@@ -17,9 +17,8 @@ class CreateReflectionsTable extends Migration
             $table->increments('Reflection_id');
             $table->timestamps();
 			$table->string('Title');
-			$table->string('Text');
+			$table->string('Content');
 			$table->string('Recording');
-			$table->timestamps('Date');
         });
     }
 

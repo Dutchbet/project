@@ -17,7 +17,7 @@ class CreateContentsTable extends Migration
             $table->increments('Content_id');
             $table->timestamps();
             $table->string('Title');
-            $table->string('Content')
+            $table->string('Content');
         });
     }
 

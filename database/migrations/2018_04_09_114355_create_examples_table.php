@@ -17,7 +17,7 @@ class CreateExamplesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('Title');
-            $table->string('Text')
+            $table->string('Body');
         });
     }
 
