@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class ProfileController extends Controller
 {
-    public function show (request $request){
-    	$profile = Profile::find($request->id);
+    public function show (){
+
     }
 }
