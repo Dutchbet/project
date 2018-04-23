@@ -32,9 +32,17 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                
+                 <li class="{{ (Request::is('home') ? 'active' : '') }}">
+                    <a href="{{ url('home') }}"><i class="fa fa-home"></i> Home</a>
+                </li>
 
+                <li class="{{ (Request::is('examples') ? 'active' : '') }}">
+                    <a href="{{ url('examples') }}"><i class="fa fa-home"></i> Examples</a>
+                </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

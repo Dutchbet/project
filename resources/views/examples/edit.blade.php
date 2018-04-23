@@ -20,14 +20,13 @@
             </div>
           </div>
         </div>
-
-        {{csrf_field()}}
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
 <button type="submit" name="status" value="Available" class="btn btn-success form-control" onClick="return validate()"><i class="fa fa-fw fa-thumbs-o-up"></i> Publish</button>
           </div>
         </div>
+      {{csrf_field()}}
       </form>
     </div>
       @if ($errors->any())
