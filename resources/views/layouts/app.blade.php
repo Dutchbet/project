@@ -34,17 +34,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                
-                 <li class="{{ (Request::is('home') ? 'active' : '') }}">
-                    <a href="{{ url('home') }}"><i class="fa fa-home"></i> Home</a>
-                </li>
-
-                <li class="{{ (Request::is('examples') ? 'active' : '') }}">
-                    <a href="{{ url('examples') }}"><i class="fa fa-home"></i> Examples</a>
-                </li>
-                    </ul>
-
+                    <nav class="navbar navbar-expand-lg navbar-light">
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+             </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+               <a class="nav-item nav-link active" href="#">Page1 <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{{ url('examples') }}">Examples</a>
+                   <a class="nav-item nav-link" href="#">Page3</a>
+                <a class="nav-item nav-link disabled" href="#">Page4</a>
+               </div>
+             </div>
+            </nav>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
