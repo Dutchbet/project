@@ -37,7 +37,17 @@ class ExampleController extends Controller
     {
          $examples = $this->validate(request(), [
           'title' => 'required',
-          'body' => 'required'
+          'body' => 'required',
+          'vraag1antwoord' => 'required',
+          'vraag2antwoord' => 'required',
+          'vraag3antwoord' => 'required',
+          'vraag4antwoord' => 'required',
+          'vraag5antwoord' => 'required',
+          'vraag6antwoord' => 'required',
+          'vraag7antwoord' => 'required',
+          'vraag8antwoord' => 'required',
+          'vraag9antwoord' => 'required',
+          'vraag10antwoord' => 'required'
         ]);
         
         Examples::create($examples);
@@ -80,10 +90,30 @@ class ExampleController extends Controller
              $examples = Examples::find($id);
         $this->validate(request(), [
           'title' => 'required',
-          'body' => 'required'
+          'body' => 'required',
+          'vraag1antwoord' => 'required',
+          'vraag2antwoord' => 'required',
+          'vraag3antwoord' => 'required',
+          'vraag4antwoord' => 'required',
+          'vraag5antwoord' => 'required',
+          'vraag6antwoord' => 'required',
+          'vraag7antwoord' => 'required',
+          'vraag8antwoord' => 'required',
+          'vraag9antwoord' => 'required',
+          'vraag10antwoord' => 'required'
         ]);
         $examples->title = $request->get('title');
         $examples->body = $request->get('body');
+        $examples->body = $request->get('vraag1antwoord');
+        $examples->body = $request->get('vraag2antwoord');
+        $examples->body = $request->get('vraag3antwoord');
+        $examples->body = $request->get('vraag4antwoord');
+        $examples->body = $request->get('vraag5antwoord');
+        $examples->body = $request->get('vraag6antwoord');
+        $examples->body = $request->get('vraag7antwoord');
+        $examples->body = $request->get('vraag8antwoord');
+        $examples->body = $request->get('vraag9antwoord');
+        $examples->body = $request->get('vraag10antwoord');
         $examples->save();
         return redirect('examples')->with('success','examples has been updated');
     }
@@ -100,4 +130,5 @@ class ExampleController extends Controller
         $examples->delete();
         return redirect('examples')->with('success','example has been  deleted');
     }
+
 }

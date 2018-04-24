@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-<button type="submit" name="status" value="Available" class="btn btn-success form-control" onClick="return validate()"><i class="fa fa-fw fa-thumbs-o-up"></i> Publish</button>
+            <button type="submit" class="btn btn-success" style="margin-left:38px">Update</button>
           </div>
         </div>
       {{csrf_field()}}

@@ -8,29 +8,75 @@
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Body</th>
-        <th colspan="2">Action</th>
-      </tr>
-    </thead>
+    <table class="table-responsive">
     <tbody>
       @foreach($examples as $example)
       <tr>
-        <td>{{$example['id']}}</td>
-        <td>{{$example['Title']}}</td>
-        <td>{{$example['Body']}}</td>
-        <td><a href="{{action('ExampleController@edit', $example['id'])}}" class="btn btn-warning">Edit</a></td>
-        <td>
+        <th> Vraag 1 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag1antwoord']}}</td>
+      </tr>
+      <tr>
+        <th> Vraag 2 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag2antwoord']}}</td>
+      </tr>      
+      <tr>
+        <th> Vraag 3 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag3antwoord']}}</td>
+      </tr>      
+      <tr>
+        <th> Vraag 4 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag4antwoord']}}</td>
+      </tr>            
+      <tr>
+        <th> Vraag 5 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag5antwoord']}}</td>
+      </tr>      
+      <tr>
+        <th> Vraag 6 antwoord</th>
+      </tr>
+        <td>{{$example['vraag6antwoord']}}</td>
+      </tr>
+      <tr>
+        <th> Vraag 7 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag7antwoord']}}</td>
+      </tr>
+      <tr>
+        <th> Vraag 8 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag8antwoord']}}</td>
+      </tr>
+      <tr>
+        <th> Vraag 9 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag9antwoord']}}</td>
+      </tr>
+      <tr>
+        <th> Vraag 10 antwoord</th>
+      </tr>
+      <tr>
+        <td>{{$example['vraag10antwoord']}}</td>
+      </tr>
+      <tr>
+        <td>  <a href="{{action('ExampleController@edit', $example['id'])}}" class="btn btn-warning">Edit</a></td>
           <form action="{{action('ExampleController@destroy', $example['id'])}}" method="post">
             {{csrf_field()}}
             <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
+           <td> <button class="btn btn-danger" type="submit">Delete</button></td>
           </form>
-        </td>
       </tr>
       @endforeach
     </tbody>

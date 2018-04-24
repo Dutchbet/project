@@ -18,6 +18,17 @@ class CreateExamplesTable extends Migration
             $table->timestamps();
             $table->string('Title');
             $table->string('Body');
+            $table->text('vraag1antwoord');
+            $table->text('vraag2antwoord');
+            $table->text('vraag3antwoord');
+            $table->text('vraag4antwoord');
+            $table->text('vraag5antwoord');
+            $table->text('vraag6antwoord');
+            $table->text('vraag7antwoord');
+            $table->text('vraag8antwoord');
+            $table->text('vraag9antwoord');
+            $table->text('vraag10antwoord');
+
         });
     }
 
