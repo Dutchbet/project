@@ -18,20 +18,6 @@
       </div><br />
       @endif
       <form method="post" action="{{url('examples')}}">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" name="title">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-              <label for="body">body:</label>
-              <input type="text" class="form-control" name="body">
-            </div>
-          </div>
           <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">

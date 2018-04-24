@@ -16,8 +16,6 @@ class CreateExamplesTable extends Migration
         Schema::create('examples', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('Title');
-            $table->string('Body');
             $table->text('vraag1antwoord');
             $table->text('vraag2antwoord');
             $table->text('vraag3antwoord');

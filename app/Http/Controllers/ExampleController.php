@@ -36,8 +36,6 @@ class ExampleController extends Controller
     public function store(Request $request)
     {
          $examples = $this->validate(request(), [
-          'title' => 'required',
-          'body' => 'required',
           'vraag1antwoord' => 'required',
           'vraag2antwoord' => 'required',
           'vraag3antwoord' => 'required',
@@ -89,8 +87,6 @@ class ExampleController extends Controller
     {
              $examples = Examples::find($id);
         $this->validate(request(), [
-          'title' => 'required',
-          'body' => 'required',
           'vraag1antwoord' => 'required',
           'vraag2antwoord' => 'required',
           'vraag3antwoord' => 'required',
@@ -102,8 +98,6 @@ class ExampleController extends Controller
           'vraag9antwoord' => 'required',
           'vraag10antwoord' => 'required'
         ]);
-        $examples->title = $request->get('title');
-        $examples->body = $request->get('body');
         $examples->body = $request->get('vraag1antwoord');
         $examples->body = $request->get('vraag2antwoord');
         $examples->body = $request->get('vraag3antwoord');
