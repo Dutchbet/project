@@ -2,6 +2,7 @@
 @section('content')
   <body>
     <div class="container">
+    <a href="{{ url('examples\create') }}" class="btn btn-warning">Nieuw voorbeeld</a>
     <br />
     @if (\Session::has('success'))
       <div class="alert alert-success">
