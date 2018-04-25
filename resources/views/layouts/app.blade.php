@@ -41,7 +41,7 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{{ url('examples') }}">Examples</a>
+                <a class="nav-item nav-link" href="{{ url('examples') }}">Voorbeelden</a>
                    <a class="nav-item nav-link" href="#">Page3</a>
                 <a class="nav-item nav-link disabled" href="#">Page4</a>
                </div>
@@ -51,8 +51,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Inloggen') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registreren') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -63,7 +63,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Uitloggen') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
