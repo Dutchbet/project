@@ -36,6 +36,9 @@ class ExampleController extends Controller
     public function store(Request $request)
     {
          $examples = $this->validate(request(), [
+             'titel' => 'required',
+             'introtext'=> 'required',
+             'situatietext' => 'required',
           'vraag1antwoord' => 'required',
           'vraag2antwoord' => 'required',
           'vraag3antwoord' => 'required',
@@ -87,6 +90,9 @@ class ExampleController extends Controller
     {
              $examples = Examples::find($id);
         $this->validate(request(), [
+            'titel' => 'required',
+            'introtext'=> 'required',
+            'situatietext' => 'required',
           'vraag1antwoord' => 'required',
           'vraag2antwoord' => 'required',
           'vraag3antwoord' => 'required',
@@ -98,16 +104,19 @@ class ExampleController extends Controller
           'vraag9antwoord' => 'required',
           'vraag10antwoord' => 'required'
         ]);
-        $examples->body = $request->get('vraag1antwoord');
-        $examples->body = $request->get('vraag2antwoord');
-        $examples->body = $request->get('vraag3antwoord');
-        $examples->body = $request->get('vraag4antwoord');
-        $examples->body = $request->get('vraag5antwoord');
-        $examples->body = $request->get('vraag6antwoord');
-        $examples->body = $request->get('vraag7antwoord');
-        $examples->body = $request->get('vraag8antwoord');
-        $examples->body = $request->get('vraag9antwoord');
-        $examples->body = $request->get('vraag10antwoord');
+        $examples->titel = $request->get('titel');
+        $examples->introtext = $request->get('introtext');
+        $examples->situatietext = $request->get('situatietext');
+        $examples->vraag1antwoord = $request->get('vraag1antwoord');
+        $examples->vraag2antwoord = $request->get('vraag2antwoord');
+        $examples->vraag3antwoord = $request->get('vraag3antwoord');
+        $examples->vraag4antwoord = $request->get('vraag4antwoord');
+        $examples->vraag5antwoord = $request->get('vraag5antwoord');
+        $examples->vraag6antwoord = $request->get('vraag6antwoord');
+        $examples->vraag7antwoord = $request->get('vraag7antwoord');
+        $examples->vraag8antwoord = $request->get('vraag8antwoord');
+        $examples->vraag9antwoord = $request->get('vraag9antwoord');
+        $examples->vraag10antwoord = $request->get('vraag10antwoord');
         $examples->save();
         return redirect('examples')->with('success','examples has been updated');
     }

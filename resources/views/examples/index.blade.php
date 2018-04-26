@@ -13,6 +13,15 @@
     <tbody>
       @foreach($examples as $example)
       <tr>
+        <td><b>{{$example['titel']}}</b></td>
+      </tr>
+      <tr>
+        <td>{{$example['introtext']}}</td>
+      </tr>
+      <tr>
+          <td>{{$example['situatietext']}}</td>
+      </tr>  
+      <tr>
         <th> Wat heb je gezien en gehoord?</th>
       </tr>
       <tr>

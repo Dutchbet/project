@@ -1,5 +1,5 @@
 @extends('layouts.app')
-   
+@section('content')   
 
     <div class="container">
       <h2>Add an example</h2><br  />
@@ -18,7 +18,28 @@
       </div><br />
       @endif
       <form method="post" action="{{url('examples')}}">
-          <div class="row">
+          <div class="row">  
+        <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="titel">Titel van de reflectie</label>
+            <input type="text" class="form-control" name="titel">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+              <div class="form-group col-md-4">
+                <label for="introtext">Geef hier een korte introductie tot de casus</label>
+                <input type="textbox" class="form-control" name="introtext">
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                  <div class="form-group col-md-4">
+                    <label for="introtext">Beschrijf hier de situatie</label>
+                    <textarea class="form-control" rows="5" id="situatietext" name="situatietext"></textarea>
+                  </div>
+                </div>  
+        <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="vraag1antwoord">vraag 1 antwoord</label>
@@ -98,3 +119,4 @@
         </div>
       </form>
     </div>
+    @endsection

@@ -17,8 +17,16 @@ class CreateReflectionsTable extends Migration
             $table->increments('Reflection_id');
             $table->timestamps();
 			$table->string('Title');
-			$table->string('Content');
-			$table->string('Recording');
+            $table->text('reflectieantwoord1');
+            $table->text('reflectieantwoord2');
+            $table->text('reflectieantwoord3');
+            $table->text('reflectieantwoord4');
+            $table->text('reflectieantwoord5');
+            $table->text('reflectieantwoord6');
+            $table->text('reflectieantwoord7');
+            $table->text('reflectieantwoord8');
+            $table->text('reflectieantwoord9');
+            $table->text('reflectieantwoord10');
         });
     }
 

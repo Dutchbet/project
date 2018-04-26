@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{username}', 'ProfileController@show')->name('profile.show');
 Route::resource('examples','ExampleController');
 Route::get('/examples/overview', 'ExampleController@overview')->name('examples_overview');
+Route::post('/Reflecties/nieuw', 'ReflectieController@create');
+Route::get('reflecties/overzicht', 'ReflectieController@overzicht')->name('reflectie_overzicht');
 
