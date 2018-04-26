@@ -44,6 +44,7 @@
                 <a class="nav-item nav-link" href="{{ url('examples') }}">Voorbeelden</a>
                    <a class="nav-item nav-link" href="#">Page3</a>
                 <a class="nav-item nav-link disabled" href="#">Page4</a>
+                <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}">Reflections </a>
                </div>
              </div>
             </nav>
