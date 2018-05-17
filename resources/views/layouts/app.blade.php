@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div>
             <div class="container flop">
                   <h2 class="text-center test">Reflectie</h2>
                   <div id="bg">Vraag 1</a>
@@ -83,4 +83,3 @@
         </main>
     </div>
 </body>
-</html>

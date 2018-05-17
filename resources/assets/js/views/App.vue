@@ -6,7 +6,7 @@
 	<div v-show="$parent.step === 1">
 
       <h1>Wat heb je gezien en gehoord?</h1>
-    <input v-model="Vragen.vraag1" placeholder="edit me">
+    <input v-model="vraag1" placeholder="edit me">
 
 	</div>
     	<div v-show="$parent.step === 2">
