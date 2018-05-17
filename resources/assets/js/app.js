@@ -46,10 +46,15 @@ const app = new Vue({
     }
   },
   methods:{
+
+    hoi() {
+      console.log("hoi")
+    },
     prev() {
       this.step--;
     },
     next() {
+      console.log("click")
       this.step++;
     },
     submit() {

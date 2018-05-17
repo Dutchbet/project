@@ -267,10 +267,14 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   },
 
   methods: {
+    hoi: function hoi() {
+      console.log("hoi");
+    },
     prev: function prev() {
       this.step--;
     },
     next: function next() {
+      console.log("click");
       this.step++;
     },
     submit: function submit() {
@@ -14335,7 +14339,7 @@ if (inBrowser && window.Vue) {
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(10)
+var __vue_script__ = null
 /* template */
 var __vue_template__ = __webpack_require__(11)
 /* template functional */
@@ -14376,71 +14380,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
+/* 10 */,
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14463,30 +14403,7 @@ var render = function() {
           }
         ]
       },
-      [
-        _c("h1", [_vm._v("Wat heb je gezien en gehoord?")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.vraag1,
-              expression: "vraag1"
-            }
-          ],
-          attrs: { placeholder: "edit me" },
-          domProps: { value: _vm.vraag1 },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.vraag1 = $event.target.value
-            }
-          }
-        })
-      ]
+      [_c("h1", [_vm._v("Wat heb je gezien en gehoord?")])]
     ),
     _vm._v(" "),
     _c(
@@ -14668,9 +14585,7 @@ var render = function() {
         }
       },
       [_vm._v("Next")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [_c("router-view")], 1)
+    )
   ])
 }
 var staticRenderFns = []

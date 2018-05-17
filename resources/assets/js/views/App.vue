@@ -6,7 +6,7 @@
 	<div v-show="$parent.step === 1">
 
       <h1>Wat heb je gezien en gehoord?</h1>
-    <input v-model="vraag1" placeholder="edit me">
+
 
 	</div>
     	<div v-show="$parent.step === 2">
@@ -45,18 +45,10 @@
 
       <h1>Zijn er nog meer gewetensvragen te formuleren?</h1>
 	</div>
-
     <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button>
 
 
-        <div class="container">
-            <router-view>
-
-            </router-view>
-        </div>
     </div>
     
 </template>
-<script>
-</script>
