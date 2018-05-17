@@ -9,6 +9,63 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.fixed-bottom {
+  padding-left: 0;
+  margin-right: 0;
+  box-shadow: inset 0 1px 0 0 #d7e1e8;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flop {
+  background-color: #ffffff;
+  box-shadow: inset 0 -1px 0 0 #d7e1e8;
+}
+
+#bg {
+  width: 64px;
+  height: 32px;
+  margin-top: 14px;
+  padding: 5px 7px 7px 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+  background-color: #f1f7fa;
+  border: solid 1px #d7e1e8;
+  float: right;
+  font-size: 12px;
+}
+
+.test {
+  width: 80% !important;
+  height: 28px !important;
+  float: left !important;
+  margin-top: 20px;
+  padding-left: 30px;
+  font-size: 18px;
+}
+
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 57px;
+}
+
+.bg-light {
+    background-color: #ffffff !important;
+}
+
+.bar-select {
+  height: 2px;
+  background-color: #32baef;
 }

@@ -204,11 +204,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(3);
-<<<<<<< HEAD
 module.exports = __webpack_require__(15);
-=======
-module.exports = __webpack_require__(16);
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
 
 
 /***/ }),
@@ -14475,31 +14471,18 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-<<<<<<< HEAD
               value: _vm.vraag1,
               expression: "vraag1"
             }
           ],
           attrs: { placeholder: "edit me" },
           domProps: { value: _vm.vraag1 },
-=======
-              value: _vm.Vragen.vraag1,
-              expression: "Vragen.vraag1"
-            }
-          ],
-          attrs: { placeholder: "edit me" },
-          domProps: { value: _vm.Vragen.vraag1 },
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-<<<<<<< HEAD
               _vm.vraag1 = $event.target.value
-=======
-              _vm.$set(_vm.Vragen, "vraag1", $event.target.value)
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
             }
           }
         })
@@ -14732,12 +14715,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-<<<<<<< HEAD
 /* 13 */
-=======
-/* 13 */,
-/* 14 */
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -14745,11 +14723,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = null
 /* template */
-<<<<<<< HEAD
 var __vue_template__ = __webpack_require__(14)
-=======
-var __vue_template__ = __webpack_require__(15)
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -14788,11 +14762,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-<<<<<<< HEAD
 /* 14 */
-=======
-/* 15 */
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -14812,11 +14782,7 @@ if (false) {
 }
 
 /***/ }),
-<<<<<<< HEAD
 /* 15 */
-=======
-/* 16 */
->>>>>>> parent of ff474aa... Merge branch 'master' of https://github.com/Dutchbet/project
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
