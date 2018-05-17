@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class ReflectieController extends Controller
 {
-    public function overzicht()
+    public function index()
     {
-        $examples = Examples::all()->toArray();
-        return view('examples.overzicht', compact('examples'));
+        return view('reflectie');
+
     }
 }

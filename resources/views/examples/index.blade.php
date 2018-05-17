@@ -12,6 +12,7 @@
     <table class="table-responsive">
     <tbody>
       @foreach($examples as $example)
+      
       <tr>
         <td><b>{{$example['titel']}}</b></td>
       </tr>

@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: 	#B8B8B8;
+                color: 	#000000;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -42,9 +42,53 @@
             }
 
             .content {
-                text-align: center;
-            }
 
+            }
+            .vraag1 {
+                width: 297px;
+                height: 249px;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
+                background-color: #fdf2fa;
+                border: solid 1px #f3c9e7;
+            }
+            .vraag2 {
+                position:relative;
+                top: 90px;
+                right: 10px;
+                transform:rotateZ(15deg);
+                width: 297px;
+                height: 88px;
+                border-radius: 4px;
+                background-image: linear-gradient(to bottom, #d954b4, #e177c3);
+                border: solid 1px #d00899;
+            }
+            .vraag3 {
+                position:relative;
+                top: 140px;
+                right: 35px;
+                transform:rotateZ(30deg);
+                max-width: 250px;
+                width: 297px;
+                height: 88px;
+                border-radius: 4px;
+                background-image: linear-gradient(to bottom, #d954b4, #e177c3);
+                border: solid 1px #d00899;
+                
+            }
+            .vraag4 {
+                position:relative;
+                top: 190px;
+                right: 120px;
+                transform:rotateZ(60deg);
+                max-width: 250px;
+                width: 297px;
+                height: 88px;
+                border-radius: 4px;
+                background-image: linear-gradient(to bottom, #d954b4, #e177c3);
+                border: solid 1px #d00899;
+                
+            }
             .title {
                 font-size: 84px;
             }
@@ -78,9 +122,18 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Jeugdhulp Fryslan
-            </div>
+                  <div class="vraag1">
+                    Wat heb je gezien en gehoord?
+                  </div>
+                  <div class="vraag2">
+                  wat heb jij daarbij gedacht en gevoeld ?
+                  </div>
+                  <div class="vraag3">
+                 Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding??
+                </div>
+                <div class="vraag4">
+                        Wie speelt welke rol en klopt dat volgens jou?
+                </div>
         </div>
     </body>
 </html>
