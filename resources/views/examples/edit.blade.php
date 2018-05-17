@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @isset($examples)
-    <div class="container"> 
+    <div class="container">
       <form method="post" action="{{action('ExampleController@update', $id)}}">
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
@@ -91,7 +91,7 @@
           <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-              <label for="vraag10antwoord">vraag 1o antwoord</label>
+              <label for="vraag10antwoord">vraag 10 antwoord</label>
               <input type="text" class="form-control" name="vraag10antwoord" value="{{$examples['vraag10antwoord']}}">
             </div>
           </div>
