@@ -21,7 +21,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<<<<<<< HEAD
     <div>
             <div class="container flop">
                   <h2 class="text-center test">Reflectie</h2>
@@ -30,38 +29,28 @@
           </div>
 
         <nav class="navbar fixed-bottom navbar-light bg-light">
-=======
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
->>>>>>> parent of 82601f9... V03.01
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="nav-item nav-link" href="{{ url('/') }}">
+                  <img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 
                     <!-- Left Side Of Navbar -->
-                    <nav class="navbar navbar-expand-lg navbar-light">
-             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+
              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-               <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{{ url('examples') }}">Voorbeelden</a>
-                   <a class="nav-item nav-link" href="#">Page3</a>
-                <a class="nav-item nav-link disabled" href="#">Page4</a>
-                <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}">Reflections </a>
-               </div>
+
+              <!--  <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a> -->
+                <a class="nav-item nav-link active" href="{{ url('examples') }}"><img class="first-slide" src="{{asset('/images/baseline-event_note-24px.svg')}} " alt="First slide"></a>
+                <a class="nav-item nav-link" href="#"><img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide"></a>
+                <a class="nav-item nav-link disabled" href="#"><img class="first-slide" src="{{asset('/images/baseline-contacts-24px.svg')}} " alt="First slide"></a>
+                <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}"><img class="first-slide" src="{{asset('/images/baseline-settings-20px.svg')}} " alt="First slide"> </a>
+
              </div>
-            </nav>
                     <!-- Right Side Of Navbar -->
+                    <!-- Disabled log out field
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                         Authentication Links
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Inloggen') }}</a></li>
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Registreren') }}</a></li>
@@ -84,6 +73,7 @@
                             </li>
                         @endguest
                     </ul>
+                  -->
                 </div>
             </div>
         </nav>
