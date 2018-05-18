@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@import url(https://fonts.googleapis.com/css?family=Muli);/*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10409,6 +10409,63 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.body-reflectie {
+  height: 100%;
+  width: 100%;
+}
+
+.topbar-reflectie-button {
+  position: relative;
+  top: 25%;
+  width: 64px;
+  height: 32px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+          box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+  background-color: #f1f7fa;
+  border: solid 1px #d7e1e8;
+}
+
+.vraagbox-reflectie-text {
+  width: 281px;
+  height: 48px;
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.vraagbox-reflectie-titel {
+  width: 46px;
+  height: 21px;
+  font-family: Muli;
+  font-size: 10px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #f3c9e7;
+}
+
+.vraagbox-reflectie {
+  position: relative;
+  left: 10%;
+  top: 10%;
+  width: 297px;
+  height: 88px;
+  border-radius: 4px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d954b4), to(#e177c3));
+  background-image: linear-gradient(to bottom, #d954b4, #e177c3);
+  border: solid 1px #d00899;
 }
 
 .navbar-laravel {

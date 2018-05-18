@@ -21,12 +21,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div>
-            <div class="container flop">
+ <div>
+{{--             <div class="container flop">
                   <h2 class="text-center test">Reflectie</h2>
                   <div id="bg">Vraag 1</a>
                   </div>
-          </div>
+          </div> --}}
 
         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
@@ -78,7 +78,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="body">
             @yield('content')
         </main>
     </div>

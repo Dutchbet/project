@@ -14388,8 +14388,280 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Reflectie")]),
+  return _c("div", { staticClass: "body-reflectie" }, [
+    _c("div", { staticClass: "container flop" }, [
+      _c("h2", { staticClass: "text-center test" }, [_vm._v("Reflectie")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 1,
+              expression: "$parent.step === 1"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 2")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 2,
+              expression: "$parent.step === 2"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 3")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 3,
+              expression: "$parent.step === 3"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 4")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 4,
+              expression: "$parent.step === 4"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 5")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 5,
+              expression: "$parent.step === 5"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 6")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 6,
+              expression: "$parent.step === 6"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 7")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 7,
+              expression: "$parent.step === 7"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 8")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 8,
+              expression: "$parent.step === 8"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 9")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.$parent.step === 9,
+              expression: "$parent.step === 9"
+            }
+          ],
+          staticClass: "body-reflectie"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.next()
+                }
+              }
+            },
+            [_vm._v("vraag 10")]
+          )
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -14403,7 +14675,7 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("Wat heb je gezien en gehoord?")])]
+      [_vm._m(0)]
     ),
     _vm._v(" "),
     _c(
@@ -14418,7 +14690,7 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("wat heb jij daarbij gedacht en gevoeld ?")])]
+      [_vm._m(1)]
     ),
     _vm._v(" "),
     _c(
@@ -14433,13 +14705,7 @@ var render = function() {
           }
         ]
       },
-      [
-        _c("h1", [
-          _vm._v(
-            "Wat raakt je in de situatie, welke waarde is voor jou in het geding ?"
-          )
-        ])
-      ]
+      [_vm._m(2)]
     ),
     _vm._v(" "),
     _c(
@@ -14454,13 +14720,7 @@ var render = function() {
           }
         ]
       },
-      [
-        _c("h1", [
-          _vm._v(
-            "Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?"
-          )
-        ])
-      ]
+      [_vm._m(3)]
     ),
     _vm._v(" "),
     _c(
@@ -14475,7 +14735,7 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("Wie speelt welke rol en klopt dat volgens jou?")])]
+      [_vm._m(4)]
     ),
     _vm._v(" "),
     _c(
@@ -14490,11 +14750,7 @@ var render = function() {
           }
         ]
       },
-      [
-        _c("h1", [
-          _vm._v("Wie heeft welk belang en wlke tegenstellingen zijn daarin?")
-        ])
-      ]
+      [_vm._m(5)]
     ),
     _vm._v(" "),
     _c(
@@ -14509,11 +14765,7 @@ var render = function() {
           }
         ]
       },
-      [
-        _c("h1", [
-          _vm._v("Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?")
-        ])
-      ]
+      [_vm._m(6)]
     ),
     _vm._v(" "),
     _c(
@@ -14528,7 +14780,7 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("Zijn er nog meer gewetensvragen te formuleren?")])]
+      [_vm._m(7)]
     ),
     _vm._v(" "),
     _c(
@@ -14543,7 +14795,7 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("Welke vragen zijn nog niet beantwoord?")])]
+      [_vm._m(8)]
     ),
     _vm._v(" "),
     _c(
@@ -14558,37 +14810,170 @@ var render = function() {
           }
         ]
       },
-      [_c("h1", [_vm._v("Zijn er nog meer gewetensvragen te formuleren?")])]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            _vm.$parent.prev()
-          }
-        }
-      },
-      [_vm._v("Previous")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        on: {
-          click: function($event) {
-            $event.preventDefault()
-            _vm.$parent.next()
-          }
-        }
-      },
-      [_vm._v("Next")]
+      [_vm._m(9)]
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 1\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v("\r\n           wat heb je gezien en gehoord? \r\n           ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 2\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           wat heb jij daarbij gedacht en gevoeld ? \r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 3\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 4\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 5\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Wie speelt welke rol en klopt dat volgens jou?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 6\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 7\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 8\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Zijn er nog meer gewetensvragen te formuleren?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 9\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Welke vragen zijn nog niet beantwoord?\r\n           "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n           Vraag 10\r\n           ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n           Zijn er nog meer gewetensvragen te formuleren?\r\n           "
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
