@@ -10411,9 +10411,57 @@ a.text-dark:focus {
   }
 }
 
+.Reflectie-Response {
+  padding-top: 10px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
+          box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
+  background-color: #fdf2fa;
+  border: solid 1px #f3c9e7;
+}
+
+.Reflectie-Bottom {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  margin: 5px;
+}
+
+.Reflectie-input {
+  width: 100%;
+  width: 345px;
+  height: 48px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 3px 0 #d7e1e8;
+          box-shadow: inset 0 1px 3px 0 #d7e1e8;
+  background-color: #ffffff;
+  border: solid 1px #d7e1e8;
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #bec9cd;
+}
+
 .body-reflectie {
   height: 100%;
   width: 100%;
+}
+
+.topbar-reflectie-button-left {
+  position: relative;
+  top: 25%;
+  width: 64px;
+  height: 32px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+          box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+  background-color: #f1f7fa;
+  border: solid 1px #d7e1e8;
 }
 
 .topbar-reflectie-button {
@@ -10466,6 +10514,8 @@ a.text-dark:focus {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d954b4), to(#e177c3));
   background-image: linear-gradient(to bottom, #d954b4, #e177c3);
   border: solid 1px #d00899;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .navbar-laravel {
