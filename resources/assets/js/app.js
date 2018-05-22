@@ -58,7 +58,7 @@ const app = new Vue({
       this.step++;
     },
     submit() {
-      alert('Submit to blah and show blah and etc.');      
+      alert('Submit to blah and show blah and etc.');
     }
   }
 });
