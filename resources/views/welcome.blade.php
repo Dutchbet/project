@@ -74,7 +74,7 @@
                 border-radius: 4px;
                 background-image: linear-gradient(to bottom, #d954b4, #e177c3);
                 border: solid 1px #d00899;
-                
+
             }
             .vraag4 {
                 position:relative;
@@ -87,7 +87,7 @@
                 border-radius: 4px;
                 background-image: linear-gradient(to bottom, #d954b4, #e177c3);
                 border: solid 1px #d00899;
-                
+
             }
             .title {
                 font-size: 84px;

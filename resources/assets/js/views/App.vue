@@ -1,6 +1,6 @@
 <template>
 <div class="body-reflectie">
-      <div class="container flop">           
+      <div class="container flop">
       <h2 class="text-center test">Reflectie</h2>
             <div class="body-reflectie" v-show="$parent.step === 1">
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 2</button>
@@ -46,12 +46,58 @@
                         Vraag 1
                   </div>
                    <div class="vraagbox-reflectie-text">
-                        wat heb je gezien en gehoord? 
+                        wat heb je gezien en gehoord?
                   </div>
             </div>
             <div v-if="$parent.Vragen.vraag1 !== null">
                   <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
             </div>
+
+            <div class="waarden-bottom">
+            <div class="collapsible">
+                <input type="button" value="Waarden" class="more-button">
+                <div class='growable'>
+                    <div class='measuringWrapper'>
+                    <div class="scrollmenu">
+                            <table class="table">
+                                <thead>
+                                    <th>Waarden</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Loyaliteit</td>
+                                </tr>
+                                <tr>
+                                    <td>Geduld</td>
+                                </tr>
+                                <tr>
+                                    <td>Openheid</td>
+                                </tr>
+                                <tr>
+                                    <td>Flexibiliteit</td>
+                                </tr>
+                                <tr>
+                                    <td>Rechtvaardig</td>
+                                </tr>
+                                <tr>
+                                    <td>Schoonheid</td>
+                                </tr>
+                                <tr>
+                                    <td>Respect</td>
+                                </tr>
+                                            </tbody>
+                           </table>
+                       </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+
+
+
+
             <div class="Reflectie-Bottom">
                   <input v-model="$parent.Vragen.vraag1" placeholder="Typ hier uw antwoord" class="Reflectie-input">
             </div>
@@ -62,7 +108,7 @@
                         Vraag 2
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        wat heb jij daarbij gedacht en gevoeld ? 
+                        wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
             <div v-if="$parent.Vragen.vraag2 !== null">
@@ -206,7 +252,7 @@
                         Vraag 1
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        wat heb je gezien en gehoord? 
+                        wat heb je gezien en gehoord?
                   </div>
             </div>
             <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
@@ -215,7 +261,7 @@
                         Vraag 2
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        wat heb jij daarbij gedacht en gevoeld ? 
+                        wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
             <div class="Reflectie-Response"> {{ $parent.Vragen.vraag2 }} </div>
@@ -295,5 +341,5 @@
            <div v-show="$parent.step === 12">
                Bericht is verstuurd
             </div>
-</div>   
+</div>
 </template>

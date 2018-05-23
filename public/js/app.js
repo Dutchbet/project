@@ -283,6 +283,27 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   }
 });
 
+(function () {
+  var i,
+      len,
+      collapsibles = document.getElementsByClassName('collapsible');
+  for (i = 0, len = collapsibles.length; i < len; i++) {
+    (function (collapsible) {
+      var button = collapsible.getElementsByClassName('more-button')[0];
+      var growDiv = collapsible.getElementsByClassName('growable')[0];
+      var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
+      button.addEventListener('click', function () {
+        if (growDiv.clientHeight) {
+          growDiv.style.height = 0;
+        } else {
+          growDiv.style.height = wrapper.clientHeight + "px";
+        }
+        button.value = button.value === 'Waarden' ? 'Waarden' : 'Read more';
+      });
+    })(collapsibles[i]);
+  }
+})();
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -14745,6 +14766,8 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Bottom" }, [
           _c("input", {
             directives: [
@@ -14784,7 +14807,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(1),
+        _vm._m(2),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag2 !== null
           ? _c("div", [
@@ -14833,7 +14856,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(2),
+        _vm._m(3),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag3 !== null
           ? _c("div", [
@@ -14882,7 +14905,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(3),
+        _vm._m(4),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag4 !== null
           ? _c("div", [
@@ -14931,7 +14954,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(4),
+        _vm._m(5),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag5 !== null
           ? _c("div", [
@@ -14980,7 +15003,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(5),
+        _vm._m(6),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag6 !== null
           ? _c("div", [
@@ -15029,7 +15052,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(6),
+        _vm._m(7),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag7 !== null
           ? _c("div", [
@@ -15078,7 +15101,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(7),
+        _vm._m(8),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag8 !== null
           ? _c("div", [
@@ -15127,7 +15150,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(8),
+        _vm._m(9),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag9 !== null
           ? _c("div", [
@@ -15176,7 +15199,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(9),
+        _vm._m(10),
         _vm._v(" "),
         _vm.$parent.Vragen.vraag10 !== null
           ? _c("div", [
@@ -15225,61 +15248,61 @@ var render = function() {
         ]
       },
       [
-        _vm._m(10),
+        _vm._m(11),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag1) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(11),
+        _vm._m(12),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag2) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(12),
+        _vm._m(13),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag3) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(13),
+        _vm._m(14),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag4) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(14),
+        _vm._m(15),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag5) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(15),
+        _vm._m(16),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag6) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(16),
+        _vm._m(17),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag7) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(17),
+        _vm._m(18),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag8) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(18),
+        _vm._m(19),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag9) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(19),
+        _vm._m(20),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag10) + " ")
@@ -15315,8 +15338,47 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb je gezien en gehoord? \n                  "
+          "\n                        wat heb je gezien en gehoord?\n                  "
         )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "waarden-bottom" }, [
+      _c("div", { staticClass: "collapsible" }, [
+        _c("input", {
+          staticClass: "more-button",
+          attrs: { type: "button", value: "Waarden" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "growable" }, [
+          _c("div", { staticClass: "measuringWrapper" }, [
+            _c("div", { staticClass: "scrollmenu" }, [
+              _c("table", { staticClass: "table" }, [
+                _c("thead", [_c("th", [_vm._v("Waarden")])]),
+                _vm._v(" "),
+                _c("tbody", [
+                  _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Geduld")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Openheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Flexibiliteit")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Rechtvaardig")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Respect")])])
+                ])
+              ])
+            ])
+          ])
+        ])
       ])
     ])
   },
@@ -15331,7 +15393,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb jij daarbij gedacht en gevoeld ? \n                  "
+          "\n                        wat heb jij daarbij gedacht en gevoeld ?\n                  "
         )
       ])
     ])
@@ -15475,7 +15537,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb je gezien en gehoord? \n                  "
+          "\n                        wat heb je gezien en gehoord?\n                  "
         )
       ])
     ])
@@ -15491,7 +15553,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb jij daarbij gedacht en gevoeld ? \n                  "
+          "\n                        wat heb jij daarbij gedacht en gevoeld ?\n                  "
         )
       ])
     ])
