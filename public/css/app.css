@@ -10592,7 +10592,7 @@ a.text-dark:focus {
   border-style: none;
   background: none;
   font: 16px Serif;
-  color: blue;
+  color: #32baef;
   margin: 0 0 10px 0;
   left: 0px;
 }
@@ -10606,19 +10606,41 @@ a.text-dark:focus {
 }
 
 .growable {
-  -webkit-transition: height .5s;
-  transition: height .5s;
+  -webkit-transition: height .3s;
+  transition: height .3s;
   height: 0;
   overflow: hidden;
   background-color: white;
+  position: absolute;
+  z-index: 999;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 998;
+  margin: 0 !important;
+  background-color: rgba(3, 25, 33, 0.32);
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .waarden-bottom {
+  -webkit-transition: bottom .3s;
+  transition: bottom .3s;
   position: absolute;
   width: 90%;
   text-align: right;
-  bottom: 100px;
+  bottom: 120px;
   margin: 16px;
+}
+
+.title_scrollmenu {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .title_value {
@@ -10635,6 +10657,10 @@ a.text-dark:focus {
 .table th,
 .table td {
   border-top: 0px;
+}
+
+.table {
+  text-align: center;
 }
 
 .example1 {

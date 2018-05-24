@@ -24,7 +24,8 @@
  <div>
 {{--             <div class="container flop">
                   <h2 class="text-center test">Reflectie</h2>
-                  <div id="bg">Vraag 1</a>
+                  <div id="bg">
+                  </a>
                   </div>
           </div> --}}
 
