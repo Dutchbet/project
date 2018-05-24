@@ -30,6 +30,7 @@ const app = new Vue({
   router,
   data() {
     return {
+      TaskName:'',
       step:1,
       Vragen:{
       vraag1:null,
@@ -42,19 +43,53 @@ const app = new Vue({
       vraag8:null,
       vraag9:null,
       vraag10:null,
-      }
+      },
+      vraag1:[
+      ],
+      vraag2:[
+      ],
+      vraag3:[
+      ],
+      vraag4:[
+      ],
+      vraag5:[
+      ],
+      vraag6:[
+      ],
+      vraag7:[
+      ],
+      vraag8:[
+      ],
+      vraag9:[
+      ],
+      vraag10:[
+      ]
     }
   },
   methods:{
 
-    hoi() {
-      console.log("hoi")
-    },
+   saveNewTask(){this.vraag1.push(
+     {memo: this.TaskName});
+     this.TaskName='';
+  },
+  saveNewTask2(){this.vraag2.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+ },
+ saveNewTask2(){this.vraag3.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask2(){this.vraag4.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+
+
     prev() {
       this.step--;
     },
     next() {
-      console.log("click")
       this.step++;
     },
     submit() {

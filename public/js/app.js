@@ -222,6 +222,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_Hello__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Home__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Home__);
+var _methods;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -250,6 +254,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: router,
   data: function data() {
     return {
+      TaskName: '',
       step: 1,
       Vragen: {
         vraag1: null,
@@ -262,25 +267,42 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         vraag8: null,
         vraag9: null,
         vraag10: null
-      }
+      },
+      vraag1: [],
+      vraag2: [],
+      vraag3: [],
+      vraag4: [],
+      vraag5: [],
+      vraag6: [],
+      vraag7: [],
+      vraag8: [],
+      vraag9: [],
+      vraag10: []
     };
   },
 
-  methods: {
-    hoi: function hoi() {
-      console.log("hoi");
+  methods: (_methods = {
+    saveNewTask: function saveNewTask() {
+      this.vraag1.push({ memo: this.TaskName });
+      this.TaskName = '';
     },
-    prev: function prev() {
-      this.step--;
-    },
-    next: function next() {
-      console.log("click");
-      this.step++;
-    },
-    submit: function submit() {
-      alert('Submit to blah and show blah and etc.');
+    saveNewTask2: function saveNewTask2() {
+      this.vraag2.push({ memo: this.TaskName });
+      this.TaskName = '';
     }
-  }
+  }, _defineProperty(_methods, 'saveNewTask2', function saveNewTask2() {
+    this.vraag3.push({ memo: this.TaskName });
+    this.TaskName = '';
+  }), _defineProperty(_methods, 'saveNewTask2', function saveNewTask2() {
+    this.vraag4.push({ memo: this.TaskName });
+    this.TaskName = '';
+  }), _defineProperty(_methods, 'prev', function prev() {
+    this.step--;
+  }), _defineProperty(_methods, 'next', function next() {
+    this.step++;
+  }), _defineProperty(_methods, 'submit', function submit() {
+    alert('Submit to blah and show blah and etc.');
+  }), _methods)
 });
 
 /***/ }),
@@ -14358,7 +14380,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/App.vue"
+Component.options.__file = "resources\\assets\\js\\views\\App.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -14367,9 +14389,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50e73d1e", Component.options)
+    hotAPI.createRecord("data-v-7cca96b8", Component.options)
   } else {
-    hotAPI.reload("data-v-50e73d1e", Component.options)
+    hotAPI.reload("data-v-7cca96b8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -14737,37 +14759,71 @@ var render = function() {
       [
         _vm._m(0),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag1 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag1) + " ")
-              ])
-            ])
+        _vm.$parent.vraag1.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag1, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag1,
-                expression: "$parent.Vragen.vraag1"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag1 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag1", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -14786,37 +14842,71 @@ var render = function() {
       [
         _vm._m(1),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag2 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag2) + " ")
-              ])
-            ])
+        _vm.$parent.vraag2.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag2, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag2,
-                expression: "$parent.Vragen.vraag2"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag2 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag2", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask2($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test2")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -14835,37 +14925,71 @@ var render = function() {
       [
         _vm._m(2),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag3 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag3) + " ")
-              ])
-            ])
+        _vm.$parent.vraag3.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag3, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag3,
-                expression: "$parent.Vragen.vraag3"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag3 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag3", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask3($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test3")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -14884,37 +15008,71 @@ var render = function() {
       [
         _vm._m(3),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag4 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag4) + " ")
-              ])
-            ])
+        _vm.$parent.vraag4.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag4, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag4,
-                expression: "$parent.Vragen.vraag4"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag4 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag4", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask4($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test4")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -14933,37 +15091,71 @@ var render = function() {
       [
         _vm._m(4),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag5 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag5) + " ")
-              ])
-            ])
+        _vm.$parent.vraag5.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag5, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag5,
-                expression: "$parent.Vragen.vraag5"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag5 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag5", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask5($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test5")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -14982,37 +15174,71 @@ var render = function() {
       [
         _vm._m(5),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag6 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag6) + " ")
-              ])
-            ])
+        _vm.$parent.vraag6.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag6, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag6,
-                expression: "$parent.Vragen.vraag6"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag6 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag6", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask6($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test6")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -15031,37 +15257,71 @@ var render = function() {
       [
         _vm._m(6),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag7 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag7) + " ")
-              ])
-            ])
+        _vm.$parent.vraag7.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag7, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag7,
-                expression: "$parent.Vragen.vraag7"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag7 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag7", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask7($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test7")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -15080,37 +15340,71 @@ var render = function() {
       [
         _vm._m(7),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag8 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag8) + " ")
-              ])
-            ])
+        _vm.$parent.vraag8.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag8, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag8,
-                expression: "$parent.Vragen.vraag8"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag8 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag8", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask8($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test8")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -15129,37 +15423,71 @@ var render = function() {
       [
         _vm._m(8),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag9 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag9) + " ")
-              ])
-            ])
+        _vm.$parent.vraag9.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag9, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag9,
-                expression: "$parent.Vragen.vraag9"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag9 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag9", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask9($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test9")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -15178,37 +15506,71 @@ var render = function() {
       [
         _vm._m(9),
         _vm._v(" "),
-        _vm.$parent.Vragen.vraag10 !== null
-          ? _c("div", [
-              _c("div", { staticClass: "Reflectie-Response" }, [
-                _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag10) + " ")
-              ])
-            ])
+        _vm.$parent.vraag10.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag10, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                  "
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Bottom" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$parent.Vragen.vraag10,
-                expression: "$parent.Vragen.vraag10"
-              }
-            ],
-            staticClass: "Reflectie-input",
-            attrs: { placeholder: "Typ hier uw antwoord" },
-            domProps: { value: _vm.$parent.Vragen.vraag10 },
+        _c(
+          "form",
+          {
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$parent.Vragen, "vraag10", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.$parent.saveNewTask10($event)
               }
             }
-          })
-        ])
+          },
+          [
+            _c("div", { staticClass: "Reflectie-Bottom" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.$parent.TaskName,
+                    expression: "$parent.TaskName"
+                  }
+                ],
+                staticClass: "Reflectie-input",
+                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                domProps: { value: _vm.$parent.TaskName },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "button-reflectie", attrs: { type: "submit" } },
+                [_vm._v("Test10")]
+              )
+            ])
+          ]
+        )
       ]
     ),
     _vm._v(" "),
@@ -15299,7 +15661,7 @@ var render = function() {
           }
         ]
       },
-      [_vm._v("\n               Bericht is verstuurd\n            ")]
+      [_vm._v("\r\n               Bericht is verstuurd\r\n            ")]
     )
   ])
 }
@@ -15310,12 +15672,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 1\n                  ")
+        _vm._v("\r\n                        Vraag 1\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb je gezien en gehoord? \n                  "
+          "\r\n                        wat heb je gezien en gehoord? \r\n                  "
         )
       ])
     ])
@@ -15326,12 +15688,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 2\n                  ")
+        _vm._v("\r\n                        Vraag 2\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb jij daarbij gedacht en gevoeld ? \n                  "
+          "\r\n                        wat heb jij daarbij gedacht en gevoeld ?\r\n                  "
         )
       ])
     ])
@@ -15342,12 +15704,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 3\n                  ")
+        _vm._v("\r\n                        Vraag 3\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\n                  "
+          "\r\n                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
         )
       ])
     ])
@@ -15358,12 +15720,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 4\n                  ")
+        _vm._v("\r\n                        Vraag 4\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\n                  "
+          "\r\n                        Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n                  "
         )
       ])
     ])
@@ -15374,12 +15736,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 5\n                  ")
+        _vm._v("\r\n                        Vraag 5\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Wie speelt welke rol en klopt dat volgens jou?\n                  "
+          "\r\n                        Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
         )
       ])
     ])
@@ -15390,12 +15752,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 6\n                  ")
+        _vm._v("\r\n                        Vraag 6\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Wie heeft welk belang en wlke tegenstellingen zijn daarin?\n                  "
+          "\r\n                        Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n                  "
         )
       ])
     ])
@@ -15406,12 +15768,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 7\n                  ")
+        _vm._v("\r\n                        Vraag 7\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\n                  "
+          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
         )
       ])
     ])
@@ -15422,12 +15784,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 8\n                  ")
+        _vm._v("\r\n                        Vraag 8\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Zijn er nog meer gewetensvragen te formuleren?\n                  "
+          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
         )
       ])
     ])
@@ -15438,12 +15800,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 9\n                  ")
+        _vm._v("\r\n                        Vraag 9\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Welke vragen zijn nog niet beantwoord?\n                  "
+          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
         )
       ])
     ])
@@ -15454,12 +15816,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 10\n                  ")
+        _vm._v("\r\n                        Vraag 10\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Zijn er nog meer gewetensvragen te formuleren?\n                  "
+          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
         )
       ])
     ])
@@ -15470,12 +15832,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 1\n                  ")
+        _vm._v("\r\n                        Vraag 1\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb je gezien en gehoord? \n                  "
+          "\r\n                        wat heb je gezien en gehoord? \r\n                  "
         )
       ])
     ])
@@ -15486,12 +15848,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 2\n                  ")
+        _vm._v("\r\n                        Vraag 2\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb jij daarbij gedacht en gevoeld ? \n                  "
+          "\r\n                        wat heb jij daarbij gedacht en gevoeld ? \r\n                  "
         )
       ])
     ])
@@ -15502,12 +15864,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 3\n                  ")
+        _vm._v("\r\n                        Vraag 3\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\n                  "
+          "\r\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
         )
       ])
     ])
@@ -15518,12 +15880,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 4\n                  ")
+        _vm._v("\r\n                        Vraag 4\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\n            "
+          "\r\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n            "
         )
       ])
     ])
@@ -15534,12 +15896,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 5\n                  ")
+        _vm._v("\r\n                        Vraag 5\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                  Wie speelt welke rol en klopt dat volgens jou?\n                  "
+          "\r\n                  Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
         )
       ])
     ])
@@ -15550,12 +15912,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                  Vraag 6\n                  ")
+        _vm._v("\r\n                  Vraag 6\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\n            "
+          "\r\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n            "
         )
       ])
     ])
@@ -15566,12 +15928,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 7\n                  ")
+        _vm._v("\r\n                        Vraag 7\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\n                  "
+          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
         )
       ])
     ])
@@ -15582,12 +15944,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 8\n                  ")
+        _vm._v("\r\n                        Vraag 8\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Zijn er nog meer gewetensvragen te formuleren?\n                  "
+          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
         )
       ])
     ])
@@ -15598,12 +15960,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 9\n                  ")
+        _vm._v("\r\n                        Vraag 9\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Welke vragen zijn nog niet beantwoord?\n                  "
+          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
         )
       ])
     ])
@@ -15614,12 +15976,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\n                        Vraag 10\n                  ")
+        _vm._v("\r\n                        Vraag 10\r\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        Zijn er nog meer gewetensvragen te formuleren?\n                  "
+          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
         )
       ])
     ])
@@ -15630,7 +15992,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50e73d1e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7cca96b8", module.exports)
   }
 }
 
@@ -15659,7 +16021,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Hello.vue"
+Component.options.__file = "resources\\assets\\js\\views\\Hello.vue"
 
 
 module.exports = Component.exports
@@ -15691,7 +16053,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Home.vue"
+Component.options.__file = "resources\\assets\\js\\views\\Home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -15700,9 +16062,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6c0a33b2", Component.options)
+    hotAPI.createRecord("data-v-11c5acec", Component.options)
   } else {
-    hotAPI.reload("data-v-6c0a33b2", Component.options)
+    hotAPI.reload("data-v-11c5acec", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15728,7 +16090,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-11c5acec", module.exports)
   }
 }
 
