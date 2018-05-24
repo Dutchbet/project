@@ -173,3 +173,46 @@ border: solid 1px #d7e1e8;
   height: 2px;
   background-color: #32baef;
 }
+
+.more-button {
+  border-style: none;
+  background: none;
+  font: 16px Serif;
+  color: blue;
+  margin: 0 0 10px 0;
+}
+
+.growable input:checked {
+  color: red;
+}
+
+.more-button:hover {
+  color: black;
+}
+
+.growable {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .waarden-bottom
+  {
+    position: absolute;
+    right: 0;
+    bottom: 90px;
+    margin: 5px;
+  }
+
+  .scrollmenu {
+    overflow: scroll;
+    height: 200px;
+}
+
+.table th, .table td {
+    border-top: 0px;
+}

@@ -97,3 +97,24 @@ saveNewTask2(){this.vraag4.push(
     }
   }
 });
+
+
+(function() {
+    var i, len, collapsibles = document.getElementsByClassName('collapsible');
+    for (i = 0, len = collapsibles.length; i < len; i++) {
+        (function(collapsible) {
+            var button = collapsible.getElementsByClassName('more-button')[0];
+            var growDiv = collapsible.getElementsByClassName('growable')[0];
+            var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
+            button.addEventListener('click', function() {
+                if (growDiv.clientHeight) {
+                  growDiv.style.height = 0;
+                }
+                else {
+                  growDiv.style.height = wrapper.clientHeight + "px";
+                }
+                button.value = (button.value === 'Waarden' ? 'Waarden' : 'Read more');
+            });
+        })(collapsibles[i]);
+    }
+})();
