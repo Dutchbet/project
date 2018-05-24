@@ -55,14 +55,14 @@
 
             <div class="waarden-bottom">
             <div class="collapsible">
+            <div class="title_scrollmenu">
+            <div class="title_value"></div>
                 <input type="button" value="Waarden" class="more-button">
+                </div>
                 <div class='growable'>
                     <div class='measuringWrapper'>
                     <div class="scrollmenu">
                             <table class="table">
-                                <thead>
-                                    <th>Waarden</th>
-                                </thead>
                                 <tbody>
                                 <tr>
                                     <td>Loyaliteit</td>

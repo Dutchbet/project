@@ -10594,6 +10594,7 @@ a.text-dark:focus {
   font: 16px Serif;
   color: blue;
   margin: 0 0 10px 0;
+  left: 0px;
 }
 
 .growable input:checked {
@@ -10609,13 +10610,21 @@ a.text-dark:focus {
   transition: height .5s;
   height: 0;
   overflow: hidden;
+  background-color: white;
 }
 
 .waarden-bottom {
   position: absolute;
-  right: 0;
-  bottom: 90px;
-  margin: 5px;
+  width: 90%;
+  text-align: right;
+  bottom: 100px;
+  margin: 16px;
+}
+
+.title_value {
+  text-align: left;
+  display: inline-block;
+  float: left;
 }
 
 .scrollmenu {
@@ -10626,5 +10635,10 @@ a.text-dark:focus {
 .table th,
 .table td {
   border-top: 0px;
+}
+
+.example1 {
+  width: 100%;
+  text-align: right;
 }
 

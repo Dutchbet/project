@@ -70,6 +70,7 @@ const app = new Vue({
         (function(collapsible) {
             var button = collapsible.getElementsByClassName('more-button')[0];
             var growDiv = collapsible.getElementsByClassName('growable')[0];
+            var test = collapsible.getElementsByClassName('title_value')[0];
             var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
             button.addEventListener('click', function() {
                 if (growDiv.clientHeight) {
@@ -77,8 +78,10 @@ const app = new Vue({
                 }
                 else {
                   growDiv.style.height = wrapper.clientHeight + "px";
+                  button.value = (button.value === 'Waarden' ? 'X' : 'Waarden');
+                  test.innerHTML = "Waarden";
                 }
-                button.value = (button.value === 'Waarden' ? 'Waarden' : 'Read more');
+
             });
         })(collapsibles[i]);
     }

@@ -291,14 +291,16 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     (function (collapsible) {
       var button = collapsible.getElementsByClassName('more-button')[0];
       var growDiv = collapsible.getElementsByClassName('growable')[0];
+      var test = collapsible.getElementsByClassName('title_value')[0];
       var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
       button.addEventListener('click', function () {
         if (growDiv.clientHeight) {
           growDiv.style.height = 0;
         } else {
           growDiv.style.height = wrapper.clientHeight + "px";
+          button.value = button.value === 'Waarden' ? 'X' : 'Waarden';
+          test.innerHTML = "Waarden";
         }
-        button.value = button.value === 'Waarden' ? 'Waarden' : 'Read more';
       });
     })(collapsibles[i]);
   }
@@ -15349,17 +15351,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "waarden-bottom" }, [
       _c("div", { staticClass: "collapsible" }, [
-        _c("input", {
-          staticClass: "more-button",
-          attrs: { type: "button", value: "Waarden" }
-        }),
+        _c("div", { staticClass: "title_scrollmenu" }, [
+          _c("div", { staticClass: "title_value" }),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "more-button",
+            attrs: { type: "button", value: "Waarden" }
+          })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "growable" }, [
           _c("div", { staticClass: "measuringWrapper" }, [
             _c("div", { staticClass: "scrollmenu" }, [
               _c("table", { staticClass: "table" }, [
-                _c("thead", [_c("th", [_vm._v("Waarden")])]),
-                _vm._v(" "),
                 _c("tbody", [
                   _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
                   _vm._v(" "),

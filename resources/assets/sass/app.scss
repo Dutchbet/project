@@ -180,6 +180,7 @@ border: solid 1px #d7e1e8;
   font: 16px Serif;
   color: blue;
   margin: 0 0 10px 0;
+  left: 0px;
 }
 
 .growable input:checked {
@@ -189,7 +190,6 @@ border: solid 1px #d7e1e8;
 .more-button:hover {
   color: black;
 }
-
 .growable {
     -moz-transition: height .5s;
     -ms-transition: height .5s;
@@ -198,16 +198,23 @@ border: solid 1px #d7e1e8;
     transition: height .5s;
     height: 0;
     overflow: hidden;
+    background-color: white;
+
   }
 
   .waarden-bottom
   {
     position: absolute;
-    right: 0;
-    bottom: 90px;
-    margin: 5px;
+    width: 90%;
+    text-align: right;
+    bottom: 100px;
+    margin: 16px;
   }
-
+  .title_value{
+    text-align: left;
+    display: inline-block;
+    float: left;
+  }
   .scrollmenu {
     overflow: scroll;
     height: 200px;
@@ -215,4 +222,9 @@ border: solid 1px #d7e1e8;
 
 .table th, .table td {
     border-top: 0px;
+}
+
+.example1 {
+  width: 100%;
+  text-align: right;
 }
