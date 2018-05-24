@@ -49,6 +49,18 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
+<<<<<<< HEAD
+            <div	v-if="$parent.vraag1.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag1">
+                        {{ vraag.memo}}
+                  </div>          
+            </div>
+            <form @submit.prevent="$parent.saveNewTask">
+=======
             <div v-if="$parent.Vragen.vraag1 !== null">
                   <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
             </div>
@@ -98,9 +110,12 @@
 
 
 
+>>>>>>> 50186d5ac369f25a20ea5c2b52fa830b09ed4390
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag1" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test</button>
             </div>
+            </form>   
 	</div>
     	<div v-show="$parent.step === 2">
             <div class="vraagbox-reflectie">
@@ -111,12 +126,21 @@
                         wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag2 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag2 }} </div>
+                        <div	v-if="$parent.vraag2.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag2">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask2">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag2" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test2</button>
             </div>
+            </form>   
       </div>
     	<div v-show="$parent.step === 3">
             <div class="vraagbox-reflectie">
@@ -127,12 +151,21 @@
                          Wat raakt je in de situatie, welke waarde is voor jou in het geding ?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag3 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag3 }} </div>
+                        <div	v-if="$parent.vraag3.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag3">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask3">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag3" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test3</button>
             </div>
+            </form>   
 	</div>
     	<div v-show="$parent.step === 4">
             <div class="vraagbox-reflectie">
@@ -142,14 +175,23 @@
                   <div class="vraagbox-reflectie-text">
                         Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?
                   </div>
+                  </div>
+                        <div	v-if="$parent.vraag4.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag4">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
-            <div v-if="$parent.Vragen.vraag4 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag4 }} </div>
-            </div>
+            <form @submit.prevent="$parent.saveNewTask4">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag4" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test4</button>
             </div>
-	</div>
+            </form>  
+      </div>
       <div v-show="$parent.step === 5">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
@@ -159,12 +201,21 @@
                         Wie speelt welke rol en klopt dat volgens jou?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag5 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag5 }} </div>
+                        <div	v-if="$parent.vraag5.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag5">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask5">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag5" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test5</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 6">
             <div class="vraagbox-reflectie">
@@ -175,12 +226,21 @@
                         Wie heeft welk belang en wlke tegenstellingen zijn daarin?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag6 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag6 }} </div>
+                        <div	v-if="$parent.vraag6.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag6">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask6">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag6" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test6</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 7">
             <div class="vraagbox-reflectie">
@@ -191,12 +251,21 @@
                         Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag7 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag7 }} </div>
+                        <div	v-if="$parent.vraag7.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag7">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask7">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag7" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test7</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 8">
             <div class="vraagbox-reflectie">
@@ -207,12 +276,21 @@
                         Zijn er nog meer gewetensvragen te formuleren?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag8 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag8 }} </div>
+                        <div	v-if="$parent.vraag8.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag8">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask8">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag8" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test8</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 9">
             <div class="vraagbox-reflectie">
@@ -223,12 +301,21 @@
                         Welke vragen zijn nog niet beantwoord?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag9 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag9 }} </div>
+                        <div	v-if="$parent.vraag9.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag9">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask9">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag9" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test9</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 10">
             <div class="vraagbox-reflectie">
@@ -239,12 +326,21 @@
                         Zijn er nog meer gewetensvragen te formuleren?
                   </div>
             </div>
-            <div v-if="$parent.Vragen.vraag10 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag10 }} </div>
+                        <div	v-if="$parent.vraag10.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag10">
+                        {{ vraag.memo}}
+                  </div>          
             </div>
+            <form @submit.prevent="$parent.saveNewTask10">
             <div class="Reflectie-Bottom">
-                  <input v-model="$parent.Vragen.vraag10" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+            <button type="submit" class="button-reflectie">Test10</button>
             </div>
+            </form>  
 	</div>
       <div v-show="$parent.step === 11">
             <div class="vraagbox-reflectie">
