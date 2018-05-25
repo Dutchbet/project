@@ -73,6 +73,7 @@ border: solid 1px #d7e1e8;
 .vraagbox-reflectie-text {
   width: 281px;
   height: 48px;
+  padding-left: 16px;
   font-family: Muli;
   font-size: 16px;
   font-weight: 600;
@@ -86,8 +87,9 @@ border: solid 1px #d7e1e8;
 
 
 .vraagbox-reflectie-titel {
-  width: 46px;
+  //width: 46px;
   height: 21px;
+  padding-left: 16px;
   font-family: Muli;
   font-size: 10px;
   font-weight: 800;
@@ -163,12 +165,31 @@ border: solid 1px #d7e1e8;
   padding-left: 16px;
   padding-right: 16px;
   height: 57px;
+  overflow: hidden;
+}
+
+/* Links inside the navigation bar */
+.container a {
+    float: left;
+    display: block;
+    border-bottom: 2px solid transparent;
+}
+
+.container a:hover {
+    border-bottom: 2px solid #32baef;
+}
+
+.container a.active {
+    border-bottom: 2px solid #32baef;
 }
 
 .bg-light {
     background-color: #ffffff !important;
 }
 
+.active {
+  height: auto;
+}
 .bar-select {
   height: 2px;
   background-color: #32baef;
@@ -224,8 +245,8 @@ border: solid 1px #d7e1e8;
 
   }
   .title_scrollmenu{
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   .title_value{
     text-align: left;

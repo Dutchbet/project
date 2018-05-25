@@ -349,6 +349,21 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   }
 })();
 
+// Get the container element
+var container = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var container = Container.getElementsByClassName("container");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < container.length; i++) {
+  btns[i].addEventListener("click", function () {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -14484,7 +14499,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 2")]
+            [_vm._v("Vraag 2")]
           )
         ]
       ),
@@ -14514,7 +14529,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 3")]
+            [_vm._v("Vraag 3")]
           )
         ]
       ),
@@ -14544,7 +14559,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 4")]
+            [_vm._v("Vraag 4")]
           )
         ]
       ),
@@ -14574,7 +14589,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 5")]
+            [_vm._v("Vraag 5")]
           )
         ]
       ),
@@ -14604,7 +14619,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 6")]
+            [_vm._v("Vraag 6")]
           )
         ]
       ),
@@ -14634,7 +14649,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 7")]
+            [_vm._v("Vraag 7")]
           )
         ]
       ),
@@ -14664,7 +14679,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 8")]
+            [_vm._v("Vraag 8")]
           )
         ]
       ),
@@ -14694,7 +14709,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 9")]
+            [_vm._v("Vraag 9")]
           )
         ]
       ),
@@ -14724,7 +14739,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("vraag 10")]
+            [_vm._v("Vraag 10")]
           )
         ]
       ),
@@ -14784,7 +14799,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("verstuur")]
+            [_vm._v("Verstuur")]
           )
         ]
       )
@@ -15738,7 +15753,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb je gezien en gehoord?\n                  "
+          "\n                        Wat heb je gezien en gehoord?\n                  "
         )
       ])
     ])
@@ -15754,7 +15769,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\n                        wat heb jij daarbij gedacht en gevoeld ?\n                  "
+          "\n                        Wat heb jij daarbij gedacht en gevoeld ?\n                  "
         )
       ])
     ])

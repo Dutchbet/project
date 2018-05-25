@@ -5,37 +5,37 @@
       <div class="container flop">
       <h2 class="text-center test">Reflectie</h2>
             <div class="body-reflectie" v-show="$parent.step === 1">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 2</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 2</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 2">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 3</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 3</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 3">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 4</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 4</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 4">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 5</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 5</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 5">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 6</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 6</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 6">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 7</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 7</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 7">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 8</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 8</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 8">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 9</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 9</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 9">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">vraag 10</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 10</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 10">
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Overzicht</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 11">
-                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">verstuur</button>
+                  <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Verstuur</button>
             </div>
       </div>
 
@@ -87,7 +87,7 @@
                         Vraag 1
                   </div>
                    <div class="vraagbox-reflectie-text">
-                        wat heb je gezien en gehoord?
+                        Wat heb je gezien en gehoord?
                   </div>
             </div>
             <div v-if="$parent.Vragen.vraag1 !== null">
@@ -107,7 +107,7 @@
                         Vraag 2
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        wat heb jij daarbij gedacht en gevoeld ?
+                        Wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
                         <div	v-if="$parent.vraag2.length > 0">
