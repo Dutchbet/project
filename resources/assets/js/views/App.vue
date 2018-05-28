@@ -91,23 +91,15 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
-<<<<<<< HEAD
-                  <div	v-if="$parent.vragen.vraag1.length > 0">	
-=======
-                  <div	v-if="$parent.vraag1.length > 0">
->>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8
+                  <div	v-if="$parent.vraag1.length > 0">	
                    <div
                         :key="index"
                         :index="index"
                         class="Reflectie-Response"
-                        v-for="(vraag, index) in $parent.vragen.vraag1">
+                        v-for="(vraag, index) in $parent.vraag1">
                         {{ vraag.memo}}
-<<<<<<< HEAD
                         <a href="#" v-on:click.prevent="$parent.deleteObject1(index)">&times;</a>
                   </div>          
-=======
-                  </div>
->>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8
             </div>
             <form @submit.prevent="$parent.saveNewTask">
             <div class="Reflectie-Bottom">
@@ -352,7 +344,7 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag1 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 2
@@ -361,7 +353,7 @@
                         wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag2 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag2 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 3
@@ -370,7 +362,7 @@
                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag3 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag3 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 4
@@ -379,7 +371,7 @@
                   Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?
             </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag4 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag4 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 5
@@ -388,7 +380,7 @@
                   Wie speelt welke rol en klopt dat volgens jou?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag5 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag5 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                   Vraag 6
@@ -397,7 +389,7 @@
                   Wie heeft welk belang en wlke tegenstellingen zijn daarin?
             </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag6 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag6 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 7
@@ -406,7 +398,7 @@
                         Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag7 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag7 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 8
@@ -415,7 +407,7 @@
                         Zijn er nog meer gewetensvragen te formuleren?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag8 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag8 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 9
@@ -424,7 +416,7 @@
                         Welke vragen zijn nog niet beantwoord?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag9 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag9 }} </div>
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 10
@@ -433,7 +425,7 @@
                         Zijn er nog meer gewetensvragen te formuleren?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.Vragen.vraag10 }} </div>
+            <div class="Reflectie-Response"> {{ $parent.vraag10 }} </div>
       </div>
            <div v-show="$parent.step === 12">
                Bericht is verstuurd

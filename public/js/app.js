@@ -252,19 +252,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     return {
       TaskName: '',
       step: 1,
-      Vragen: {
-        vraag1: null,
-        vraag2: null,
-        vraag3: null,
-        vraag4: null,
-        vraag5: null,
-        vraag6: null,
-        vraag7: null,
-        vraag8: null,
-        vraag9: null,
-        vraag10: null
-      },
-      vraag15: [],
+      vraag1: [],
       vraag2: [],
       vraag3: [],
       vraag4: [],
@@ -279,7 +267,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
   methods: {
     deleteObject1: function deleteObject1(index) {
-      this.$delete(this.Vragen.vragen1, index);
+      this.$delete(this.vraag1, index);
     },
     saveNewTask: function saveNewTask() {
       this.vraag1.push({ memo: this.TaskName });
@@ -14849,56 +14837,41 @@ var render = function() {
       },
       [
         _vm._m(1),
-        _vm._v("\r\n<<<<<<< HEAD\r\n                  "),
-        _vm.$parent.vragen.vraag1.length > 0
-          ? _c("div", [
-              _vm._v("\t\r\n=======\r\n                  "),
-              _vm.$parent.vraag1.length > 0
-                ? _c(
-                    "div",
-                    [
-                      _vm._v(
-                        "\r\n>>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8\r\n                   "
-                      ),
-                      _vm._l(_vm.$parent.vragen.vraag1, function(vraag, index) {
-                        return _c(
-                          "div",
-                          {
-                            key: index,
-                            staticClass: "Reflectie-Response",
-                            attrs: { index: index }
-                          },
-                          [
-                            _vm._v(
-                              "\r\n                        " +
-                                _vm._s(vraag.memo) +
-                                "\r\n<<<<<<< HEAD\r\n                        "
-                            ),
-                            _c(
-                              "a",
-                              {
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    _vm.$parent.deleteObject1(index)
-                                  }
-                                }
-                              },
-                              [_vm._v("×")]
-                            )
-                          ]
-                        )
-                      }),
-                      _vm._v("          \r\n=======\r\n                  ")
-                    ],
-                    2
-                  )
-                : _vm._e(),
-              _vm._v(
-                "\r\n>>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8\r\n            "
-              )
-            ])
+        _vm._v(" "),
+        _vm.$parent.vraag1.length > 0
+          ? _c(
+              "div",
+              _vm._l(_vm.$parent.vraag1, function(vraag, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "Reflectie-Response",
+                    attrs: { index: index }
+                  },
+                  [
+                    _vm._v(
+                      "\r\n                        " +
+                        _vm._s(vraag.memo) +
+                        "\r\n                        "
+                    ),
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.$parent.deleteObject1(index)
+                          }
+                        }
+                      },
+                      [_vm._v("×")]
+                    )
+                  ]
+                )
+              })
+            )
           : _vm._e(),
         _vm._v(" "),
         _c(
@@ -15709,61 +15682,61 @@ var render = function() {
         _vm._m(11),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag1) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag1) + " ")
         ]),
         _vm._v(" "),
         _vm._m(12),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag2) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag2) + " ")
         ]),
         _vm._v(" "),
         _vm._m(13),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag3) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag3) + " ")
         ]),
         _vm._v(" "),
         _vm._m(14),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag4) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag4) + " ")
         ]),
         _vm._v(" "),
         _vm._m(15),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag5) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag5) + " ")
         ]),
         _vm._v(" "),
         _vm._m(16),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag6) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag6) + " ")
         ]),
         _vm._v(" "),
         _vm._m(17),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag7) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag7) + " ")
         ]),
         _vm._v(" "),
         _vm._m(18),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag8) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag8) + " ")
         ]),
         _vm._v(" "),
         _vm._m(19),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag9) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag9) + " ")
         ]),
         _vm._v(" "),
         _vm._m(20),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag10) + " ")
+          _vm._v(" " + _vm._s(_vm.$parent.vraag10) + " ")
         ])
       ]
     ),

@@ -32,19 +32,7 @@ const app = new Vue({
     return {
       TaskName:'',
       step:1,
-      Vragen:{
-      vraag1:null,
-      vraag2:null,
-      vraag3:null,
-      vraag4:null,
-      vraag5:null,
-      vraag6:null,
-      vraag7:null,
-      vraag8:null,
-      vraag9:null,
-      vraag10:null,
-      },
-      vraag15:[
+      vraag1:[
       ],
       vraag2:[
       ],
@@ -68,7 +56,7 @@ const app = new Vue({
   },
   methods:{
     deleteObject1: function(index) {
-      this.$delete(this.Vragen.vragen1, index);
+      this.$delete(this.vraag1, index);
     },
    saveNewTask(){this.vraag1.push(
      {memo: this.TaskName});
