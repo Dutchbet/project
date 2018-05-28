@@ -10488,6 +10488,7 @@ a.text-dark:focus {
 .vraagbox-reflectie-text {
   width: 281px;
   height: 48px;
+  padding-left: 16px;
   font-family: Muli;
   font-size: 16px;
   font-weight: 600;
@@ -10500,8 +10501,8 @@ a.text-dark:focus {
 }
 
 .vraagbox-reflectie-titel {
-  width: 46px;
   height: 21px;
+  padding-left: 16px;
   font-family: Muli;
   font-size: 10px;
   font-weight: 800;
@@ -10588,10 +10589,31 @@ a.text-dark:focus {
   padding-left: 16px;
   padding-right: 16px;
   height: 57px;
+  overflow: hidden;
+}
+
+/* Links inside the navigation bar */
+
+.container a {
+  float: left;
+  display: block;
+  border-bottom: 2px solid transparent;
+}
+
+.container a:hover {
+  border-bottom: 2px solid #32baef;
+}
+
+.container a.active {
+  border-bottom: 2px solid #32baef;
 }
 
 .bg-light {
   background-color: #ffffff !important;
+}
+
+.active {
+  height: auto;
 }
 
 .bar-select {
@@ -10603,8 +10625,9 @@ a.text-dark:focus {
   border-style: none;
   background: none;
   font: 16px Serif;
-  color: blue;
+  color: #32baef;
   margin: 0 0 10px 0;
+  left: 0px;
 }
 
 .growable input:checked {
@@ -10616,17 +10639,47 @@ a.text-dark:focus {
 }
 
 .growable {
-  -webkit-transition: height .5s;
-  transition: height .5s;
+  -webkit-transition: height .3s;
+  transition: height .3s;
   height: 0;
   overflow: hidden;
+  background-color: white;
+  position: absolute;
+  z-index: 999;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 998;
+  margin: 0 !important;
+  background-color: rgba(3, 25, 33, 0.32);
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .waarden-bottom {
+  -webkit-transition: bottom .3s;
+  transition: bottom .3s;
   position: absolute;
-  right: 0;
-  bottom: 90px;
-  margin: 5px;
+  width: 90%;
+  text-align: right;
+  bottom: 120px;
+  margin: 16px;
+}
+
+.title_scrollmenu {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.title_value {
+  text-align: left;
+  display: inline-block;
+  float: left;
 }
 
 .scrollmenu {
@@ -10637,5 +10690,14 @@ a.text-dark:focus {
 .table th,
 .table td {
   border-top: 0px;
+}
+
+.table {
+  text-align: center;
+}
+
+.example1 {
+  width: 100%;
+  text-align: right;
 }
 
