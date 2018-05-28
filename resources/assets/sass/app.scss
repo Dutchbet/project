@@ -8,7 +8,14 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
+.button-reflectie {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+  background-image: linear-gradient(to bottom, #32baef, #5bc8f3);
+  border: solid 1px #049ce8;
+}
 .Reflectie-Response{
  padding-top: 10px;
   border-radius: 4px;

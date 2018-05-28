@@ -76,11 +76,35 @@ const app = new Vue({
     {memo: this.TaskName});
     this.TaskName='';
  },
- saveNewTask2(){this.vraag3.push(
+ saveNewTask3(){this.vraag3.push(
   {memo: this.TaskName});
   this.TaskName='';
 },
-saveNewTask2(){this.vraag4.push(
+saveNewTask4(){this.vraag4.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask5(){this.vraag5.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask6(){this.vraag6.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask7(){this.vraag7.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask8(){this.vraag8.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask9(){this.vraag9.push(
+  {memo: this.TaskName});
+  this.TaskName='';
+},
+saveNewTask10(){this.vraag10.push(
   {memo: this.TaskName});
   this.TaskName='';
 },

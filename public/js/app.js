@@ -222,10 +222,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_Hello__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Home__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Home__);
-var _methods;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -281,7 +277,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     };
   },
 
-  methods: (_methods = {
+  methods: {
     saveNewTask: function saveNewTask() {
       this.vraag1.push({ memo: this.TaskName });
       this.TaskName = '';
@@ -289,20 +285,49 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     saveNewTask2: function saveNewTask2() {
       this.vraag2.push({ memo: this.TaskName });
       this.TaskName = '';
+    },
+    saveNewTask3: function saveNewTask3() {
+      this.vraag3.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask4: function saveNewTask4() {
+      this.vraag4.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask5: function saveNewTask5() {
+      this.vraag5.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask6: function saveNewTask6() {
+      this.vraag6.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask7: function saveNewTask7() {
+      this.vraag7.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask8: function saveNewTask8() {
+      this.vraag8.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask9: function saveNewTask9() {
+      this.vraag9.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    saveNewTask10: function saveNewTask10() {
+      this.vraag10.push({ memo: this.TaskName });
+      this.TaskName = '';
+    },
+    prev: function prev() {
+      this.step--;
+    },
+    next: function next() {
+      this.step++;
+    },
+    submit: function submit() {
+      alert('Submit to blah and show blah and etc.');
     }
-  }, _defineProperty(_methods, 'saveNewTask2', function saveNewTask2() {
-    this.vraag3.push({ memo: this.TaskName });
-    this.TaskName = '';
-  }), _defineProperty(_methods, 'saveNewTask2', function saveNewTask2() {
-    this.vraag4.push({ memo: this.TaskName });
-    this.TaskName = '';
-  }), _defineProperty(_methods, 'prev', function prev() {
-    this.step--;
-  }), _defineProperty(_methods, 'next', function next() {
-    this.step++;
-  }), _defineProperty(_methods, 'submit', function submit() {
-    alert('Submit to blah and show blah and etc.');
-  }), _methods)
+  }
 });
 
 (function () {
@@ -14765,6 +14790,8 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "div",
       {
@@ -14778,8 +14805,8 @@ var render = function() {
         ]
       },
       [
-        _vm._m(0),
-        _vm._v("\r\n<<<<<<< HEAD\r\n            "),
+        _vm._m(1),
+        _vm._v(" "),
         _vm.$parent.vraag1.length > 0
           ? _c(
               "div",
@@ -14814,19 +14841,6 @@ var render = function() {
             }
           },
           [
-            _vm._v("\r\n=======\r\n            "),
-            _vm.$parent.Vragen.vraag1 !== null
-              ? _c("div", [
-                  _c("div", { staticClass: "Reflectie-Response" }, [
-                    _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag1) + " ")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(
-              "\r\n\r\n\r\n\r\n\r\n\r\n\r\n>>>>>>> 50186d5ac369f25a20ea5c2b52fa830b09ed4390\r\n            "
-            ),
             _c("div", { staticClass: "Reflectie-Bottom" }, [
               _c("input", {
                 directives: [
@@ -15704,22 +15718,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        wat heb je gezien en gehoord?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "waarden-bottom" }, [
       _c("div", { staticClass: "collapsible" }, [
         _c("input", {
@@ -15752,6 +15750,22 @@ var staticRenderFns = [
             ])
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vraagbox-reflectie" }, [
+      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
+        _vm._v("\r\n                        Vraag 1\r\n                  ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
+        _vm._v(
+          "\r\n                        wat heb je gezien en gehoord?\r\n                  "
+        )
       ])
     ])
   },

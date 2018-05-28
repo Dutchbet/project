@@ -36,36 +36,7 @@
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">verstuur</button>
             </div>
       </div>
-
-<!--    <button @click.prevent="$parent.prev()">Previous</button>
-    <button @click.prevent="$parent.next()">Next</button> -->
-
-	<div v-show="$parent.step === 1">
-            <div class="vraagbox-reflectie">
-                  <div class="vraagbox-reflectie-titel">
-                        Vraag 1
-                  </div>
-                   <div class="vraagbox-reflectie-text">
-                        wat heb je gezien en gehoord?
-                  </div>
-            </div>
-<<<<<<< HEAD
-            <div	v-if="$parent.vraag1.length > 0">	
-                   <div
-                        :key="index"
-                        :index="index"
-                        class="Reflectie-Response"
-                        v-for="(vraag, index) in $parent.vraag1">
-                        {{ vraag.memo}}
-                  </div>          
-            </div>
-            <form @submit.prevent="$parent.saveNewTask">
-=======
-            <div v-if="$parent.Vragen.vraag1 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
-            </div>
-
-            <div class="waarden-bottom">
+<div class="waarden-bottom">
             <div class="collapsible">
                 <input type="button" value="Waarden" class="more-button">
                 <div class='growable'>
@@ -104,19 +75,39 @@
                 </div>
             </div>
           </div>
+<!--    <button @click.prevent="$parent.prev()">Previous</button>
+    <button @click.prevent="$parent.next()">Next</button> -->
 
-
-
-
-
-
->>>>>>> 50186d5ac369f25a20ea5c2b52fa830b09ed4390
+	<div v-show="$parent.step === 1">
+            <div class="vraagbox-reflectie">
+                  <div class="vraagbox-reflectie-titel">
+                        Vraag 1
+                  </div>
+                   <div class="vraagbox-reflectie-text">
+                        wat heb je gezien en gehoord?
+                  </div>
+            </div>
+                  <div	v-if="$parent.vraag1.length > 0">	
+                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag1">
+                        {{ vraag.memo}}
+                  </div>          
+            </div>
+            <form @submit.prevent="$parent.saveNewTask">
             <div class="Reflectie-Bottom">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
             <button type="submit" class="button-reflectie">Test</button>
             </div>
-            </form>   
-	</div>
+            </form>
+
+
+
+
+
+      </div>
     	<div v-show="$parent.step === 2">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
