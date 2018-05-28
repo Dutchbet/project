@@ -264,7 +264,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         vraag9: null,
         vraag10: null
       },
-      vraag1: [],
+      vraag15: [],
       vraag2: [],
       vraag3: [],
       vraag4: [],
@@ -278,6 +278,9 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   },
 
   methods: {
+    deleteObject1: function deleteObject1(index) {
+      this.$delete(this.Vragen.vragen1, index);
+    },
     saveNewTask: function saveNewTask() {
       this.vraag1.push({ memo: this.TaskName });
       this.TaskName = '';
@@ -14849,10 +14852,10 @@ var render = function() {
       [
         _vm._m(2),
         _vm._v(" "),
-        _vm.$parent.vraag1.length > 0
+        _vm.$parent.vragen.vraag1.length > 0
           ? _c(
               "div",
-              _vm._l(_vm.$parent.vraag1, function(vraag, index) {
+              _vm._l(_vm.$parent.vragen.vraag1, function(vraag, index) {
                 return _c(
                   "div",
                   {
@@ -14864,7 +14867,20 @@ var render = function() {
                     _vm._v(
                       "\r\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                  "
+                        "\r\n                        "
+                    ),
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.$parent.deleteObject1(index)
+                          }
+                        }
+                      },
+                      [_vm._v("×")]
                     )
                   ]
                 )

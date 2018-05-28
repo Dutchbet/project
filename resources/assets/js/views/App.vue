@@ -135,13 +135,14 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
-                  <div	v-if="$parent.vraag1.length > 0">	
+                  <div	v-if="$parent.vragen.vraag1.length > 0">	
                    <div
                         :key="index"
                         :index="index"
                         class="Reflectie-Response"
-                        v-for="(vraag, index) in $parent.vraag1">
+                        v-for="(vraag, index) in $parent.vragen.vraag1">
                         {{ vraag.memo}}
+                        <a href="#" v-on:click.prevent="$parent.deleteObject1(index)">&times;</a>
                   </div>          
             </div>
             <form @submit.prevent="$parent.saveNewTask">
