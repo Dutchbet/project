@@ -3,20 +3,32 @@
   <div class="overlay">
   </div>
       <div class="container flop">
-      <h2 class="text-center test">Reflectie</h2>
             <div class="body-reflectie" v-show="$parent.step === 1">
+              <h2 class="text-center test">Reflectie</h2>
+
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 2</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 2">
+                  <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
+              <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 3</button>
             </div>
+
+
+
             <div class="body-reflectie" v-show="$parent.step === 3">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 2</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 4</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 4">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 3</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 5</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 5">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 6</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 6">
@@ -91,7 +103,7 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
-                  <div	v-if="$parent.vraag1.length > 0">	
+                  <div	v-if="$parent.vraag1.length > 0">
                    <div
                         :key="index"
                         :index="index"
@@ -99,7 +111,7 @@
                         v-for="(vraag, index) in $parent.vraag1">
                         {{ vraag.memo}}
                         <a href="#" v-on:click.prevent="$parent.deleteObject1(index)">&times;</a>
-                  </div>          
+                  </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask">
             <div class="Reflectie-Bottom">

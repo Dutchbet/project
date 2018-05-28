@@ -66,6 +66,7 @@
   box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
   background-color: #f1f7fa;
   border: solid 1px #d7e1e8;
+  float: left;
   }
 
 .topbar-reflectie-button {
@@ -144,6 +145,7 @@ border: solid 1px #d7e1e8;
 .flop {
   background-color: #ffffff;
   box-shadow: inset 0 -1px 0 0 #d7e1e8;
+  width: 100%;
 }
 
 #bg {
@@ -161,6 +163,15 @@ border: solid 1px #d7e1e8;
 
 .test {
   width: 75% !important;
+  height: 28px !important;
+  float: left !important;
+  margin-top: 20px;
+  padding-left: 30px;
+  font-size: 18px;
+}
+
+.test2 {
+  width: 65% !important;
   height: 28px !important;
   float: left !important;
   margin-top: 20px;
