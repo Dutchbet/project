@@ -38,7 +38,7 @@
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Verstuur</button>
             </div>
       </div>
-<<<<<<< HEAD
+
 <div class="waarden-bottom">
             <div class="collapsible">
                 <input type="button" value="Waarden" class="more-button">
@@ -81,7 +81,7 @@
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
 
-=======
+
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
@@ -125,14 +125,13 @@
         </div>
     </div>
     </div>
->>>>>>> e3cbfcbeb165197d2d0a7d8fef5a62053470112c
 	<div v-show="$parent.step === 1">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 1
                   </div>
                    <div class="vraagbox-reflectie-text">
-<<<<<<< HEAD
+
                         wat heb je gezien en gehoord?
                   </div>
             </div>
@@ -153,26 +152,7 @@
             </form>
 
 
-
-
-
-      </div>
-=======
-                        Wat heb je gezien en gehoord?
-                  </div>
-            </div>
-            <div v-if="$parent.Vragen.vraag1 !== null">
-                  <div class="Reflectie-Response"> {{ $parent.Vragen.vraag1 }} </div>
-            </div>
-
-
-            <div class="Reflectie-Bottom">
-                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test</button>
-            </div>
-            </form>
 	</div>
->>>>>>> e3cbfcbeb165197d2d0a7d8fef5a62053470112c
     	<div v-show="$parent.step === 2">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
