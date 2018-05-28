@@ -39,50 +39,6 @@
             </div>
       </div>
 
-<div class="waarden-bottom">
-            <div class="collapsible">
-                <input type="button" value="Waarden" class="more-button">
-                <div class='growable'>
-                    <div class='measuringWrapper'>
-                    <div class="scrollmenu">
-                            <table class="table">
-                                <thead>
-                                    <th>Waarden</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Loyaliteit</td>
-                                </tr>
-                                <tr>
-                                    <td>Geduld</td>
-                                </tr>
-                                <tr>
-                                    <td>Openheid</td>
-                                </tr>
-                                <tr>
-                                    <td>Flexibiliteit</td>
-                                </tr>
-                                <tr>
-                                    <td>Rechtvaardig</td>
-                                </tr>
-                                <tr>
-                                    <td>Schoonheid</td>
-                                </tr>
-                                <tr>
-                                    <td>Respect</td>
-                                </tr>
-                                            </tbody>
-                           </table>
-                       </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-<!--    <button @click.prevent="$parent.prev()">Previous</button>
-    <button @click.prevent="$parent.next()">Next</button> -->
-
-
-
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
     <div class="waarden-bottom">
@@ -135,14 +91,14 @@
                         wat heb je gezien en gehoord?
                   </div>
             </div>
-                  <div	v-if="$parent.vraag1.length > 0">	
+                  <div	v-if="$parent.vraag1.length > 0">
                    <div
                         :key="index"
                         :index="index"
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag1">
                         {{ vraag.memo}}
-                  </div>          
+                  </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask">
             <div class="Reflectie-Bottom">
