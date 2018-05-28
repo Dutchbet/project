@@ -14835,8 +14835,6 @@ var render = function() {
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
     _c(
       "div",
       {
@@ -14850,42 +14848,57 @@ var render = function() {
         ]
       },
       [
-        _vm._m(2),
-        _vm._v(" "),
+        _vm._m(1),
+        _vm._v("\r\n<<<<<<< HEAD\r\n                  "),
         _vm.$parent.vragen.vraag1.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vragen.vraag1, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                        "
-                    ),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.$parent.deleteObject1(index)
-                          }
-                        }
-                      },
-                      [_vm._v("×")]
-                    )
-                  ]
-                )
-              })
-            )
+          ? _c("div", [
+              _vm._v("\t\r\n=======\r\n                  "),
+              _vm.$parent.vraag1.length > 0
+                ? _c(
+                    "div",
+                    [
+                      _vm._v(
+                        "\r\n>>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8\r\n                   "
+                      ),
+                      _vm._l(_vm.$parent.vragen.vraag1, function(vraag, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "Reflectie-Response",
+                            attrs: { index: index }
+                          },
+                          [
+                            _vm._v(
+                              "\r\n                        " +
+                                _vm._s(vraag.memo) +
+                                "\r\n<<<<<<< HEAD\r\n                        "
+                            ),
+                            _c(
+                              "a",
+                              {
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    _vm.$parent.deleteObject1(index)
+                                  }
+                                }
+                              },
+                              [_vm._v("×")]
+                            )
+                          ]
+                        )
+                      }),
+                      _vm._v("          \r\n=======\r\n                  ")
+                    ],
+                    2
+                  )
+                : _vm._e(),
+              _vm._v(
+                "\r\n>>>>>>> 16e30543f172528de72a3d86eded8e0404444cf8\r\n            "
+              )
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c(
@@ -14946,7 +14959,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(3),
+        _vm._m(2),
         _vm._v(" "),
         _vm.$parent.vraag2.length > 0
           ? _c(
@@ -15029,7 +15042,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(4),
+        _vm._m(3),
         _vm._v(" "),
         _vm.$parent.vraag3.length > 0
           ? _c(
@@ -15112,7 +15125,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(5),
+        _vm._m(4),
         _vm._v(" "),
         _vm.$parent.vraag4.length > 0
           ? _c(
@@ -15195,7 +15208,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(6),
+        _vm._m(5),
         _vm._v(" "),
         _vm.$parent.vraag5.length > 0
           ? _c(
@@ -15278,7 +15291,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(7),
+        _vm._m(6),
         _vm._v(" "),
         _vm.$parent.vraag6.length > 0
           ? _c(
@@ -15361,7 +15374,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(8),
+        _vm._m(7),
         _vm._v(" "),
         _vm.$parent.vraag7.length > 0
           ? _c(
@@ -15444,7 +15457,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(9),
+        _vm._m(8),
         _vm._v(" "),
         _vm.$parent.vraag8.length > 0
           ? _c(
@@ -15527,7 +15540,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(10),
+        _vm._m(9),
         _vm._v(" "),
         _vm.$parent.vraag9.length > 0
           ? _c(
@@ -15610,7 +15623,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(11),
+        _vm._m(10),
         _vm._v(" "),
         _vm.$parent.vraag10.length > 0
           ? _c(
@@ -15693,61 +15706,61 @@ var render = function() {
         ]
       },
       [
-        _vm._m(12),
+        _vm._m(11),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag1) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(13),
+        _vm._m(12),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag2) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(14),
+        _vm._m(13),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag3) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(15),
+        _vm._m(14),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag4) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(16),
+        _vm._m(15),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag5) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(17),
+        _vm._m(16),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag6) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(18),
+        _vm._m(17),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag7) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(19),
+        _vm._m(18),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag8) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(20),
+        _vm._m(19),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag9) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(21),
+        _vm._m(20),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.Vragen.vraag10) + " ")
@@ -15772,45 +15785,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "waarden-bottom" }, [
-      _c("div", { staticClass: "collapsible" }, [
-        _c("input", {
-          staticClass: "more-button",
-          attrs: { type: "button", value: "Waarden" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "growable" }, [
-          _c("div", { staticClass: "measuringWrapper" }, [
-            _c("div", { staticClass: "scrollmenu" }, [
-              _c("table", { staticClass: "table" }, [
-                _c("thead", [_c("th", [_vm._v("Waarden")])]),
-                _vm._v(" "),
-                _c("tbody", [
-                  _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Geduld")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Openheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Flexibiliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Rechtvaardig")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Respect")])])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

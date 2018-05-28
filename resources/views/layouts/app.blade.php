@@ -31,7 +31,6 @@
 
         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
-
                 <a class="nav-item nav-link" href="{{ url('/') }}">
                   <img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide">
                 </a>
@@ -43,12 +42,14 @@
              </button>
 
               <!--  <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a> -->
+
                 <a class="nav-item nav-link" href="{{ url('examples') }}" ><img class="first-slide" src="{{asset('/images/baseline-event_note-24px.svg')}} " alt="First slide"></a>
-                <a class="nav-item nav-link" href="{{ url('reflectie') }}" class="active"><img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide"></a>
+                <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide"></a>
                 <a class="nav-item nav-link" href="#"><img class="first-slide" src="{{asset('/images/baseline-contacts-24px.svg')}} " alt="First slide"></a>
                 <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}"><img class="first-slide" src="{{asset('/images/baseline-settings-20px.svg')}} " alt="First slide"> </a>
-</div>
+
              </div>
+                </div>
             </div>
         </nav>
 
