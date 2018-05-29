@@ -27,26 +27,38 @@
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 5</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 5">
-              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 4</button>
           <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 6</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 6">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 5</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 7</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 7">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 6</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 8</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 8">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 7</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 9</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 9">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 8</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 10</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 10">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 9</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Overzicht</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 11">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 10</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Verstuur</button>
             </div>
       </div>

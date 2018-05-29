@@ -14683,7 +14683,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Vraag 1")]
+            [_vm._v("Vraag 4")]
           ),
           _vm._v(" "),
           _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
@@ -14721,6 +14721,22 @@ var render = function() {
           _c(
             "button",
             {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 5")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
               staticClass: "topbar-reflectie-button",
               on: {
                 click: function($event) {
@@ -14748,6 +14764,22 @@ var render = function() {
           staticClass: "body-reflectie"
         },
         [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 6")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
           _c(
             "button",
             {
@@ -14781,6 +14813,22 @@ var render = function() {
           _c(
             "button",
             {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 7")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
               staticClass: "topbar-reflectie-button",
               on: {
                 click: function($event) {
@@ -14808,6 +14856,22 @@ var render = function() {
           staticClass: "body-reflectie"
         },
         [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 8")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
           _c(
             "button",
             {
@@ -14841,6 +14905,22 @@ var render = function() {
           _c(
             "button",
             {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 9")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
               staticClass: "topbar-reflectie-button",
               on: {
                 click: function($event) {
@@ -14868,6 +14948,22 @@ var render = function() {
           staticClass: "body-reflectie"
         },
         [
+          _c(
+            "button",
+            {
+              staticClass: "topbar-reflectie-button-left",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.$parent.prev()
+                }
+              }
+            },
+            [_vm._v("Vraag 10")]
+          ),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
+          _vm._v(" "),
           _c(
             "button",
             {
