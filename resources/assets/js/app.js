@@ -99,7 +99,6 @@ saveNewTask10(){this.vraag10.push(
   this.TaskName='';
 },
 
-
     prev() {
       this.step--;
     },
