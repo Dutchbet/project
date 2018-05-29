@@ -127,6 +127,12 @@ border: solid 1px #d7e1e8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.fixed-header {
+  padding-left: 0;
+  margin-right: 0;
+  box-shadow: inset 0 -1px 0 0 #d7e1e8;
+}
+
 .fixed-bottom {
   padding-left: 0;
   margin-right: 0;
@@ -141,12 +147,6 @@ border: solid 1px #d7e1e8;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.flop {
-  background-color: #ffffff;
-  box-shadow: inset 0 -1px 0 0 #d7e1e8;
-  width: 100%;
 }
 
 #bg {

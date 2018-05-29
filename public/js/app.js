@@ -14487,498 +14487,522 @@ var render = function() {
   return _c("div", { staticClass: "body-reflectie" }, [
     _c("div", { staticClass: "overlay" }),
     _vm._v(" "),
-    _c("div", { staticClass: "container flop" }, [
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 1,
-              expression: "$parent.step === 1"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c("h2", { staticClass: "text-center test" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
-                }
+    _c("div", { staticClass: "fixed-header bg-light" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 1,
+                expression: "$parent.step === 1"
               }
-            },
-            [_vm._v("Vraag 2")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 2,
-              expression: "$parent.step === 2"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c("h2", { staticClass: "text-center test" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 2")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 2,
+                expression: "$parent.step === 2"
               }
-            },
-            [_vm._v("Vraag 1")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 3")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 3,
-              expression: "$parent.step === 3"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 1")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 3")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 3,
+                expression: "$parent.step === 3"
               }
-            },
-            [_vm._v("Vraag 2")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 4")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 4,
-              expression: "$parent.step === 4"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 2")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 4")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 4,
+                expression: "$parent.step === 4"
               }
-            },
-            [_vm._v("Vraag 3")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 5")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 5,
-              expression: "$parent.step === 5"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 3")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 5")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 5,
+                expression: "$parent.step === 5"
               }
-            },
-            [_vm._v("Vraag 4")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 6")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 6,
-              expression: "$parent.step === 6"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 4")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 6")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 6,
+                expression: "$parent.step === 6"
               }
-            },
-            [_vm._v("Vraag 5")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 7")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 7,
-              expression: "$parent.step === 7"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 5")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 7")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 7,
+                expression: "$parent.step === 7"
               }
-            },
-            [_vm._v("Vraag 6")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 8")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 8,
-              expression: "$parent.step === 8"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 6")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 8")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 8,
+                expression: "$parent.step === 8"
               }
-            },
-            [_vm._v("Vraag 7")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 9")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 9,
-              expression: "$parent.step === 9"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 7")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 9")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 9,
+                expression: "$parent.step === 9"
               }
-            },
-            [_vm._v("Vraag 8")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 10")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 10,
-              expression: "$parent.step === 10"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 8")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 10")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 10,
+                expression: "$parent.step === 10"
               }
-            },
-            [_vm._v("Vraag 9")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Overzicht")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 11,
-              expression: "$parent.step === 11"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button-left",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.prev()
+              },
+              [_vm._v("Vraag 9")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Overzicht")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 11,
+                expression: "$parent.step === 11"
               }
-            },
-            [_vm._v("Vraag 10")]
-          ),
-          _vm._v(" "),
-          _c("h2", { staticClass: "text-center test2" }, [_vm._v("Reflectie")]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Verstuur")]
-          )
-        ]
-      )
+              },
+              [_vm._v("Vraag 10")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Verstuur")]
+            )
+          ]
+        )
+      ])
     ]),
     _vm._v(" "),
     _vm._m(0),

@@ -2,7 +2,8 @@
 <div class="body-reflectie">
   <div class="overlay">
   </div>
-      <div class="container flop">
+    <div class="fixed-header bg-light">
+      <div class="container">
             <div class="body-reflectie" v-show="$parent.step === 1">
               <h2 class="text-center test">Reflectie</h2>
 
@@ -13,9 +14,6 @@
               <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 3</button>
             </div>
-
-
-
             <div class="body-reflectie" v-show="$parent.step === 3">
               <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 2</button>
           <h2 class="text-center test2">Reflectie</h2>
@@ -62,6 +60,7 @@
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Verstuur</button>
             </div>
       </div>
+    </div>
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
