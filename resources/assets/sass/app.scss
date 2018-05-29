@@ -9,8 +9,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 .button-reflectie {
-  width: 32px;
-  height: 32px;
+  margin: 8px;
+  float: right;
   border-radius: 4px;
   box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
   background-image: linear-gradient(to bottom, #32baef, #5bc8f3);
@@ -33,13 +33,14 @@
 }
 .Reflectie-input
 {
-  width: 100%;
-  width: 345px;
-  height: 48px;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 3px 0 #d7e1e8;
+  width: 80%;
+  height: 20px;
+  margin-top: 14px;
+  margin-left: 3px;
+//  border-radius: 4px;
+//  box-shadow: inset 0 1px 3px 0 #d7e1e8;
   background-color: #ffffff;
-  border: solid 1px #d7e1e8;
+//  border: solid 1px #d7e1e8;
   font-family: Muli;
   font-size: 16px;
   font-weight: normal;
@@ -49,8 +50,6 @@
   letter-spacing: normal;
   text-align: center;
   color: #bec9cd;
-
-
 }
 
 .body-reflectie{
@@ -221,6 +220,8 @@ border: solid 1px #d7e1e8;
   color: #32baef;
   margin: 0 0 10px 0;
   left: 0px;
+  text-decoration: underline;
+  line-height: normal;
 }
 
 .growable input:checked {
@@ -253,15 +254,22 @@ border: solid 1px #d7e1e8;
   background-color: rgba(3, 25, 33, 0.32);
   transition: opacity .5s;
 }
+.memo-bottom
+{
+  position: absolute;
+  width: 50%
+  text-align: left;
+  bottom: 11%;
+  margin: 16px;
+}
   .waarden-bottom
   {
     transition: bottom .3s;
     position: absolute;
-    width: 90%;
+    width: 50%;
     text-align: right;
-    bottom: 120px;
+    bottom: 10%;
     margin: 16px;
-
   }
   .title_scrollmenu{
     border-top-left-radius: 8px;
@@ -275,6 +283,16 @@ border: solid 1px #d7e1e8;
   .scrollmenu {
     overflow: scroll;
     height: 200px;
+}
+.antwoordenblok {
+    background-color: #ffffff;
+    height: 48px;
+    width: 100%;
+    border-radius: 4px;
+    margin-left: 15px;
+    margin-right: 15px;
+    box-shadow: inset 0 1px 3px 0 #d7e1e8;
+    border: solid 1px #d7e1e8;
 }
 
 .table th, .table td {

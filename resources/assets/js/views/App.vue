@@ -64,6 +64,10 @@
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
+    <div class="memo-bottom">
+        Voeg een memo toe:
+    </div>
+
     <div class="waarden-bottom">
     <div class="collapsible">
     <div class="title_scrollmenu">
@@ -126,8 +130,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask">
             <div class="Reflectie-Bottom">
+              <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test</button>
+                  <button type="submit" class="button-reflectie">Test</button>
+              </div>
             </div>
             </form>
 
@@ -153,8 +159,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask2">
             <div class="Reflectie-Bottom">
+                <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test2</button>
+                  <button type="submit" class="button-reflectie">Test2</button>
+                </div>
             </div>
             </form>
       </div>
@@ -178,8 +186,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask3">
             <div class="Reflectie-Bottom">
+                <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test3</button>
+                  <button type="submit" class="button-reflectie">Test3</button>
+                </div>
             </div>
             </form>
 	</div>
@@ -203,8 +213,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask4">
             <div class="Reflectie-Bottom">
+              <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test4</button>
+                  <button type="submit" class="button-reflectie">Test4</button>
+              </div>
             </div>
             </form>
       </div>
@@ -228,8 +240,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask5">
             <div class="Reflectie-Bottom">
+                <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
             <button type="submit" class="button-reflectie">Test5</button>
+                </div>
             </div>
             </form>
 	</div>
@@ -253,8 +267,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask6">
             <div class="Reflectie-Bottom">
+                <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
             <button type="submit" class="button-reflectie">Test6</button>
+                </div>
             </div>
             </form>
 	</div>
@@ -278,8 +294,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask7">
             <div class="Reflectie-Bottom">
+              <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test7</button>
+                  <button type="submit" class="button-reflectie">Test7</button>
+              </div>
             </div>
             </form>
 	</div>
@@ -303,8 +321,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask8">
             <div class="Reflectie-Bottom">
+                <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test8</button>
+                  <button type="submit" class="button-reflectie">Test8</button>
+                </div>
             </div>
             </form>
 	</div>
@@ -328,8 +348,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask9">
             <div class="Reflectie-Bottom">
+              <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test9</button>
+                  <button type="submit" class="button-reflectie">Test9</button>
+              </div>
             </div>
             </form>
 	</div>
@@ -353,8 +375,10 @@
             </div>
             <form @submit.prevent="$parent.saveNewTask10">
             <div class="Reflectie-Bottom">
+              <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-            <button type="submit" class="button-reflectie">Test10</button>
+                  <button type="submit" class="button-reflectie">Test10</button>
+              </div>
             </div>
             </form>
 	</div>
