@@ -15006,7 +15006,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "memo-bottom" }, [
-      _vm._v("\n        Voeg een memo toe:\n    ")
+      _vm._v("\n          Voeg een memo toe:\n        ")
     ]),
     _vm._v(" "),
     _vm._m(0),
@@ -15097,14 +15097,7 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button-reflectie",
-                    attrs: { type: "submit" }
-                  },
-                  [_vm._v("Test")]
-                )
+                _vm._m(2)
               ])
             ])
           ]
@@ -15125,7 +15118,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(2),
+        _vm._m(3),
         _vm._v(" "),
         _vm.$parent.vraag2.length > 0
           ? _c(
@@ -15213,7 +15206,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(3),
+        _vm._m(4),
         _vm._v(" "),
         _vm.$parent.vraag3.length > 0
           ? _c(
@@ -15301,7 +15294,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(4),
+        _vm._m(5),
         _vm._v(" "),
         _vm.$parent.vraag4.length > 0
           ? _c(
@@ -15389,7 +15382,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(5),
+        _vm._m(6),
         _vm._v(" "),
         _vm.$parent.vraag5.length > 0
           ? _c(
@@ -15477,7 +15470,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(6),
+        _vm._m(7),
         _vm._v(" "),
         _vm.$parent.vraag6.length > 0
           ? _c(
@@ -15565,7 +15558,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(7),
+        _vm._m(8),
         _vm._v(" "),
         _vm.$parent.vraag7.length > 0
           ? _c(
@@ -15653,7 +15646,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(8),
+        _vm._m(9),
         _vm._v(" "),
         _vm.$parent.vraag8.length > 0
           ? _c(
@@ -15741,7 +15734,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(9),
+        _vm._m(10),
         _vm._v(" "),
         _vm.$parent.vraag9.length > 0
           ? _c(
@@ -15829,7 +15822,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(10),
+        _vm._m(11),
         _vm._v(" "),
         _vm.$parent.vraag10.length > 0
           ? _c(
@@ -15917,61 +15910,61 @@ var render = function() {
         ]
       },
       [
-        _vm._m(11),
+        _vm._m(12),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag1) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(12),
+        _vm._m(13),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag2) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(13),
+        _vm._m(14),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag3) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(14),
+        _vm._m(15),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag4) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(15),
+        _vm._m(16),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag5) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(16),
+        _vm._m(17),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag6) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(17),
+        _vm._m(18),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag7) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(18),
+        _vm._m(19),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag8) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(19),
+        _vm._m(20),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag9) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(20),
+        _vm._m(21),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag10) + " ")
@@ -16052,6 +16045,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
@@ -16469,7 +16472,7 @@ if (false) {
 /* 14 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n  text-align: left;\n ^\n      Invalid CSS after \"  text-align\": expected \"}\", was \": left;\"\n      in /Users/minoradm/Sites/project/resources/assets/sass/app.scss (line 261, column 3)\n    at runLoaders (/Users/minoradm/Sites/project/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/minoradm/Sites/project/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/minoradm/Sites/project/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/minoradm/Sites/project/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/minoradm/Sites/project/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Users/minoradm/Sites/project/node_modules/neo-async/async.js:7974:18)\n    at options.error (/Users/minoradm/Sites/project/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -64,16 +64,15 @@
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
-    <div class="memo-bottom">
-        Voeg een memo toe:
-    </div>
-
-    <div class="waarden-bottom">
-    <div class="collapsible">
-    <div class="title_scrollmenu">
-    <div class="title_value"></div>
-        <input type="button" value="Waarden" class="more-button">
-    </div>
+      <div class="memo-bottom">
+          Voeg een memo toe:
+        </div>
+        <div class="waarden-bottom">
+          <div class="collapsible">
+          <div class="title_scrollmenu">
+              <div class="title_value"></div>
+                <input type="button" value="Waarden" class="more-button">
+          </div>
 
         <div class='growable'>
             <div class='measuringWrapper'>
@@ -104,10 +103,11 @@
                                     </tbody>
                    </table>
                </div>
-            </div>
+          </div>
+          </div>
+
         </div>
-    </div>
-    </div>
+        </div>
 	<div v-show="$parent.step === 1">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
@@ -132,7 +132,7 @@
             <div class="Reflectie-Bottom">
               <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
-                  <button type="submit" class="button-reflectie">Test</button>
+                  <button type="submit" class="button-reflectie"><img src="/images/send.svg"></button>
               </div>
             </div>
             </form>
