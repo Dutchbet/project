@@ -17,7 +17,10 @@
   border: solid 1px #049ce8;
 }
 .Reflectie-Response{
- padding-top: 10px;
+  padding-top: 10px;
+  width:70%;
+  float: right;
+  margin-right: 5%;
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
   background-color: #fdf2fa;
@@ -41,7 +44,7 @@
 //  border: solid 1px #d7e1e8;
   font-family: Muli;
   font-size: 16px;
-  width: 80%;
+  width: 75%;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -110,9 +113,9 @@ border: solid 1px #d7e1e8;
 
 .vraagbox-reflectie {
   position: relative;
-  left: 10%;
+  left: 5%;
   top: 10%;
-  width: 297px;
+  width: 85%;
   height: 88px;
   border-radius: 4px;
   background-image: linear-gradient(to bottom, #d954b4, #e177c3);

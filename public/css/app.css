@@ -10424,6 +10424,9 @@ a.text-dark:focus {
 
 .Reflectie-Response {
   padding-top: 10px;
+  width: 70%;
+  float: right;
+  margin-right: 5%;
   border-radius: 4px;
   -webkit-box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
           box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
@@ -10444,7 +10447,7 @@ a.text-dark:focus {
   background-color: #ffffff;
   font-family: Muli;
   font-size: 16px;
-  width: 80%;
+  width: 75%;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -10514,9 +10517,9 @@ a.text-dark:focus {
 
 .vraagbox-reflectie {
   position: relative;
-  left: 10%;
+  left: 5%;
   top: 10%;
-  width: 297px;
+  width: 85%;
   height: 88px;
   border-radius: 4px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d954b4), to(#e177c3));
