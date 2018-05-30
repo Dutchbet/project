@@ -1,12 +1,15 @@
+import modal from './components/modal.vue';
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+Vue.component('modal', modal, {
+props: ['index'],});
 Vue.use(VueRouter)
 
 
 import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
+
 
 const router = new VueRouter({
     mode: 'history',
@@ -26,12 +29,14 @@ const router = new VueRouter({
 
 const app = new Vue({
   el:'#app',
-  components: { App },
+  components: { App,modal,},
   router,
   data() {
     return {
+      isModalVisible: false,
       TaskName:'',
       step:1,
+      placeholder:'',
       vraag1:[
       ],
       vraag2:[
@@ -55,6 +60,17 @@ const app = new Vue({
     }
   },
   methods:{
+
+    itemClicked: function(vraag) {
+      this.vraag = vraag.vraag1;
+    },
+    showModal: function(data) {
+      this.placeholder = vraag.vraag1;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
     deleteObject1: function(index) {
       this.$delete(this.vraag1, index);
     },
