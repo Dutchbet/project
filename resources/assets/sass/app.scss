@@ -9,19 +9,23 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 .button-reflectie {
-  width: 32px;
-  height: 32px;
+  margin: 8px;
+  float: right;
   border-radius: 4px;
   box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
   background-image: linear-gradient(to bottom, #32baef, #5bc8f3);
   border: solid 1px #049ce8;
 }
 .Reflectie-Response{
- padding-top: 10px;
+  width:70%;
+  float: right;
+  padding: 10px 0 0 16px;
+  margin-right: 5%;
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
   background-color: #fdf2fa;
   border: solid 1px #f3c9e7;
+  overflow: scroll;
 }
 
 .Reflectie-Bottom
@@ -29,19 +33,19 @@
   position: absolute;
   bottom: 50px;
   width: 100%;
-  margin: 5px;
 }
 .Reflectie-input
 {
-  width: 100%;
-  width: 345px;
-  height: 48px;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 3px 0 #d7e1e8;
+  height: 20px;
+  margin-top: 14px;
+  margin-left: 3px;
+//  border-radius: 4px;
+//  box-shadow: inset 0 1px 3px 0 #d7e1e8;
   background-color: #ffffff;
-  border: solid 1px #d7e1e8;
+//  border: solid 1px #d7e1e8;
   font-family: Muli;
   font-size: 16px;
+  width: 75%;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -49,8 +53,6 @@
   letter-spacing: normal;
   text-align: center;
   color: #bec9cd;
-
-
 }
 
 .body-reflectie{
@@ -81,8 +83,7 @@ border: solid 1px #d7e1e8;
 }
 .vraagbox-reflectie-text {
   width: 281px;
-  height: 48px;
-  padding-left: 16px;
+  padding: 0 0 14px 16px;
   font-family: Muli;
   font-size: 16px;
   font-weight: 600;
@@ -112,15 +113,24 @@ border: solid 1px #d7e1e8;
 
 .vraagbox-reflectie {
   position: relative;
-  left: 10%;
+  left: 5%;
   top: 10%;
-  width: 297px;
+  width: 85%;
   height: 88px;
   border-radius: 4px;
   background-image: linear-gradient(to bottom, #d954b4, #e177c3);
   border: solid 1px #d00899;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.remove {
+  position: relative;
+  width: 100%;
+  padding-bottom: 12px;
+  padding-right: 22px;
+  text-align: right;
+  float: right;
 }
 
 .navbar-laravel {
@@ -172,8 +182,8 @@ border: solid 1px #d7e1e8;
 }
 
 .test2 {
-  width: 58% !important;
-  height: 28px !important;
+  width: 55%;
+  height: 28px;
   float: left;
   margin-top: 20px;
   padding-left: 30px;
@@ -221,6 +231,8 @@ border: solid 1px #d7e1e8;
   color: #32baef;
   margin: 0 0 10px 0;
   left: 0px;
+  text-decoration: underline;
+  line-height: normal;
 }
 
 .growable input:checked {
@@ -245,7 +257,7 @@ border: solid 1px #d7e1e8;
 .overlay{
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   z-index: 998;
@@ -253,15 +265,22 @@ border: solid 1px #d7e1e8;
   background-color: rgba(3, 25, 33, 0.32);
   transition: opacity .5s;
 }
+.memo-bottom
+{
+  position: absolute;
+  text-align: left;
+  bottom: 16%;
+  margin: 24px 5% 24px 5%;
+  width: 40%;
+}
   .waarden-bottom
   {
     transition: bottom .3s;
     position: absolute;
     width: 90%;
     text-align: right;
-    bottom: 120px;
-    margin: 16px;
-
+    bottom: 14%;
+    margin: 24px 5% 24px 5%;
   }
   .title_scrollmenu{
     border-top-left-radius: 8px;
@@ -275,6 +294,17 @@ border: solid 1px #d7e1e8;
   .scrollmenu {
     overflow: scroll;
     height: 200px;
+}
+.antwoordenblok {
+    background-color: #ffffff;
+    height: 48px;
+    width: 90%;
+    border-radius: 4px;
+    margin-right: 20px;
+    box-shadow: inset 0 1px 3px 0 #d7e1e8;
+    border: solid 1px #d7e1e8;
+    margin: 24px 5% 24px 5%;
+
 }
 
 .table th, .table td {

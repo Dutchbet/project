@@ -14839,6 +14839,10 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
+    _c("div", { staticClass: "memo-bottom" }, [
+      _vm._v("\r\n          Voeg een memo toe:\r\n        ")
+    ]),
+    _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
     _c(
@@ -14871,50 +14875,24 @@ var render = function() {
                     _vm._v(
                       "\r\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                        "
+                        "\r\n                          "
                     ),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.$parent.deleteObject1(index)
-                          }
-                        }
-                      },
-                      [_vm._v("×")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        attrs: { type: "button" },
-                        on: {
-                          click: function($event) {
-                            _vm.$parent.showModal(vraag)
-                          }
-                        }
-                      },
-                      [_vm._v("\r\n      Open Modal!\r\n    ")]
-                    ),
-                    _vm._v(" "),
-                    _c("modal", {
-                      directives: [
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
                         {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.$parent.isModalVisible,
-                          expression: "$parent.isModalVisible"
-                        }
-                      ],
-                      attrs: { index: _vm.$index },
-                      on: { close: _vm.$parent.closeModal }
-                    })
-                  ],
-                  1
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject1(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
+                  ]
                 )
               })
             )
@@ -14932,33 +14910,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
             ])
           ]
         )
@@ -14978,7 +14954,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(2),
+        _vm._m(3),
         _vm._v(" "),
         _vm.$parent.vraag2.length > 0
           ? _c(
@@ -15015,33 +14991,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test2")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ])
             ])
           ]
         )
@@ -15061,7 +15035,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(3),
+        _vm._m(5),
         _vm._v(" "),
         _vm.$parent.vraag3.length > 0
           ? _c(
@@ -15098,33 +15072,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test3")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(6)
+              ])
             ])
           ]
         )
@@ -15144,7 +15116,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(4),
+        _vm._m(7),
         _vm._v(" "),
         _vm.$parent.vraag4.length > 0
           ? _c(
@@ -15181,33 +15153,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test4")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(8)
+              ])
             ])
           ]
         )
@@ -15227,7 +15197,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(5),
+        _vm._m(9),
         _vm._v(" "),
         _vm.$parent.vraag5.length > 0
           ? _c(
@@ -15264,33 +15234,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test5")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(10)
+              ])
             ])
           ]
         )
@@ -15310,7 +15278,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(6),
+        _vm._m(11),
         _vm._v(" "),
         _vm.$parent.vraag6.length > 0
           ? _c(
@@ -15347,33 +15315,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test6")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(12)
+              ])
             ])
           ]
         )
@@ -15393,7 +15359,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(7),
+        _vm._m(13),
         _vm._v(" "),
         _vm.$parent.vraag7.length > 0
           ? _c(
@@ -15430,33 +15396,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test7")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(14)
+              ])
             ])
           ]
         )
@@ -15476,7 +15440,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(8),
+        _vm._m(15),
         _vm._v(" "),
         _vm.$parent.vraag8.length > 0
           ? _c(
@@ -15513,33 +15477,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test8")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(16)
+              ])
             ])
           ]
         )
@@ -15559,7 +15521,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(9),
+        _vm._m(17),
         _vm._v(" "),
         _vm.$parent.vraag9.length > 0
           ? _c(
@@ -15596,33 +15558,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test9")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(18)
+              ])
             ])
           ]
         )
@@ -15642,7 +15602,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(10),
+        _vm._m(19),
         _vm._v(" "),
         _vm.$parent.vraag10.length > 0
           ? _c(
@@ -15679,33 +15639,31 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.$parent.TaskName,
-                    expression: "$parent.TaskName"
-                  }
-                ],
-                staticClass: "Reflectie-input",
-                attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                domProps: { value: _vm.$parent.TaskName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "antwoordenblok" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.$parent.TaskName,
+                      expression: "$parent.TaskName"
                     }
-                    _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                  ],
+                  staticClass: "Reflectie-input",
+                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
+                  domProps: { value: _vm.$parent.TaskName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-reflectie", attrs: { type: "submit" } },
-                [_vm._v("Test10")]
-              )
+                }),
+                _vm._v(" "),
+                _vm._m(20)
+              ])
             ])
           ]
         )
@@ -15725,61 +15683,61 @@ var render = function() {
         ]
       },
       [
-        _vm._m(11),
+        _vm._m(21),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag1) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(12),
+        _vm._m(22),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag2) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(13),
+        _vm._m(23),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag3) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(14),
+        _vm._m(24),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag4) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(15),
+        _vm._m(25),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag5) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(16),
+        _vm._m(26),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag6) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(17),
+        _vm._m(27),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag7) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(18),
+        _vm._m(28),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag8) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(19),
+        _vm._m(29),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag9) + " ")
         ]),
         _vm._v(" "),
-        _vm._m(20),
+        _vm._m(30),
         _vm._v(" "),
         _c("div", { staticClass: "Reflectie-Response" }, [
           _vm._v(" " + _vm._s(_vm.$parent.vraag10) + " ")
@@ -15865,6 +15823,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
         _vm._v("\r\n                        Vraag 2\r\n                  ")
@@ -15876,6 +15844,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
@@ -15897,6 +15875,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
         _vm._v("\r\n                        Vraag 4\r\n                  ")
@@ -15908,6 +15896,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
@@ -15929,6 +15927,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
         _vm._v("\r\n                        Vraag 6\r\n                  ")
@@ -15940,6 +15948,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
@@ -15961,6 +15979,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
         _vm._v("\r\n                        Vraag 8\r\n                  ")
@@ -15972,6 +16000,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
@@ -15993,6 +16031,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
         _vm._v("\r\n                        Vraag 10\r\n                  ")
@@ -16004,6 +16052,16 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "button-reflectie", attrs: { type: "submit" } },
+      [_c("img", { attrs: { src: "/images/send.svg" } })]
+    )
   },
   function() {
     var _vm = this
