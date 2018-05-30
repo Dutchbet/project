@@ -15006,7 +15006,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "memo-bottom" }, [
-      _vm._v("\n          Voeg een memo toe:\n        ")
+      _vm._v("\n          Voeg een antwoord toe:\n        ")
     ]),
     _vm._v(" "),
     _vm._m(0),
@@ -15055,7 +15055,12 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("×")]
+                        [
+                          _c("img", {
+                            staticClass: "bin",
+                            attrs: { src: "/images/delete-color.svg" }
+                          })
+                        ]
                       )
                     ])
                   ]
