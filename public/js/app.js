@@ -60,33 +60,169 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(3);
+module.exports = __webpack_require__(22);
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_modal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_App__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_App__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Hello__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Hello__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Hello__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Home__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Home__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_Home__);
 
 
@@ -310,14 +446,98 @@ for (var i = 0; i < container.length; i++) {
 }
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(5)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(10)
+/* template */
+var __vue_template__ = __webpack_require__(11)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/modal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-514744a6", Component.options)
+  } else {
+    hotAPI.reload("data-v-514744a6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
-/* 3 */,
-/* 4 */
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(6);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(8)("4766cecb", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.modal-backdrop {\n  position: fixed;\n  background-color: rgba(0, 0, 0, 0.3);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.modal {\n  background: #FFFFFF;\n  -webkit-box-shadow: 2px 2px 20px 1px;\n          box-shadow: 2px 2px 20px 1px;\n  overflow-x: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.modal-header,\n.modal-footer {\n  padding: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-header {\n  border-bottom: 1px solid #eeeeee;\n  color: #4AAE9B;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.modal-footer {\n  border-top: 1px solid #eeeeee;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.modal-body {\n  position: relative;\n  padding: 20px 10px;\n}\n.btn-close {\n  border: none;\n  font-size: 20px;\n  padding: 20px;\n  cursor: pointer;\n  font-weight: bold;\n  color: #4AAE9B;\n  background: transparent;\n}\n.btn-green {\n  color: white;\n  background: #4AAE9B;\n  border: 1px solid #4AAE9B;\n  border-radius: 2px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 /*
@@ -399,236 +619,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(10)
-}
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = __webpack_require__(14)
-/* template */
-var __vue_template__ = __webpack_require__(15)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\modal.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-72449f66", Component.options)
-  } else {
-    hotAPI.reload("data-v-72449f66", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(11);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(12)("2211d13f", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72449f66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72449f66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.modal-backdrop {\n  position: fixed;\n  background-color: rgba(0, 0, 0, 0.3);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.modal {\n  background: #FFFFFF;\n  -webkit-box-shadow: 2px 2px 20px 1px;\n          box-shadow: 2px 2px 20px 1px;\n  overflow-x: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.modal-header,\n.modal-footer {\n  padding: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-header {\n  border-bottom: 1px solid #eeeeee;\n  color: #4AAE9B;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.modal-footer {\n  border-top: 1px solid #eeeeee;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.modal-body {\n  position: relative;\n  padding: 20px 10px;\n}\n.btn-close {\n  border: none;\n  font-size: 20px;\n  padding: 20px;\n  cursor: pointer;\n  font-weight: bold;\n  color: #4AAE9B;\n  background: transparent;\n}\n.btn-green {\n  color: white;\n  background: #4AAE9B;\n  border: 1px solid #4AAE9B;\n  border-radius: 2px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -647,7 +638,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(13)
+var listToStyles = __webpack_require__(9)
 
 /*
 type StyleObject = {
@@ -856,7 +847,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 13 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /**
@@ -889,7 +880,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 14 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -906,7 +897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 15 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -974,12 +965,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-72449f66", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-514744a6", module.exports)
   }
 }
 
 /***/ }),
-/* 16 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11942,10 +11933,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(17).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(13).setImmediate))
 
 /***/ }),
-/* 17 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -12001,7 +11992,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(18);
+__webpack_require__(14);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -12012,10 +12003,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 18 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -12205,10 +12196,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(15)))
 
 /***/ }),
-/* 19 */
+/* 15 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -12398,7 +12389,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 20 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12759,7 +12750,6 @@ function isObjectEqual (a, b) {
   })
 }
 
-<<<<<<< HEAD
 function isIncludedRoute (current, target) {
   return (
     current.path.replace(trailingSlashRE, '/').indexOf(
@@ -12775,42 +12765,6 @@ function queryIncludes (current, target) {
     if (!(key in current)) {
       return false
     }
-=======
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(10)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/App.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50e73d1e", Component.options)
-  } else {
-    hotAPI.reload("data-v-50e73d1e", Component.options)
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   }
   return true
 }
@@ -12845,7 +12799,6 @@ var Link = {
   render: function render (h) {
     var this$1 = this;
 
-<<<<<<< HEAD
     var router = this.$router;
     var current = this.$route;
     var ref = router.resolve(this.to, current, this.append);
@@ -14878,7 +14831,244 @@ var VueRouter = function VueRouter (options) {
   }
   if (!inBrowser) {
     mode = 'abstract';
-=======
+  }
+  this.mode = mode;
+
+  switch (mode) {
+    case 'history':
+      this.history = new HTML5History(this, options.base);
+      break
+    case 'hash':
+      this.history = new HashHistory(this, options.base, this.fallback);
+      break
+    case 'abstract':
+      this.history = new AbstractHistory(this, options.base);
+      break
+    default:
+      if (true) {
+        assert(false, ("invalid mode: " + mode));
+      }
+  }
+};
+
+var prototypeAccessors = { currentRoute: { configurable: true } };
+
+VueRouter.prototype.match = function match (
+  raw,
+  current,
+  redirectedFrom
+) {
+  return this.matcher.match(raw, current, redirectedFrom)
+};
+
+prototypeAccessors.currentRoute.get = function () {
+  return this.history && this.history.current
+};
+
+VueRouter.prototype.init = function init (app /* Vue component instance */) {
+    var this$1 = this;
+
+  "development" !== 'production' && assert(
+    install.installed,
+    "not installed. Make sure to call `Vue.use(VueRouter)` " +
+    "before creating root instance."
+  );
+
+  this.apps.push(app);
+
+  // main app already initialized.
+  if (this.app) {
+    return
+  }
+
+  this.app = app;
+
+  var history = this.history;
+
+  if (history instanceof HTML5History) {
+    history.transitionTo(history.getCurrentLocation());
+  } else if (history instanceof HashHistory) {
+    var setupHashListener = function () {
+      history.setupListeners();
+    };
+    history.transitionTo(
+      history.getCurrentLocation(),
+      setupHashListener,
+      setupHashListener
+    );
+  }
+
+  history.listen(function (route) {
+    this$1.apps.forEach(function (app) {
+      app._route = route;
+    });
+  });
+};
+
+VueRouter.prototype.beforeEach = function beforeEach (fn) {
+  return registerHook(this.beforeHooks, fn)
+};
+
+VueRouter.prototype.beforeResolve = function beforeResolve (fn) {
+  return registerHook(this.resolveHooks, fn)
+};
+
+VueRouter.prototype.afterEach = function afterEach (fn) {
+  return registerHook(this.afterHooks, fn)
+};
+
+VueRouter.prototype.onReady = function onReady (cb, errorCb) {
+  this.history.onReady(cb, errorCb);
+};
+
+VueRouter.prototype.onError = function onError (errorCb) {
+  this.history.onError(errorCb);
+};
+
+VueRouter.prototype.push = function push (location, onComplete, onAbort) {
+  this.history.push(location, onComplete, onAbort);
+};
+
+VueRouter.prototype.replace = function replace (location, onComplete, onAbort) {
+  this.history.replace(location, onComplete, onAbort);
+};
+
+VueRouter.prototype.go = function go (n) {
+  this.history.go(n);
+};
+
+VueRouter.prototype.back = function back () {
+  this.go(-1);
+};
+
+VueRouter.prototype.forward = function forward () {
+  this.go(1);
+};
+
+VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
+  var route = to
+    ? to.matched
+      ? to
+      : this.resolve(to).route
+    : this.currentRoute;
+  if (!route) {
+    return []
+  }
+  return [].concat.apply([], route.matched.map(function (m) {
+    return Object.keys(m.components).map(function (key) {
+      return m.components[key]
+    })
+  }))
+};
+
+VueRouter.prototype.resolve = function resolve (
+  to,
+  current,
+  append
+) {
+  var location = normalizeLocation(
+    to,
+    current || this.history.current,
+    append,
+    this
+  );
+  var route = this.match(location, current);
+  var fullPath = route.redirectedFrom || route.fullPath;
+  var base = this.history.base;
+  var href = createHref(base, fullPath, this.mode);
+  return {
+    location: location,
+    route: route,
+    href: href,
+    // for backwards compat
+    normalizedTo: location,
+    resolved: route
+  }
+};
+
+VueRouter.prototype.addRoutes = function addRoutes (routes) {
+  this.matcher.addRoutes(routes);
+  if (this.history.current !== START) {
+    this.history.transitionTo(this.history.getCurrentLocation());
+  }
+};
+
+Object.defineProperties( VueRouter.prototype, prototypeAccessors );
+
+function registerHook (list, fn) {
+  list.push(fn);
+  return function () {
+    var i = list.indexOf(fn);
+    if (i > -1) { list.splice(i, 1); }
+  }
+}
+
+function createHref (base, fullPath, mode) {
+  var path = mode === 'hash' ? '#' + fullPath : fullPath;
+  return base ? cleanPath(base + '/' + path) : path
+}
+
+VueRouter.install = install;
+VueRouter.version = '3.0.1';
+
+if (inBrowser && window.Vue) {
+  window.Vue.use(VueRouter);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (VueRouter);
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(18)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/App.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-50e73d1e", Component.options)
+  } else {
+    hotAPI.reload("data-v-50e73d1e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -14886,338 +15076,522 @@ var render = function() {
   return _c("div", { staticClass: "body-reflectie" }, [
     _c("div", { staticClass: "overlay" }),
     _vm._v(" "),
-    _c("div", { staticClass: "container flop" }, [
-      _c("h2", { staticClass: "text-center test" }, [_vm._v("Reflectie")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 1,
-              expression: "$parent.step === 1"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
-                }
+    _c("div", { staticClass: "fixed-header bg-light" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 1,
+                expression: "$parent.step === 1"
               }
-            },
-            [_vm._v("Vraag 2")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 2,
-              expression: "$parent.step === 2"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c("h2", { staticClass: "text-center test" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 2")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 2,
+                expression: "$parent.step === 2"
               }
-            },
-            [_vm._v("Vraag 3")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 3,
-              expression: "$parent.step === 3"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 4")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 4,
-              expression: "$parent.step === 4"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+              },
+              [_vm._v("Vraag 1")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 3")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 3,
+                expression: "$parent.step === 3"
               }
-            },
-            [_vm._v("Vraag 5")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 5,
-              expression: "$parent.step === 5"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 6")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 6,
-              expression: "$parent.step === 6"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+              },
+              [_vm._v("Vraag 2")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 4")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 4,
+                expression: "$parent.step === 4"
               }
-            },
-            [_vm._v("Vraag 7")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 7,
-              expression: "$parent.step === 7"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 8")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 8,
-              expression: "$parent.step === 8"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+              },
+              [_vm._v("Vraag 3")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 5")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 5,
+                expression: "$parent.step === 5"
               }
-            },
-            [_vm._v("Vraag 9")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 9,
-              expression: "$parent.step === 9"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
-              }
-            },
-            [_vm._v("Vraag 10")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 10,
-              expression: "$parent.step === 10"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+              },
+              [_vm._v("Vraag 4")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
                 }
+              },
+              [_vm._v("Vraag 6")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 6,
+                expression: "$parent.step === 6"
               }
-            },
-            [_vm._v("Overzicht")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.$parent.step === 11,
-              expression: "$parent.step === 11"
-            }
-          ],
-          staticClass: "body-reflectie"
-        },
-        [
-          _c(
-            "button",
-            {
-              staticClass: "topbar-reflectie-button",
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  _vm.$parent.next()
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
                 }
+              },
+              [_vm._v("Vraag 5")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Vraag 7")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 7,
+                expression: "$parent.step === 7"
               }
-            },
-            [_vm._v("Verstuur")]
-          )
-        ]
-      )
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
+                }
+              },
+              [_vm._v("Vraag 6")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Vraag 8")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 8,
+                expression: "$parent.step === 8"
+              }
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
+                }
+              },
+              [_vm._v("Vraag 7")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Vraag 9")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 9,
+                expression: "$parent.step === 9"
+              }
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
+                }
+              },
+              [_vm._v("Vraag 8")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Vraag 10")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 10,
+                expression: "$parent.step === 10"
+              }
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
+                }
+              },
+              [_vm._v("Vraag 9")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Overzicht")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.$parent.step === 11,
+                expression: "$parent.step === 11"
+              }
+            ],
+            staticClass: "body-reflectie"
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button-left",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.prev()
+                  }
+                }
+              },
+              [_vm._v("Vraag 10")]
+            ),
+            _vm._v(" "),
+            _c("h2", { staticClass: "text-center test2" }, [
+              _vm._v("Reflectie")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "topbar-reflectie-button",
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$parent.next()
+                  }
+                }
+              },
+              [_vm._v("Verstuur")]
+            )
+          ]
+        )
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "memo-bottom" }, [
@@ -15290,7 +15664,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.$parent.saveNewTask($event)
+                return _vm.$parent.saveNewTask1($event)
               }
             }
           },
@@ -15357,8 +15731,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                  "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject2(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15438,8 +15827,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                  "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject3(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15519,8 +15923,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                  "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject4(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15600,8 +16019,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                  "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject5(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15681,8 +16115,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                                         "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject6(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15762,8 +16211,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                                         "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject7(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15843,8 +16307,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                                         "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject8(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -15924,8 +16403,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                                         "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject9(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -16005,8 +16499,23 @@ var render = function() {
                     _vm._v(
                       "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\n                  "
-                    )
+                        "\n                                                                         "
+                    ),
+                    _c("div", { staticClass: "remove" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.$parent.deleteObject10(index)
+                            }
+                          }
+                        },
+                        [_vm._v("×")]
+                      )
+                    ])
                   ]
                 )
               })
@@ -16616,31 +17125,14 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-50e73d1e", module.exports)
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   }
-  this.mode = mode;
+}
 
-  switch (mode) {
-    case 'history':
-      this.history = new HTML5History(this, options.base);
-      break
-    case 'hash':
-      this.history = new HashHistory(this, options.base, this.fallback);
-      break
-    case 'abstract':
-      this.history = new AbstractHistory(this, options.base);
-      break
-    default:
-      if (true) {
-        assert(false, ("invalid mode: " + mode));
-      }
-  }
-};
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-var prototypeAccessors = { currentRoute: { configurable: true } };
-=======
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
@@ -16662,42 +17154,21 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/views/Hello.vue"
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
 
-VueRouter.prototype.match = function match (
-  raw,
-  current,
-  redirectedFrom
-) {
-  return this.matcher.match(raw, current, redirectedFrom)
-};
 
-prototypeAccessors.currentRoute.get = function () {
-  return this.history && this.history.current
-};
+module.exports = Component.exports
 
-VueRouter.prototype.init = function init (app /* Vue component instance */) {
-    var this$1 = this;
 
-  "development" !== 'production' && assert(
-    install.installed,
-    "not installed. Make sure to call `Vue.use(VueRouter)` " +
-    "before creating root instance."
-  );
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-  this.apps.push(app);
-
-  // main app already initialized.
-  if (this.app) {
-    return
-=======
 var disposed = false
-var normalizeComponent = __webpack_require__(1)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(13)
+var __vue_template__ = __webpack_require__(21)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16726,2492 +17197,17 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-6c0a33b2", Component.options)
   } else {
     hotAPI.reload("data-v-6c0a33b2", Component.options)
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
-  this.app = app;
-
-  var history = this.history;
-
-<<<<<<< HEAD
-  if (history instanceof HTML5History) {
-    history.transitionTo(history.getCurrentLocation());
-  } else if (history instanceof HashHistory) {
-    var setupHashListener = function () {
-      history.setupListeners();
-    };
-    history.transitionTo(
-      history.getCurrentLocation(),
-      setupHashListener,
-      setupHashListener
-    );
-=======
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("p", [_vm._v("This is the homepage")])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
-  }
-
-  history.listen(function (route) {
-    this$1.apps.forEach(function (app) {
-      app._route = route;
-    });
-  });
-};
-
-VueRouter.prototype.beforeEach = function beforeEach (fn) {
-  return registerHook(this.beforeHooks, fn)
-};
-
-VueRouter.prototype.beforeResolve = function beforeResolve (fn) {
-  return registerHook(this.resolveHooks, fn)
-};
-
-VueRouter.prototype.afterEach = function afterEach (fn) {
-  return registerHook(this.afterHooks, fn)
-};
-
-VueRouter.prototype.onReady = function onReady (cb, errorCb) {
-  this.history.onReady(cb, errorCb);
-};
-
-VueRouter.prototype.onError = function onError (errorCb) {
-  this.history.onError(errorCb);
-};
-
-VueRouter.prototype.push = function push (location, onComplete, onAbort) {
-  this.history.push(location, onComplete, onAbort);
-};
-
-VueRouter.prototype.replace = function replace (location, onComplete, onAbort) {
-  this.history.replace(location, onComplete, onAbort);
-};
-
-VueRouter.prototype.go = function go (n) {
-  this.history.go(n);
-};
-
-VueRouter.prototype.back = function back () {
-  this.go(-1);
-};
-
-VueRouter.prototype.forward = function forward () {
-  this.go(1);
-};
-
-VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
-  var route = to
-    ? to.matched
-      ? to
-      : this.resolve(to).route
-    : this.currentRoute;
-  if (!route) {
-    return []
-  }
-  return [].concat.apply([], route.matched.map(function (m) {
-    return Object.keys(m.components).map(function (key) {
-      return m.components[key]
-    })
-  }))
-};
-
-VueRouter.prototype.resolve = function resolve (
-  to,
-  current,
-  append
-) {
-  var location = normalizeLocation(
-    to,
-    current || this.history.current,
-    append,
-    this
-  );
-  var route = this.match(location, current);
-  var fullPath = route.redirectedFrom || route.fullPath;
-  var base = this.history.base;
-  var href = createHref(base, fullPath, this.mode);
-  return {
-    location: location,
-    route: route,
-    href: href,
-    // for backwards compat
-    normalizedTo: location,
-    resolved: route
-  }
-};
-
-VueRouter.prototype.addRoutes = function addRoutes (routes) {
-  this.matcher.addRoutes(routes);
-  if (this.history.current !== START) {
-    this.history.transitionTo(this.history.getCurrentLocation());
-  }
-};
-
-Object.defineProperties( VueRouter.prototype, prototypeAccessors );
-
-function registerHook (list, fn) {
-  list.push(fn);
-  return function () {
-    var i = list.indexOf(fn);
-    if (i > -1) { list.splice(i, 1); }
-  }
-}
-
-function createHref (base, fullPath, mode) {
-  var path = mode === 'hash' ? '#' + fullPath : fullPath;
-  return base ? cleanPath(base + '/' + path) : path
-}
-
-VueRouter.install = install;
-VueRouter.version = '3.0.1';
-
-if (inBrowser && window.Vue) {
-  window.Vue.use(VueRouter);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (VueRouter);
+module.exports = Component.exports
 
 
 /***/ }),
 /* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(22)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-<<<<<<< HEAD
-Component.options.__file = "resources\\assets\\js\\views\\App.vue"
-=======
-Component.options.__file = "resources/assets/js/components/modal.vue"
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-<<<<<<< HEAD
-    hotAPI.createRecord("data-v-7cca96b8", Component.options)
-  } else {
-    hotAPI.reload("data-v-7cca96b8", Component.options)
-=======
-    hotAPI.createRecord("data-v-514744a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-514744a6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(21);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(22)("4766cecb", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(16)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.modal-backdrop {\n  position: fixed;\n  background-color: rgba(0, 0, 0, 0.3);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.modal {\n  background: #FFFFFF;\n  -webkit-box-shadow: 2px 2px 20px 1px;\n          box-shadow: 2px 2px 20px 1px;\n  overflow-x: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.modal-header,\n.modal-footer {\n  padding: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.modal-header {\n  border-bottom: 1px solid #eeeeee;\n  color: #4AAE9B;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.modal-footer {\n  border-top: 1px solid #eeeeee;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.modal-body {\n  position: relative;\n  padding: 20px 10px;\n}\n.btn-close {\n  border: none;\n  font-size: 20px;\n  padding: 20px;\n  cursor: pointer;\n  font-weight: bold;\n  color: #4AAE9B;\n  background: transparent;\n}\n.btn-green {\n  color: white;\n  background: #4AAE9B;\n  border: 1px solid #4AAE9B;\n  border-radius: 2px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-  Modified by Evan You @yyx990803
-*/
-
-var hasDocument = typeof document !== 'undefined'
-
-if (typeof DEBUG !== 'undefined' && DEBUG) {
-  if (!hasDocument) {
-    throw new Error(
-    'vue-style-loader cannot be used in a non-browser environment. ' +
-    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
-  ) }
-}
-
-var listToStyles = __webpack_require__(23)
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-var stylesInDom = {/*
-  [id: number]: {
-    id: number,
-    refs: number,
-    parts: Array<(obj?: StyleObjectPart) => void>
-  }
-*/}
-
-var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
-var singletonElement = null
-var singletonCounter = 0
-var isProduction = false
-var noop = function () {}
-var options = null
-var ssrIdKey = 'data-vue-ssr-id'
-
-// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-// tags it will allow on a page
-var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
-
-module.exports = function (parentId, list, _isProduction, _options) {
-  isProduction = _isProduction
-
-  options = _options || {}
-
-  var styles = listToStyles(parentId, list)
-  addStylesToDom(styles)
-
-  return function update (newList) {
-    var mayRemove = []
-    for (var i = 0; i < styles.length; i++) {
-      var item = styles[i]
-      var domStyle = stylesInDom[item.id]
-      domStyle.refs--
-      mayRemove.push(domStyle)
-    }
-    if (newList) {
-      styles = listToStyles(parentId, newList)
-      addStylesToDom(styles)
-    } else {
-      styles = []
-    }
-    for (var i = 0; i < mayRemove.length; i++) {
-      var domStyle = mayRemove[i]
-      if (domStyle.refs === 0) {
-        for (var j = 0; j < domStyle.parts.length; j++) {
-          domStyle.parts[j]()
-        }
-        delete stylesInDom[domStyle.id]
-      }
-    }
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "body-reflectie" }, [
-    _c("div", { staticClass: "overlay" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "fixed-header bg-light" }, [
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 1,
-                expression: "$parent.step === 1"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c("h2", { staticClass: "text-center test" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 2")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 2,
-                expression: "$parent.step === 2"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 1")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 3")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 3,
-                expression: "$parent.step === 3"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 2")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 4")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 4,
-                expression: "$parent.step === 4"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 3")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 5")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 5,
-                expression: "$parent.step === 5"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 4")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 6")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 6,
-                expression: "$parent.step === 6"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 5")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 7")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 7,
-                expression: "$parent.step === 7"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 6")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 8")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 8,
-                expression: "$parent.step === 8"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 7")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 9")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 9,
-                expression: "$parent.step === 9"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 8")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Vraag 10")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 10,
-                expression: "$parent.step === 10"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 9")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Overzicht")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.$parent.step === 11,
-                expression: "$parent.step === 11"
-              }
-            ],
-            staticClass: "body-reflectie"
-          },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
-                  }
-                }
-              },
-              [_vm._v("Vraag 10")]
-            ),
-            _vm._v(" "),
-            _c("h2", { staticClass: "text-center test2" }, [
-              _vm._v("Reflectie")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
-                  }
-                }
-              },
-              [_vm._v("Verstuur")]
-            )
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "memo-bottom" }, [
-      _vm._v("\r\n          Voeg een memo toe:\r\n        ")
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 1,
-            expression: "$parent.step === 1"
-          }
-        ]
-      },
-      [
-        _vm._m(1),
-        _vm._v(" "),
-        _vm.$parent.vraag1.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag1, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                          "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject1(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask1($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 2,
-            expression: "$parent.step === 2"
-          }
-        ]
-      },
-      [
-        _vm._m(3),
-        _vm._v(" "),
-        _vm.$parent.vraag2.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag2, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                  "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject2(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask2($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(4)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 3,
-            expression: "$parent.step === 3"
-          }
-        ]
-      },
-      [
-        _vm._m(5),
-        _vm._v(" "),
-        _vm.$parent.vraag3.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag3, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                  "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject3(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask3($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(6)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 4,
-            expression: "$parent.step === 4"
-          }
-        ]
-      },
-      [
-        _vm._m(7),
-        _vm._v(" "),
-        _vm.$parent.vraag4.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag4, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                  "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject4(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask4($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(8)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 5,
-            expression: "$parent.step === 5"
-          }
-        ]
-      },
-      [
-        _vm._m(9),
-        _vm._v(" "),
-        _vm.$parent.vraag5.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag5, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                  "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject5(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask5($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(10)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 6,
-            expression: "$parent.step === 6"
-          }
-        ]
-      },
-      [
-        _vm._m(11),
-        _vm._v(" "),
-        _vm.$parent.vraag6.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag6, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject6(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask6($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(12)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 7,
-            expression: "$parent.step === 7"
-          }
-        ]
-      },
-      [
-        _vm._m(13),
-        _vm._v(" "),
-        _vm.$parent.vraag7.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag7, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject7(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask7($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(14)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 8,
-            expression: "$parent.step === 8"
-          }
-        ]
-      },
-      [
-        _vm._m(15),
-        _vm._v(" "),
-        _vm.$parent.vraag8.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag8, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject8(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask8($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(16)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 9,
-            expression: "$parent.step === 9"
-          }
-        ]
-      },
-      [
-        _vm._m(17),
-        _vm._v(" "),
-        _vm.$parent.vraag9.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag9, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject9(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask9($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(18)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 10,
-            expression: "$parent.step === 10"
-          }
-        ]
-      },
-      [
-        _vm._m(19),
-        _vm._v(" "),
-        _vm.$parent.vraag10.length > 0
-          ? _c(
-              "div",
-              _vm._l(_vm.$parent.vraag10, function(vraag, index) {
-                return _c(
-                  "div",
-                  {
-                    key: index,
-                    staticClass: "Reflectie-Response",
-                    attrs: { index: index }
-                  },
-                  [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
-                    ),
-                    _c("div", { staticClass: "remove" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.$parent.deleteObject10(index)
-                            }
-                          }
-                        },
-                        [_vm._v("×")]
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.$parent.saveNewTask10($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "Reflectie-Bottom" }, [
-              _c("div", { staticClass: "antwoordenblok" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.$parent.TaskName,
-                      expression: "$parent.TaskName"
-                    }
-                  ],
-                  staticClass: "Reflectie-input",
-                  attrs: { type: "text", placeholder: "Typ hier uw antwoord" },
-                  domProps: { value: _vm.$parent.TaskName },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.$parent, "TaskName", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(20)
-              ])
-            ])
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 11,
-            expression: "$parent.step === 11"
-          }
-        ]
-      },
-      [
-        _vm._m(21),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag1) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(22),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag2) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(23),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag3) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(24),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag4) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(25),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag5) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(26),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag6) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(27),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag7) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(28),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag8) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(29),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag9) + " ")
-        ]),
-        _vm._v(" "),
-        _vm._m(30),
-        _vm._v(" "),
-        _c("div", { staticClass: "Reflectie-Response" }, [
-          _vm._v(" " + _vm._s(_vm.$parent.vraag10) + " ")
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step === 12,
-            expression: "$parent.step === 12"
-          }
-        ]
-      },
-      [_vm._v("\r\n               Bericht is verstuurd\r\n            ")]
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "waarden-bottom" }, [
-      _c("div", { staticClass: "collapsible" }, [
-        _c("div", { staticClass: "title_scrollmenu" }, [
-          _c("div", { staticClass: "title_value" }),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "more-button",
-            attrs: { type: "button", value: "Waarden" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "growable" }, [
-          _c("div", { staticClass: "measuringWrapper" }, [
-            _c("div", { staticClass: "scrollmenu" }, [
-              _c("table", { staticClass: "table" }, [
-                _c("tbody", [
-                  _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Geduld")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Openheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Flexibiliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Rechtvaardig")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Respect")])])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n\r\n                        wat heb je gezien en gehoord?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Wat heb jij daarbij gedacht en gevoeld ?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 6\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "button-reflectie", attrs: { type: "submit" } },
-      [_c("img", { attrs: { src: "/images/send.svg" } })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        wat heb je gezien en gehoord?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        wat heb jij daarbij gedacht en gevoeld ?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n            "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                  Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                  Vraag 6\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n            "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vraagbox-reflectie" }, [
-      _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
-        )
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7cca96b8", module.exports)
-  }
-}
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = null
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\views\\Hello.vue"
-
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(25)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\views\\Home.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-11c5acec", Component.options)
-  } else {
-    hotAPI.reload("data-v-11c5acec", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -19226,13 +17222,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-<<<<<<< HEAD
-    require("vue-hot-reload-api")      .rerender("data-v-11c5acec", module.exports)
-=======
-    require("vue-hot-reload-api")      .rerender("data-v-514744a6", module.exports)
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
+    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
   }
 }
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
