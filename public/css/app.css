@@ -10432,7 +10432,7 @@ a.text-dark:focus {
           box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
   background-color: #fdf2fa;
   border: solid 1px #f3c9e7;
-  overflow: scroll;
+  margin: 4px;
 }
 
 .Reflectie-Bottom {
@@ -10442,8 +10442,8 @@ a.text-dark:focus {
 }
 
 .Reflectie-input {
-  height: 20px;
-  margin-top: 14px;
+  height: 40px;
+  margin-top: 5px;
   margin-left: 3px;
   background-color: #ffffff;
   font-family: Muli;
@@ -10455,6 +10455,7 @@ a.text-dark:focus {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+  border-color: transparent;
   color: #bec9cd;
 }
 

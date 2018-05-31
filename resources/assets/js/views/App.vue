@@ -1,44 +1,65 @@
-
 <template>
 <div class="body-reflectie">
   <div class="overlay">
   </div>
-      <div class="container flop">
-      <h2 class="text-center test">Reflectie</h2>
+    <div class="fixed-header bg-light">
+      <div class="container">
             <div class="body-reflectie" v-show="$parent.step === 1">
+              <h2 class="text-center test">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 2</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 2">
+                  <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
+              <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 3</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 3">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 2</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 4</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 4">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 3</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 5</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 5">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 4</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 6</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 6">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 5</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 7</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 7">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 6</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 8</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 8">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 7</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 9</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 9">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 8</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 10</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 10">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 9</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Overzicht</button>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 11">
+              <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 10</button>
+          <h2 class="text-center test2">Reflectie</h2>
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Verstuur</button>
             </div>
       </div>
+    </div>
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
@@ -108,7 +129,7 @@
                           </div>
                   </div>
             </div>
-            <form @submit.prevent="$parent.saveNewTask">
+            <form @submit.prevent="$parent.saveNewTask1">
             <div class="Reflectie-Bottom">
               <div class="antwoordenblok">
                   <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
@@ -135,6 +156,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag2">
                         {{ vraag.memo}}
+                                                  <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject2(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask2">
@@ -162,6 +186,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag3">
                         {{ vraag.memo}}
+                                                  <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject3(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask3">
@@ -189,6 +216,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag4">
                         {{ vraag.memo}}
+                                                  <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject4(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask4">
@@ -216,12 +246,15 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag5">
                         {{ vraag.memo}}
+                                                  <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject5(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask5">
             <div class="Reflectie-Bottom">
                 <div class="antwoordenblok">
-                  <input v-model="$parent.TaskName" type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
+                  <input v-model="$parent.TaskName"  type="text" placeholder="Typ hier uw antwoord" class="Reflectie-input">
             <button type="submit" class="button-reflectie"><img src="/images/send.svg"></button>
                 </div>
             </div>
@@ -243,6 +276,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag6">
                         {{ vraag.memo}}
+                                                                         <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject6(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask6">
@@ -270,6 +306,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag7">
                         {{ vraag.memo}}
+                                                                         <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject7(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask7">
@@ -297,6 +336,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag8">
                         {{ vraag.memo}}
+                                                                         <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject8(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask8">
@@ -324,6 +366,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag9">
                         {{ vraag.memo}}
+                                                                         <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject9(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask9">
@@ -351,6 +396,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag10">
                         {{ vraag.memo}}
+                                                                         <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject10(index)">&times;</a>
+                          </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask10">

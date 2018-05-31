@@ -25,7 +25,7 @@
   box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
   background-color: #fdf2fa;
   border: solid 1px #f3c9e7;
-  overflow: scroll;
+  margin: 4px;
 }
 
 .Reflectie-Bottom
@@ -34,15 +34,11 @@
   bottom: 50px;
   width: 100%;
 }
-.Reflectie-input
-{
-  height: 20px;
-  margin-top: 14px;
+.Reflectie-input {
+  height: 40px;
+  margin-top: 5px;
   margin-left: 3px;
-//  border-radius: 4px;
-//  box-shadow: inset 0 1px 3px 0 #d7e1e8;
   background-color: #ffffff;
-//  border: solid 1px #d7e1e8;
   font-family: Muli;
   font-size: 16px;
   width: 75%;
@@ -52,6 +48,7 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+  border-color: transparent;
   color: #bec9cd;
 }
 

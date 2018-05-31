@@ -74,45 +74,102 @@ const app = new Vue({
     deleteObject1: function(index) {
       this.$delete(this.vraag1, index);
     },
-   saveNewTask(){this.vraag1.push(
-     {memo: this.TaskName});
-     this.TaskName='';
-  },
-  saveNewTask2(){this.vraag2.push(
+    deleteObject2: function(index) {
+      this.$delete(this.vraag2, index);
+    },
+    deleteObject3: function(index) {
+      this.$delete(this.vraag3, index);
+    },
+    deleteObject4: function(index) {
+      this.$delete(this.vraag4, index);
+    },
+    deleteObject5: function(index) {
+      this.$delete(this.vraag5, index);
+    },
+    deleteObject6: function(index) {
+      this.$delete(this.vraag6, index);
+    },
+    deleteObject7: function(index) {
+      this.$delete(this.vraag7, index);
+    },
+    deleteObject8: function(index) {
+      this.$delete(this.vraag8, index);
+    },
+    deleteObject9: function(index) {
+      this.$delete(this.vraag9, index);
+    },
+    deleteObject10: function(index) {
+      this.$delete(this.vraag10, index);
+    },
+    saveNewTask1(){
+      if (this.TaskName) {
+        this.vraag1.push(
+        {memo: this.TaskName});
+        this.TaskName='';
+      }
+    },
+    saveNewTask2(){
+      if (this.TaskName) {
+        this.vraag2.push(
+        {memo: this.TaskName});
+        this.TaskName='';
+      }
+    },
+    saveNewTask3(){
+      if (this.TaskName) {
+        this.vraag3.push(
+        {memo: this.TaskName});
+        this.TaskName='';
+      }
+    },
+saveNewTask4(){
+  if (this.TaskName) {
+    this.vraag4.push(
     {memo: this.TaskName});
     this.TaskName='';
- },
- saveNewTask3(){this.vraag3.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+  }
 },
-saveNewTask4(){this.vraag4.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask5(){
+  if (this.TaskName) {
+    this.vraag5.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
-saveNewTask5(){this.vraag5.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask6(){
+  if (this.TaskName) {
+    this.vraag6.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
-saveNewTask6(){this.vraag6.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask7(){
+  if (this.TaskName) {
+    this.vraag7.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
-saveNewTask7(){this.vraag7.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask8(){
+  if (this.TaskName) {
+    this.vraag8.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
-saveNewTask8(){this.vraag8.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask9(){
+  if (this.TaskName) {
+    this.vraag9.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
-saveNewTask9(){this.vraag9.push(
-  {memo: this.TaskName});
-  this.TaskName='';
-},
-saveNewTask10(){this.vraag10.push(
-  {memo: this.TaskName});
-  this.TaskName='';
+saveNewTask10(){
+  if (this.TaskName) {
+    this.vraag10.push(
+    {memo: this.TaskName});
+    this.TaskName='';
+  }
 },
 
     prev() {
