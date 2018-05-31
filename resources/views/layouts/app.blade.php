@@ -32,7 +32,7 @@
         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
                 <a class="nav-item nav-link" href="{{ url('/') }}">
-                  <img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide">
+                  <img class="first-slide" src="{{asset('/images/home.svg')}} " alt="First slide">
                 </a>
 
 
@@ -43,10 +43,12 @@
 
               <!--  <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a> -->
 
-                <a class="nav-item nav-link" href="{{ url('examples') }}" ><img class="first-slide" src="{{asset('/images/baseline-event_note-24px.svg')}} " alt="First slide"></a>
-                <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/baseline-home-24px.svg')}} " alt="First slide"></a>
-                <a class="nav-item nav-link" href="#"><img class="first-slide" src="{{asset('/images/baseline-contacts-24px.svg')}} " alt="First slide"></a>
-                <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}"><img class="first-slide" src="{{asset('/images/baseline-settings-20px.svg')}} " alt="First slide"> </a>
+                <a class="nav-item nav-link" href="{{ url('examples') }}" ><img class="first-slide" src="{{asset('/images/memos.svg')}} " alt="First slide"></a>
+                  <div class="cards">
+                <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/tile-2.svg')}} " alt="First slide"></a>
+                  </div>
+                <a class="nav-item nav-link" href="#"><img class="first-slide" src="{{asset('/images/contacts.svg')}} " alt="First slide"></a>
+                <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}"><img class="first-slide" src="{{asset('/images/settings.svg')}} " alt="First slide"> </a>
 
              </div>
                 </div>

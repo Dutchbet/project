@@ -10412,7 +10412,7 @@ a.text-dark:focus {
 }
 
 .button-reflectie {
-  margin: 8px;
+  margin: 12px;
   float: right;
   border-radius: 4px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
@@ -10426,7 +10426,7 @@ a.text-dark:focus {
   width: 70%;
   float: right;
   padding: 10px 0 0 16px;
-  margin-right: 5%;
+  margin: 10px 5%;
   border-radius: 4px;
   -webkit-box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
           box-shadow: 0 2px 8px 0 rgba(190, 233, 250, 0.32);
@@ -10443,6 +10443,10 @@ a.text-dark:focus {
 
 .Reflectie-input {
   height: 40px;
+<<<<<<< HEAD
+=======
+  padding: 14px 16px;
+>>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   margin-top: 5px;
   margin-left: 3px;
   background-color: #ffffff;
@@ -10454,7 +10458,11 @@ a.text-dark:focus {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+<<<<<<< HEAD
   text-align: center;
+=======
+  text-align: cnter;
+>>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   border-color: transparent;
   color: #bec9cd;
 }
@@ -10516,12 +10524,23 @@ a.text-dark:focus {
   color: #f3c9e7;
 }
 
+.cards {
+  height: 80px;
+  width: 80px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+          box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#32baef), to(#5bc8f3));
+  background-image: linear-gradient(to bottom, #32baef, #5bc8f3);
+  border: solid 1px #049ce8;
+  border-radius: 100%;
+  z-index: 999;
+}
+
 .vraagbox-reflectie {
   position: relative;
   left: 5%;
   top: 10%;
   width: 85%;
-  height: 88px;
   border-radius: 4px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d954b4), to(#e177c3));
   background-image: linear-gradient(to bottom, #d954b4, #e177c3);
@@ -10537,6 +10556,10 @@ a.text-dark:focus {
   padding-right: 22px;
   text-align: right;
   float: right;
+}
+
+.bin {
+  height: 16px;
 }
 
 .navbar-laravel {
@@ -10689,7 +10712,6 @@ a.text-dark:focus {
   text-align: left;
   bottom: 16%;
   margin: 24px 5% 24px 5%;
-  width: 40%;
 }
 
 .waarden-bottom {
@@ -10705,6 +10727,7 @@ a.text-dark:focus {
 .title_scrollmenu {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  font-family: Prompt;
 }
 
 .title_value {

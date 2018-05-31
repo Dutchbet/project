@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/24x24/edit-color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/24x24/edit-color">
+            <g id="Group" transform="translate(0.000000, 4.000000)">
+                <path d="M10.2941587,4.76351831 C10.2433874,4.69058656 10.1800589,4.62725809 10.1071272,4.57648678 C9.76717621,4.33983046 9.29974365,4.42356733 9.06308733,4.76351831 L4.65295306,11.0985677 C4.53818117,11.2634347 4.49434455,11.4674526 4.53126436,11.6649131 L5.52026619,16.9544516 C5.58662388,17.3093564 5.89643546,17.5666104 6.25749058,17.5666104 L13.0997555,17.5666104 C13.4608106,17.5666104 13.7706222,17.3093564 13.8369799,16.9544516 L14.8259817,11.6649131 C14.8629015,11.4674526 14.8190649,11.2634347 14.704293,11.0985677 L10.2941587,4.76351831 Z" id="Rectangle-10" stroke="#EAA0D5" stroke-width="1.5" transform="translate(9.678623, 11.004250) rotate(-135.000000) translate(-9.678623, -11.004250) "></path>
+                <rect id="Rectangle-11" stroke="#EAA0D5" stroke-width="1.5" transform="translate(15.379572, 5.303301) rotate(-135.000000) translate(-15.379572, -5.303301) " x="9.37957249" y="3.80330086" width="12" height="3" rx="1.5"></rect>
+                <rect id="Rectangle-12" fill="#EAA0D5" transform="translate(6.629126, 14.053747) rotate(-135.000000) translate(-6.629126, -14.053747) " x="5.87912607" y="12.1787473" width="1.5" height="3.75" rx="0.75"></rect>
+                <circle id="Oval-2" fill="#F3C9E7" transform="translate(10.606602, 10.076272) rotate(-135.000000) translate(-10.606602, -10.076272) " cx="10.6066017" cy="10.0762716" r="1.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

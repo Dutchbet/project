@@ -64,7 +64,7 @@
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
       <div class="memo-bottom">
-          Voeg een memo toe:
+          Voeg een antwoord toe:
         </div>
         <div class="waarden-bottom">
           <div class="collapsible">
@@ -125,7 +125,7 @@
                         v-for="(vraag, index) in $parent.vraag1">
                         {{ vraag.memo}}
                           <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject1(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject1(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
