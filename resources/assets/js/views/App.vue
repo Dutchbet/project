@@ -3,7 +3,6 @@
 <div class="body-reflectie">
   <div class="overlay">
   </div>
-    <div class="fixed-header bg-light">
       <div class="container flop">
       <h2 class="text-center test">Reflectie</h2>
             <div class="body-reflectie" v-show="$parent.step === 1">
