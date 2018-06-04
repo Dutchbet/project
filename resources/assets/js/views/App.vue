@@ -116,7 +116,7 @@
                   </div>
                    <div class="vraagbox-reflectie-text">wat heb je gezien en gehoord?</div>
             </div>
-                  <div	v-if="$parent.vraag1.length > 0">	
+                  <div	v-if="$parent.vraag1.length > 0">
                    <div
                         :key="index"
                         :index="index"
@@ -566,4 +566,3 @@
             </div>
 </div>
 </template>
-

@@ -429,21 +429,21 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
     })(collapsibles[i]);
   }
 })();
-
-// Get the container element
-var container = document.getElementById("myDIV");
-
-// Get all buttons with class="btn" inside the container
-var container = Container.getElementsByClassName("container");
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < container.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+//
+// // Get the container element
+// var myDiv = document.getElementById("myDIV");
+//
+// // Get all buttons with class="btn" inside the container
+// var container = myDiv.getElementsByClassName("container");
+//
+// // Loop through the buttons and add the active class to the current/clicked button
+// for (var i = 0; i < container.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
 
 /***/ }),
 /* 4 */
