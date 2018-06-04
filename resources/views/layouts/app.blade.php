@@ -28,7 +28,7 @@
                   </a>
                   </div>
           </div> --}}
-
+{{--    
         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
                 <a class="nav-item nav-link" href="{{ url('/') }}">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </nav>
-
+--}}
         <main class="body">
             @yield('content')
         </main>

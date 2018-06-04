@@ -10411,6 +10411,12 @@ a.text-dark:focus {
   }
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .button-reflectie {
   margin: 12px;
   float: right;
@@ -10443,10 +10449,7 @@ a.text-dark:focus {
 
 .Reflectie-input {
   height: 40px;
-<<<<<<< HEAD
-=======
   padding: 14px 16px;
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   margin-top: 5px;
   margin-left: 3px;
   background-color: #ffffff;
@@ -10458,11 +10461,7 @@ a.text-dark:focus {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-<<<<<<< HEAD
   text-align: center;
-=======
-  text-align: cnter;
->>>>>>> 478e670ae9481320b7d5bad3a1f2f657c05a4086
   border-color: transparent;
   color: #bec9cd;
 }

@@ -63,6 +63,7 @@
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
+      <div v-show="$parent.step  <= 10">
       <div class="memo-bottom">
           Voeg een antwoord toe:
         </div>
@@ -107,15 +108,13 @@
 
         </div>
         </div>
+      </div>
 	<div v-show="$parent.step === 1">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 1
                   </div>
-                   <div class="vraagbox-reflectie-text">
-
-                        wat heb je gezien en gehoord?
-                  </div>
+                   <div class="vraagbox-reflectie-text">wat heb je gezien en gehoord?</div>
             </div>
                   <div	v-if="$parent.vraag1.length > 0">	
                    <div
@@ -145,9 +144,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 2
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Wat heb jij daarbij gedacht en gevoeld ?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Wat heb jij daarbij gedacht en gevoeld ?</div>
             </div>
                         <div	v-if="$parent.vraag2.length > 0">
                    <div
@@ -156,9 +153,9 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag2">
                         {{ vraag.memo}}
-                                                  <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject2(index)">&times;</a>
-                          </div>
+                        <div class="remove">
+                            <a href="#" v-on:click.prevent="$parent.deleteObject2(index)"><img class="bin" src="/images/delete-color.svg"></a>
+                        </div>
                   </div>
             </div>
             <form @submit.prevent="$parent.saveNewTask2">
@@ -175,9 +172,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 3
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Wat raakt je in de situatie, welke waarde is voor jou in het geding ?</div>
             </div>
                         <div	v-if="$parent.vraag3.length > 0">
                    <div
@@ -187,7 +182,7 @@
                         v-for="(vraag, index) in $parent.vraag3">
                         {{ vraag.memo}}
                                                   <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject3(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject3(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -205,9 +200,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 4
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?</div>
                   </div>
                         <div	v-if="$parent.vraag4.length > 0">
                    <div
@@ -217,7 +210,7 @@
                         v-for="(vraag, index) in $parent.vraag4">
                         {{ vraag.memo}}
                                                   <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject4(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject4(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -235,9 +228,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 5
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Wie speelt welke rol en klopt dat volgens jou?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Wie speelt welke rol en klopt dat volgens jou?</div>
             </div>
                         <div	v-if="$parent.vraag5.length > 0">
                    <div
@@ -247,7 +238,7 @@
                         v-for="(vraag, index) in $parent.vraag5">
                         {{ vraag.memo}}
                                                   <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject5(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject5(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -265,9 +256,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 6
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Wie heeft welk belang en wlke tegenstellingen zijn daarin?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Wie heeft welk belang en wlke tegenstellingen zijn daarin?</div>
             </div>
                         <div	v-if="$parent.vraag6.length > 0">
                    <div
@@ -277,7 +266,7 @@
                         v-for="(vraag, index) in $parent.vraag6">
                         {{ vraag.memo}}
                                                                          <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject6(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject6(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -295,9 +284,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 7
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?</div>
             </div>
                         <div	v-if="$parent.vraag7.length > 0">
                    <div
@@ -307,7 +294,7 @@
                         v-for="(vraag, index) in $parent.vraag7">
                         {{ vraag.memo}}
                                                                          <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject7(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject7(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -325,9 +312,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 8
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Zijn er nog meer gewetensvragen te formuleren?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Zijn er nog meer gewetensvragen te formuleren?</div>
             </div>
                         <div	v-if="$parent.vraag8.length > 0">
                    <div
@@ -337,7 +322,7 @@
                         v-for="(vraag, index) in $parent.vraag8">
                         {{ vraag.memo}}
                                                                          <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject8(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject8(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -355,9 +340,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 9
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Welke vragen zijn nog niet beantwoord?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Welke vragen zijn nog niet beantwoord?</div>
             </div>
                         <div	v-if="$parent.vraag9.length > 0">
                    <div
@@ -367,7 +350,7 @@
                         v-for="(vraag, index) in $parent.vraag9">
                         {{ vraag.memo}}
                                                                          <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject9(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject9(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -385,9 +368,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 10
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        Zijn er nog meer gewetensvragen te formuleren?
-                  </div>
+                  <div class="vraagbox-reflectie-text">Zijn er nog meer gewetensvragen te formuleren?</div>
             </div>
                         <div	v-if="$parent.vraag10.length > 0">
                    <div
@@ -397,7 +378,7 @@
                         v-for="(vraag, index) in $parent.vraag10">
                         {{ vraag.memo}}
                                                                          <div class="remove">
-                            <a href="#" v-on:click.prevent="$parent.deleteObject10(index)">&times;</a>
+                            <a href="#" v-on:click.prevent="$parent.deleteObject10(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
             </div>
@@ -411,15 +392,22 @@
             </form>
 	</div>
       <div v-show="$parent.step === 11">
+            <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 1
                   </div>
-                  <div class="vraagbox-reflectie-text">
-                        wat heb je gezien en gehoord?
-                  </div>
+                  <div class="vraagbox-reflectie-text">wat heb je gezien en gehoord?</div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag1 }} </div>
+                               <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag1">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 2
@@ -428,7 +416,15 @@
                         wat heb jij daarbij gedacht en gevoeld ?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag2 }} </div>
+                                          <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag2">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 3
@@ -437,7 +433,15 @@
                         Wat raakt je in de situatie, welke waarde is voor jou in het geding ?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag3 }} </div>
+                                                      <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag3">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 4
@@ -446,7 +450,15 @@
                   Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?
             </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag4 }} </div>
+                                                            <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag4">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 5
@@ -455,7 +467,15 @@
                   Wie speelt welke rol en klopt dat volgens jou?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag5 }} </div>
+                                                                        <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag5">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                   Vraag 6
@@ -464,7 +484,15 @@
                   Wie heeft welk belang en wlke tegenstellingen zijn daarin?
             </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag6 }} </div>
+                                                                        <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag6">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 7
@@ -473,7 +501,15 @@
                         Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag7 }} </div>
+                                                                                   <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag7">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 8
@@ -482,7 +518,15 @@
                         Zijn er nog meer gewetensvragen te formuleren?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag8 }} </div>
+                                                                               <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag8">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 9
@@ -491,16 +535,31 @@
                         Welke vragen zijn nog niet beantwoord?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag9 }} </div>
+                                                                               <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag9">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
+                  <div class="clearfix">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 10
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        Zijn er nog meer gewetensvragen te formuleren?
+                        Wlke stappen ga je in welke volgore zetten ?
                   </div>
             </div>
-            <div class="Reflectie-Response"> {{ $parent.vraag10 }} </div>
+                                                                               <div
+                        :key="index"
+                        :index="index"
+                        class="Reflectie-Response"
+                        v-for="(vraag, index) in $parent.vraag10">
+                        {{ vraag.memo}}
+                  </div>
+                  </div>
       </div>
            <div v-show="$parent.step === 12">
                Bericht is verstuurd
