@@ -15096,19 +15096,21 @@ var render = function() {
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 2")]
-            )
+                },
+                [_vm._v("Vraag 2")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -16944,7 +16946,61 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
                   _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Respect")])])
+                  _c("tr", [_c("td", [_vm._v("Respect")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Gemak")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Mededogen")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Vrede")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Betrokkenheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Betrouwbaarheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Eerlijkheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Solidariteit")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Humor")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Dankbaarheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Collegialiteit")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Verantwoordelijkheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Liefde")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Gelijk(waardig)heid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Tolerantie")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Zelfstandigheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Deskundigheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Vrijheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Dienstbaarheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Zorgzaamheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Gehoorzaamheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Eigenheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Gerechtigheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Zinvolheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Duidelijkheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Veiligheid")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Vetrouwen")])]),
+                  _vm._v(" "),
+                  _c("tr", [_c("td", [_vm._v("Duurzaamheid")])])
                 ])
               ])
             ])

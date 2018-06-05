@@ -10655,11 +10655,9 @@ a.text-dark:focus {
 }
 
 .test {
-  width: 75% !important;
-  height: 28px !important;
+  width: 80%;
   float: left !important;
   margin-top: 20px;
-  padding-left: 30px;
   font-size: 18px;
   font-family: prompt;
   font-weight: 500;
@@ -10670,7 +10668,6 @@ a.text-dark:focus {
   height: 28px;
   float: left;
   margin-top: 20px;
-  padding-left: 30px;
   font-size: 18px;
   font-family: prompt;
 }
@@ -10737,6 +10734,8 @@ a.text-dark:focus {
   overflow: hidden;
   background-color: white;
   position: absolute;
+  -webkit-box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 
@@ -10758,6 +10757,8 @@ a.text-dark:focus {
   text-align: left;
   bottom: 16%;
   margin: 24px 5% 24px 5%;
+  font-family: Prompt;
+  font-size: 16px;
 }
 
 .waarden-bottom {
@@ -10780,11 +10781,13 @@ a.text-dark:focus {
   text-align: left;
   display: inline-block;
   float: left;
+  font-family: Prompt;
+  font-size: 18px;
 }
 
 .scrollmenu {
   overflow: scroll;
-  height: 200px;
+  height: 182px;
 }
 
 .antwoordenblok {
@@ -10799,6 +10802,13 @@ a.text-dark:focus {
   margin: 24px 5% 24px 5%;
 }
 
+.next {
+  position: relative;
+  width: 20%;
+  float: right;
+  padding-top: 12px;
+}
+
 .table th,
 .table td {
   border-top: 0px;
@@ -10806,6 +10816,8 @@ a.text-dark:focus {
 
 .table {
   text-align: center;
+  font-family: Multi;
+  font-size: 18px;
 }
 
 .example1 {

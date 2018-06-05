@@ -6,7 +6,9 @@
       <div class="container">
             <div class="body-reflectie" v-show="$parent.step === 1">
               <h2 class="text-center test">Reflectie</h2>
+                <div class="next">
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 2</button>
+                </div>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 2">
                   <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
@@ -100,8 +102,89 @@
                         <tr>
                             <td>Respect</td>
                         </tr>
-                                    </tbody>
-                   </table>
+                        <tr>
+                            <td>Gemak</td>
+                        </tr>
+                        <tr>
+                            <td>Mededogen</td>
+                        </tr>
+                        <tr>
+                            <td>Vrede</td>
+                        </tr>
+                        <tr>
+                            <td>Betrokkenheid</td>
+                        </tr>
+                        <tr>
+                            <td>Betrouwbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Eerlijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Solidariteit</td>
+                        </tr>
+                        <tr>
+                            <td>Humor</td>
+                        </tr>
+                        <tr>
+                            <td>Dankbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Collegialiteit</td>
+                        </tr>
+                        <tr>
+                            <td>Verantwoordelijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Liefde</td>
+                        </tr>
+                        <tr>
+                            <td>Gelijk(waardig)heid</td>
+                        </tr>
+                        <tr>
+                            <td>Tolerantie</td>
+                        </tr>
+                        <tr>
+                            <td>Zelfstandigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Deskundigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Vrijheid</td>
+                        </tr>
+                        <tr>
+                            <td>Dienstbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Zorgzaamheid</td>
+                        </tr>
+                        <tr>
+                            <td>Gehoorzaamheid</td>
+                        </tr>
+                        <tr>
+                            <td>Eigenheid</td>
+                        </tr>
+                        <tr>
+                            <td>Gerechtigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Zinvolheid</td>
+                        </tr>
+                        <tr>
+                            <td>Duidelijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Veiligheid</td>
+                        </tr>
+                        <tr>
+                            <td>Vetrouwen</td>
+                        </tr>
+                        <tr>
+                            <td>Duurzaamheid</td>
+                        </tr>
+                      </tbody>
+                  </table>
                </div>
           </div>
           </div>
