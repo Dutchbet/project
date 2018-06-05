@@ -195,7 +195,7 @@ saveNewTask10(){
             var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
             var title_scrollmenu = document.getElementsByClassName('title_scrollmenu')[0];
             var waarden_bottom = document.getElementsByClassName('waarden-bottom')[0];
-            var navbar = document.getElementsByClassName('navbar')[0];
+            // var navbar = document.getElementsByClassName('navbar')[0];
             var overlay = document.getElementsByClassName('overlay')[0];
             button.addEventListener('click', function() {
                 if (growDiv.clientHeight) {
@@ -208,7 +208,7 @@ saveNewTask10(){
                   overlay.style.visibility = "hidden";
                 }
                 else {
-                  navbar.style.zIndex = "1";
+                  // navbar.style.zIndex = "1";
                   waarden_bottom.style.bottom = "24%"
                   waarden_bottom.style.zIndex = "999";
                   growDiv.style.zIndex = "999";

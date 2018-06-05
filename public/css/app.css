@@ -10418,7 +10418,8 @@ a.text-dark:focus {
 }
 
 .button-reflectie {
-  margin: 12px;
+  margin: 8px;
+  height: 32px;
   float: right;
   border-radius: 4px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
@@ -10451,17 +10452,15 @@ a.text-dark:focus {
   height: 40px;
   padding: 14px 16px;
   margin-top: 5px;
-  margin-left: 3px;
   background-color: #ffffff;
   font-family: Muli;
   font-size: 16px;
-  width: 75%;
+  width: 80%;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: center;
   border-color: transparent;
   color: #bec9cd;
 }
@@ -10481,6 +10480,7 @@ a.text-dark:focus {
   background-color: #f1f7fa;
   border: solid 1px #d7e1e8;
   float: left;
+  font-family: prompt;
 }
 
 .topbar-reflectie-button {
@@ -10493,10 +10493,10 @@ a.text-dark:focus {
           box-shadow: 0 1px 4px 0 rgba(3, 25, 33, 0.08);
   background-color: #f1f7fa;
   border: solid 1px #d7e1e8;
+  font-family: prompt;
 }
 
 .vraagbox-reflectie-text {
-  width: 281px;
   padding: 0 0 14px 16px;
   font-family: Muli;
   font-size: 16px;
@@ -10524,6 +10524,7 @@ a.text-dark:focus {
 }
 
 .cards {
+  position: relative;
   height: 80px;
   width: 80px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(4, 156, 232, 0.16), 0 1px 4px 0 rgba(3, 25, 33, 0.08);
@@ -10533,6 +10534,49 @@ a.text-dark:focus {
   border: solid 1px #049ce8;
   border-radius: 100%;
   z-index: 999;
+}
+
+#card1 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 16px;
+  left: 0;
+  right: 0;
+}
+
+#card2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 24.6px;
+  left: 34;
+  right: 0;
+  -webkit-transform: rotate(-330deg);
+          transform: rotate(-330deg);
+}
+
+#card3 {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 24.6px;
+  left: 0;
+  right: 34;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .vraagbox-reflectie {
@@ -10617,6 +10661,8 @@ a.text-dark:focus {
   margin-top: 20px;
   padding-left: 30px;
   font-size: 18px;
+  font-family: prompt;
+  font-weight: 500;
 }
 
 .test2 {
@@ -10626,13 +10672,13 @@ a.text-dark:focus {
   margin-top: 20px;
   padding-left: 30px;
   font-size: 18px;
+  font-family: prompt;
 }
 
 .container {
   padding-left: 16px;
   padding-right: 16px;
   height: 57px;
-  overflow: hidden;
 }
 
 /* Links inside the navigation bar */
@@ -10667,7 +10713,8 @@ a.text-dark:focus {
 .more-button {
   border-style: none;
   background: none;
-  font: 16px Serif;
+  font-family: Prompt;
+  font-size: 16px;
   color: #32baef;
   margin: 0 0 10px 0;
   left: 0px;
@@ -10764,5 +10811,9 @@ a.text-dark:focus {
 .example1 {
   width: 100%;
   text-align: right;
+}
+
+.nav-link {
+  padding: 0;
 }
 
