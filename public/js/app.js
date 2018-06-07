@@ -215,7 +215,7 @@ module.exports = __webpack_require__(22);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_modal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_postroute_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_postroute_vue__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_postroute_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_postroute_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
@@ -412,7 +412,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
       var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
       var title_scrollmenu = document.getElementsByClassName('title_scrollmenu')[0];
       var waarden_bottom = document.getElementsByClassName('waarden-bottom')[0];
-      var navbar = document.getElementsByClassName('navbar')[0];
+      // var navbar = document.getElementsByClassName('navbar')[0];
       var overlay = document.getElementsByClassName('overlay')[0];
       button.addEventListener('click', function () {
         if (growDiv.clientHeight) {
@@ -424,7 +424,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
           overlay.style.opacity = "0";
           overlay.style.visibility = "hidden";
         } else {
-          navbar.style.zIndex = "1";
+          // navbar.style.zIndex = "1";
           waarden_bottom.style.bottom = "24%";
           waarden_bottom.style.zIndex = "999";
           growDiv.style.zIndex = "999";
@@ -489,7 +489,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\modal.vue"
+Component.options.__file = "resources/assets/js/components/modal.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -498,9 +498,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-72449f66", Component.options)
+    hotAPI.createRecord("data-v-514744a6", Component.options)
   } else {
-    hotAPI.reload("data-v-72449f66", Component.options)
+    hotAPI.reload("data-v-514744a6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -521,13 +521,13 @@ var content = __webpack_require__(6);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(8)("2211d13f", content, false, {});
+var update = __webpack_require__(8)("4766cecb", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72449f66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-72449f66\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-514744a6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modal.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -979,7 +979,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-72449f66", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-514744a6", module.exports)
   }
 }
 
@@ -15058,7 +15058,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\App.vue"
+Component.options.__file = "resources/assets/js/views/App.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -15067,9 +15067,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7cca96b8", Component.options)
+    hotAPI.createRecord("data-v-50e73d1e", Component.options)
   } else {
-    hotAPI.reload("data-v-7cca96b8", Component.options)
+    hotAPI.reload("data-v-50e73d1e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15110,19 +15110,21 @@ var render = function() {
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 2")]
-            )
+                },
+                [_vm._v("Vraag 2")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15140,37 +15142,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 1")]
-            ),
+                },
+                [_vm._v("Vraag 1")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 3")]
-            )
+                },
+                [_vm._v("Vraag 3")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15188,37 +15194,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 2")]
-            ),
+                },
+                [_vm._v("Vraag 2")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 4")]
-            )
+                },
+                [_vm._v("Vraag 4")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15236,37 +15246,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 3")]
-            ),
+                },
+                [_vm._v("Vraag 3")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 5")]
-            )
+                },
+                [_vm._v("Vraag 5")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15284,37 +15298,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 4")]
-            ),
+                },
+                [_vm._v("Vraag 4")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 6")]
-            )
+                },
+                [_vm._v("Vraag 6")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15332,37 +15350,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 5")]
-            ),
+                },
+                [_vm._v("Vraag 5")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 7")]
-            )
+                },
+                [_vm._v("Vraag 7")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15380,37 +15402,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 6")]
-            ),
+                },
+                [_vm._v("Vraag 6")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 8")]
-            )
+                },
+                [_vm._v("Vraag 8")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15428,37 +15454,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 7")]
-            ),
+                },
+                [_vm._v("Vraag 7")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 9")]
-            )
+                },
+                [_vm._v("Vraag 9")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15476,37 +15506,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 8")]
-            ),
+                },
+                [_vm._v("Vraag 8")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 10")]
-            )
+                },
+                [_vm._v("Vraag 10")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15524,37 +15558,41 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 9")]
-            ),
+                },
+                [_vm._v("Vraag 9")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Overzicht")]
-            )
+                },
+                [_vm._v("Overzicht")]
+              )
+            ])
           ]
         ),
         _vm._v(" "),
@@ -15572,62 +15610,47 @@ var render = function() {
             staticClass: "body-reflectie"
           },
           [
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button-left",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.prev()
+            _c("div", { staticClass: "previous" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button-left",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.prev()
+                    }
                   }
-                }
-              },
-              [_vm._v("Vraag 10")]
-            ),
+                },
+                [_vm._v("Vraag 10")]
+              )
+            ]),
             _vm._v(" "),
             _c("h2", { staticClass: "text-center test2" }, [
               _vm._v("Reflectie")
             ]),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "topbar-reflectie-button",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    _vm.$parent.next()
+            _c("div", { staticClass: "next" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "topbar-reflectie-button",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.$parent.next()
+                    }
                   }
-                }
-              },
-              [_vm._v("Verstuur")]
-            )
+                },
+                [_vm._v("Verstuur")]
+              )
+            ])
           ]
         )
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.$parent.step <= 10,
-            expression: "$parent.step  <= 10"
-          }
-        ]
-      },
-      [
-        _c("div", { staticClass: "memo-bottom" }, [
-          _vm._v("\r\n          Voeg een antwoord toe:\r\n        ")
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ]
-    ),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "div",
@@ -15657,9 +15680,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                          "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15758,9 +15781,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                        "
+                        "\n                        "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15859,9 +15882,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15960,9 +15983,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16061,9 +16084,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16162,9 +16185,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16263,9 +16286,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\n                          "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16364,9 +16387,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\n                                                                         "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16465,9 +16488,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\n                                                                         "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16566,9 +16589,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\n                        " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\n                                                                         "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16668,9 +16691,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16695,9 +16718,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16722,9 +16745,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16749,9 +16772,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16776,9 +16799,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16803,9 +16826,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16830,9 +16853,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16857,9 +16880,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16884,9 +16907,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16911,9 +16934,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\n                        " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\n                  "
                   )
                 ]
               )
@@ -16952,35 +16975,95 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "waarden-bottom" }, [
-      _c("div", { staticClass: "collapsible" }, [
-        _c("div", { staticClass: "title_scrollmenu" }, [
-          _c("div", { staticClass: "title_value" }),
+    return _c("div", { staticClass: "hulpmiddel" }, [
+      _c("div", { staticClass: "memo-bottom" }, [
+        _vm._v("\n          Voeg een antwoord toe:\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "waarden-bottom" }, [
+        _c("div", { staticClass: "collapsible" }, [
+          _c("div", { staticClass: "title_scrollmenu" }, [
+            _c("div", { staticClass: "title_value" }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "more-button",
+              attrs: { type: "button", value: "Waarden" }
+            })
+          ]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "more-button",
-            attrs: { type: "button", value: "Waarden" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "growable" }, [
-          _c("div", { staticClass: "measuringWrapper" }, [
-            _c("div", { staticClass: "scrollmenu" }, [
-              _c("table", { staticClass: "table" }, [
-                _c("tbody", [
-                  _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Geduld")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Openheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Flexibiliteit")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Rechtvaardig")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
-                  _vm._v(" "),
-                  _c("tr", [_c("td", [_vm._v("Respect")])])
+          _c("div", { staticClass: "growable" }, [
+            _c("div", { staticClass: "measuringWrapper" }, [
+              _c("div", { staticClass: "scrollmenu" }, [
+                _c("table", { staticClass: "table" }, [
+                  _c("tbody", [
+                    _c("tr", [_c("td", [_vm._v("Loyaliteit")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Geduld")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Openheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Flexibiliteit")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Rechtvaardig")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Schoonheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Respect")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Gemak")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Mededogen")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Vrede")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Betrokkenheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Betrouwbaarheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Eerlijkheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Solidariteit")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Humor")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Dankbaarheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Collegialiteit")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Verantwoordelijkheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Liefde")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Gelijk(waardig)heid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Tolerantie")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Zelfstandigheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Deskundigheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Vrijheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Dienstbaarheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Zorgzaamheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Gehoorzaamheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Eigenheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Gerechtigheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Zinvolheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Duidelijkheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Veiligheid")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Vetrouwen")])]),
+                    _vm._v(" "),
+                    _c("tr", [_c("td", [_vm._v("Duurzaamheid")])])
+                  ])
                 ])
               ])
             ])
@@ -16995,11 +17078,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
+        _vm._v("\n                        Vraag 1\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("wat heb je gezien en gehoord?")
+        _vm._v("Wat heb je gezien en gehoord?")
       ])
     ])
   },
@@ -17019,11 +17102,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
+        _vm._v("\n                        Vraag 2\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Wat heb jij daarbij gedacht en gevoeld ?")
+        _vm._v("Wat heb je daarbij gedacht en gevoeld?")
       ])
     ])
   },
@@ -17043,12 +17126,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
+        _vm._v("\n                        Vraag 3\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "Wat raakt je in de situatie, welke waarde is voor jou in het geding ?"
+          "Wat raakt je in de situatie, welke waarde is voor jou in het geding?"
         )
       ])
     ])
@@ -17069,7 +17152,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
+        _vm._v("\n                        Vraag 4\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17095,7 +17178,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
+        _vm._v("\n                        Vraag 5\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17119,11 +17202,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 6\r\n                  ")
+        _vm._v("\n                        Vraag 6\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Wie heeft welk belang en wlke tegenstellingen zijn daarin?")
+        _vm._v("Wie heeft welk belang en welke tegenstellingen zijn daarin?")
       ])
     ])
   },
@@ -17143,11 +17226,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
+        _vm._v("\n                        Vraag 7\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?")
+        _vm._v("Formuleer je gewetensvraag, begin met: moet...? Of: mag...?")
       ])
     ])
   },
@@ -17167,7 +17250,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
+        _vm._v("\n                        Vraag 8\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17191,7 +17274,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
+        _vm._v("\n                        Vraag 9\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17215,11 +17298,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
+        _vm._v("\n                        Vraag 10\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Zijn er nog meer gewetensvragen te formuleren?")
+        _vm._v("Welke stappen ga je in welke volgorde zetten?")
       ])
     ])
   },
@@ -17239,11 +17322,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
+        _vm._v("\n                        Vraag 1\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("wat heb je gezien en gehoord?")
+        _vm._v("Wat heb je gezien en gehoord?")
       ])
     ])
   },
@@ -17253,12 +17336,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
+        _vm._v("\n                        Vraag 2\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        wat heb jij daarbij gedacht en gevoeld ?\r\n                  "
+          "\n                        Wat heb je daarbij gedacht en gevoeld?\n                  "
         )
       ])
     ])
@@ -17269,12 +17352,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
+        _vm._v("\n                        Vraag 3\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
+          "\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\n                  "
         )
       ])
     ])
@@ -17285,12 +17368,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
+        _vm._v("\n                        Vraag 4\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n            "
+          "\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\n            "
         )
       ])
     ])
@@ -17301,12 +17384,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
+        _vm._v("\n                        Vraag 5\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
+          "\n                  Wie speelt welke rol en klopt dat volgens jou?\n                  "
         )
       ])
     ])
@@ -17317,12 +17400,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                  Vraag 6\r\n                  ")
+        _vm._v("\n                  Vraag 6\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n            "
+          "\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\n            "
         )
       ])
     ])
@@ -17333,12 +17416,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
+        _vm._v("\n                        Vraag 7\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
+          "\n                        Formuleer je gewetensvraag, begin met: moet...? Of: mag...?\n                  "
         )
       ])
     ])
@@ -17349,12 +17432,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
+        _vm._v("\n                        Vraag 8\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
+          "\n                        Zijn er nog meer gewetensvragen te formuleren?\n                  "
         )
       ])
     ])
@@ -17365,12 +17448,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
+        _vm._v("\n                        Vraag 9\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
+          "\n                        Welke vragen zijn nog niet beantwoord?\n                  "
         )
       ])
     ])
@@ -17381,12 +17464,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
+        _vm._v("\n                        Vraag 10\n                  ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Wlke stappen ga je in welke volgore zetten ?\r\n                  "
+          "\n                        Welke stappen ga je in welke volgorde zetten?\n                  "
         )
       ])
     ])
@@ -17397,7 +17480,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7cca96b8", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-50e73d1e", module.exports)
   }
 }
 
@@ -17426,7 +17509,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\Hello.vue"
+Component.options.__file = "resources/assets/js/views/Hello.vue"
 
 module.exports = Component.exports
 
@@ -17457,7 +17540,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\views\\Home.vue"
+Component.options.__file = "resources/assets/js/views/Home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -17466,9 +17549,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-11c5acec", Component.options)
+    hotAPI.createRecord("data-v-6c0a33b2", Component.options)
   } else {
-    hotAPI.reload("data-v-11c5acec", Component.options)
+    hotAPI.reload("data-v-6c0a33b2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -17494,7 +17577,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-11c5acec", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6c0a33b2", module.exports)
   }
 }
 
@@ -17508,19 +17591,15 @@ if (false) {
 /* 23 */,
 /* 24 */,
 /* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(31)
+var __vue_script__ = __webpack_require__(27)
 /* template */
-var __vue_template__ = __webpack_require__(32)
+var __vue_template__ = __webpack_require__(28)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17537,7 +17616,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\postroute.vue"
+Component.options.__file = "resources/assets/js/components/postroute.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -17546,9 +17625,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7fbfe83c", Component.options)
+    hotAPI.createRecord("data-v-66ce1122", Component.options)
   } else {
-    hotAPI.reload("data-v-7fbfe83c", Component.options)
+    hotAPI.reload("data-v-66ce1122", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -17559,7 +17638,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 31 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17578,7 +17657,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 32 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17600,7 +17679,7 @@ var staticRenderFns = [
         { staticClass: "button-reflectie", attrs: { type: "submit" } },
         [_c("img", { attrs: { src: "/images/send.svg" } })]
       ),
-      _vm._v("\r\nHello\r\n")
+      _vm._v("\nHello\n")
     ])
   }
 ]
@@ -17609,7 +17688,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7fbfe83c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-66ce1122", module.exports)
   }
 }
 
