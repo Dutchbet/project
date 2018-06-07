@@ -10444,7 +10444,7 @@ a.text-dark:focus {
 
 .Reflectie-Bottom {
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
   width: 100%;
 }
 
@@ -10658,7 +10658,7 @@ a.text-dark:focus {
   width: 78%;
   float: left !important;
   margin-top: 20px;
-  padding-left: 20%;
+  padding-left: 22%;
   font-size: 18px;
   font-family: prompt;
   font-weight: 500;
@@ -10788,7 +10788,7 @@ a.text-dark:focus {
 
 .scrollmenu {
   overflow: scroll;
-  height: 182px;
+  height: 158px;
 }
 
 .antwoordenblok {
