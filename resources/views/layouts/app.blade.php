@@ -12,6 +12,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.0.0-alpha.1/jspdf.plugin.autotable.js></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">

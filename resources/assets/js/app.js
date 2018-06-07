@@ -1,14 +1,15 @@
 import modal from './components/modal.vue';
+import postroute from './components/postroute.vue';
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.component('modal', modal, {
 props: ['index'],});
 Vue.use(VueRouter)
-
-
 import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
+
 
 
 const router = new VueRouter({
@@ -60,6 +61,17 @@ const app = new Vue({
     }
   },
   methods:{
+    savePdf(){
+      var vm = this
+      var columns = [{title: "1", dataKey: "memo"}];
+      var columns2 = [{title: "2", dataKey: "memo"}];
+      var doc = new jsPDF('p', 'pt');
+      doc.text('JeudghulpFriesland', 20, 20)
+      doc.autoTable(columns, vm.vraag1);
+      doc.autoTable2(columns, vm.vraag2);
+      doc.save('todos.pdf');
+    },
+  
 
     itemClicked: function(vraag) {
       this.vraag = vraag.vraag1;

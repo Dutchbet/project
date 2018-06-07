@@ -562,7 +562,10 @@
                   </div>
       </div>
            <div v-show="$parent.step === 12">
-               Bericht is verstuurd
+
+                   <button @click="$parent.savePdf">save pdf</button>
+
+               <postroute>hello</postroute>
             </div>
 </div>
 </template>

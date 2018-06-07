@@ -25,3 +25,10 @@ Route::get('/reflectie', 'ReflectieController@index')->where('any', '.*');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/sendmail', function (\Illuminate\Http\Request $request, \Illuminate\Mail\Mailer $mailer) {
+    $mailer
+        ->to($request->input('mail'))
+        ->send(new \App\Mail\VerzendReflecties($request->input('title')));
+    return redirect()->back();
+})->name('sendmail');

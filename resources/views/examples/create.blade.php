@@ -118,5 +118,13 @@
           </div>
         </div>
       </form>
+      <div class="flex-center position-ref full-height">
+          <form action="{{ route('sendmail') }}" method="post">
+              <input type="email" name="mail" placeholder="mail address">
+              <input type="text" name="title" placeholder="title">
+              <button type="submit">Send me a Mail</button>
+              {{ csrf_field() }}
+          </form>
+      </div>
     </div>
     @endsection

@@ -215,42 +215,45 @@ module.exports = __webpack_require__(22);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_modal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_App__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Hello__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Hello__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Home__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_Home__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_postroute_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_postroute_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_postroute_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_router__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Hello__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Hello___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_Hello__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Home__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_Home__);
 
 
 
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('modal', __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default.a, {
+
+
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.component('modal', __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default.a, {
   props: ['index'] });
-__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]);
 
 
 
 
-
-var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
+var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
   mode: 'history',
   routes: [{
     path: '/',
     name: 'home',
-    component: __WEBPACK_IMPORTED_MODULE_5__views_Home___default.a
+    component: __WEBPACK_IMPORTED_MODULE_6__views_Home___default.a
   }, {
     path: '/hello',
     name: 'hello',
-    component: __WEBPACK_IMPORTED_MODULE_4__views_Hello___default.a
+    component: __WEBPACK_IMPORTED_MODULE_5__views_Hello___default.a
   }]
 });
 
-var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
+var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
   el: '#app',
-  components: { App: __WEBPACK_IMPORTED_MODULE_3__views_App___default.a, modal: __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default.a },
+  components: { App: __WEBPACK_IMPORTED_MODULE_4__views_App___default.a, modal: __WEBPACK_IMPORTED_MODULE_0__components_modal_vue___default.a },
   router: router,
   data: function data() {
     return {
@@ -272,6 +275,17 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
   },
 
   methods: {
+    savePdf: function savePdf() {
+      var vm = this;
+      var columns = [{ title: "1", dataKey: "memo" }];
+      var columns2 = [{ title: "2", dataKey: "memo" }];
+      var doc = new jsPDF('p', 'pt');
+      doc.text('JeudghulpFriesland', 20, 20);
+      doc.autoTable(columns, vm.vraag1);
+      doc.autoTable2(columns, vm.vraag2);
+      doc.save('todos.pdf');
+    },
+
 
     itemClicked: function itemClicked(vraag) {
       this.vraag = vraag.vraag1;
@@ -16922,7 +16936,14 @@ var render = function() {
           }
         ]
       },
-      [_vm._v("\r\n               Bericht is verstuurd\r\n            ")]
+      [
+        _c("button", { on: { click: _vm.$parent.savePdf } }, [
+          _vm._v("save pdf")
+        ]),
+        _vm._v(" "),
+        _c("postroute", [_vm._v("hello")])
+      ],
+      1
     )
   ])
 }
@@ -17407,7 +17428,6 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources\\assets\\js\\views\\Hello.vue"
 
-
 module.exports = Component.exports
 
 
@@ -17483,6 +17503,115 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(31)
+/* template */
+var __vue_template__ = __webpack_require__(32)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\postroute.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7fbfe83c", Component.options)
+  } else {
+    hotAPI.reload("data-v-7fbfe83c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['post-route']
+});
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("form", { attrs: { action: "this.postroute", method: "POST" } }),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "button-reflectie", attrs: { type: "submit" } },
+        [_c("img", { attrs: { src: "/images/send.svg" } })]
+      ),
+      _vm._v("\r\nHello\r\n")
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7fbfe83c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
