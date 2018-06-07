@@ -412,7 +412,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
       var wrapper = growDiv.getElementsByClassName('measuringWrapper')[0];
       var title_scrollmenu = document.getElementsByClassName('title_scrollmenu')[0];
       var waarden_bottom = document.getElementsByClassName('waarden-bottom')[0];
-      var navbar = document.getElementsByClassName('navbar')[0];
+      // var navbar = document.getElementsByClassName('navbar')[0];
       var overlay = document.getElementsByClassName('overlay')[0];
       button.addEventListener('click', function () {
         if (growDiv.clientHeight) {
@@ -424,7 +424,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_2_vue___default.a({
           overlay.style.opacity = "0";
           overlay.style.visibility = "hidden";
         } else {
-          navbar.style.zIndex = "1";
+          // navbar.style.zIndex = "1";
           waarden_bottom.style.bottom = "24%";
           waarden_bottom.style.zIndex = "999";
           growDiv.style.zIndex = "999";
@@ -15622,7 +15622,9 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "memo-bottom" }, [
-          _vm._v("\r\n          Voeg een antwoord toe:\r\n        ")
+          _vm._v(
+            "\r\n                  Voeg een antwoord toe:\r\n                  "
+          )
         ]),
         _vm._v(" "),
         _vm._m(0)
@@ -15657,9 +15659,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                          "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15758,9 +15760,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                        "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15859,9 +15861,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -15960,9 +15962,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16061,9 +16063,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                  "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16162,9 +16164,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16263,9 +16265,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16364,9 +16366,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\r\n                                    "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16465,9 +16467,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\r\n                              "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16566,9 +16568,9 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "\r\n                        " +
+                      "\r\n                              " +
                         _vm._s(vraag.memo) +
-                        "\r\n                                                                         "
+                        "\r\n                              "
                     ),
                     _c("div", { staticClass: "remove" }, [
                       _c(
@@ -16668,9 +16670,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16695,9 +16697,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16722,9 +16724,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16749,9 +16751,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16776,9 +16778,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16803,9 +16805,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16830,9 +16832,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16857,9 +16859,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16884,9 +16886,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16911,9 +16913,9 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "\r\n                        " +
+                    "\r\n                              " +
                       _vm._s(vraag.memo) +
-                      "\r\n                  "
+                      "\r\n                        "
                   )
                 ]
               )
@@ -16995,11 +16997,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 1\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("wat heb je gezien en gehoord?")
+        _vm._v("Wat heb je gezien en gehoord?")
       ])
     ])
   },
@@ -17019,11 +17023,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 2\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Wat heb jij daarbij gedacht en gevoeld ?")
+        _vm._v("Wat heb je daarbij gedacht en gevoeld?")
       ])
     ])
   },
@@ -17043,7 +17049,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 3\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17069,7 +17077,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 4\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17095,7 +17105,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 5\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17119,11 +17131,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 6\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 6\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("Wie heeft welk belang en wlke tegenstellingen zijn daarin?")
+        _vm._v("Wie heeft welk belang en welke tegenstellingen zijn daarin?")
       ])
     ])
   },
@@ -17143,7 +17157,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 7\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17167,7 +17183,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 8\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17191,7 +17209,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 9\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17215,7 +17235,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
+        _vm._v(
+          "\r\n                              Vraag 10\r\n                        "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
@@ -17239,11 +17261,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 1\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 1\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
-        _vm._v("wat heb je gezien en gehoord?")
+        _vm._v("Wat heb je gezien en gehoord?")
       ])
     ])
   },
@@ -17253,12 +17277,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 2\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 2\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        wat heb jij daarbij gedacht en gevoeld ?\r\n                  "
+          "\r\n                                    Wat heb je daarbij gedacht en gevoeld?\r\n                              "
         )
       ])
     ])
@@ -17269,12 +17295,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 3\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 3\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                  "
+          "\r\n                                    Wat raakt je in de situatie, welke waarde is voor jou in het geding ?\r\n                              "
         )
       ])
     ])
@@ -17285,12 +17313,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 4\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 4\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n            "
+          "\r\n                                    Welke andere waarden zijn er voor jou of voor andere in de situatie in het geding?\r\n                              "
         )
       ])
     ])
@@ -17301,12 +17331,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 5\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 5\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Wie speelt welke rol en klopt dat volgens jou?\r\n                  "
+          "\r\n                                    Wie speelt welke rol en klopt dat volgens jou?\r\n                              "
         )
       ])
     ])
@@ -17317,12 +17349,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                  Vraag 6\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 6\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                  Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n            "
+          "\r\n                                    Wie heeft welk belang en wlke tegenstellingen zijn daarin?\r\n                              "
         )
       ])
     ])
@@ -17333,12 +17367,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 7\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 7\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                  "
+          "\r\n                                    Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?\r\n                              "
         )
       ])
     ])
@@ -17349,12 +17385,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 8\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 8\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Zijn er nog meer gewetensvragen te formuleren?\r\n                  "
+          "\r\n                                    Zijn er nog meer gewetensvragen te formuleren?\r\n                              "
         )
       ])
     ])
@@ -17365,12 +17403,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 9\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 9\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Welke vragen zijn nog niet beantwoord?\r\n                  "
+          "\r\n                                    Welke vragen zijn nog niet beantwoord?\r\n                              "
         )
       ])
     ])
@@ -17381,12 +17421,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "vraagbox-reflectie" }, [
       _c("div", { staticClass: "vraagbox-reflectie-titel" }, [
-        _vm._v("\r\n                        Vraag 10\r\n                  ")
+        _vm._v(
+          "\r\n                                    Vraag 10\r\n                              "
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "vraagbox-reflectie-text" }, [
         _vm._v(
-          "\r\n                        Wlke stappen ga je in welke volgore zetten ?\r\n                  "
+          "\r\n                                    Welke stappen ga je in welke volgorde zetten?\r\n                              "
         )
       ])
     ])
