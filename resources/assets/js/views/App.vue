@@ -6,7 +6,9 @@
       <div class="container">
             <div class="body-reflectie" v-show="$parent.step === 1">
               <h2 class="text-center test">Reflectie</h2>
+                <div class="next">
                   <button class="topbar-reflectie-button" @click.prevent="$parent.next() ">Vraag 2</button>
+                </div>
             </div>
             <div class="body-reflectie" v-show="$parent.step === 2">
                   <button class="topbar-reflectie-button-left" @click.prevent="$parent.prev() ">Vraag 1</button>
@@ -63,8 +65,8 @@
 
 <!--    <button @click.prevent="$parent.prev()">Previous</button>
     <button @click.prevent="$parent.next()">Next</button> -->
-      <div v-show="$parent.step  <= 10">
-      <div class="memo-bottom">
+    <!-- Bottom of the reflection page -->
+       <div class="memo-bottom">
           Voeg een antwoord toe:
         </div>
         <div class="waarden-bottom">
@@ -100,21 +102,103 @@
                         <tr>
                             <td>Respect</td>
                         </tr>
-                                    </tbody>
-                   </table>
+                        <tr>
+                            <td>Gemak</td>
+                        </tr>
+                        <tr>
+                            <td>Mededogen</td>
+                        </tr>
+                        <tr>
+                            <td>Vrede</td>
+                        </tr>
+                        <tr>
+                            <td>Betrokkenheid</td>
+                        </tr>
+                        <tr>
+                            <td>Betrouwbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Eerlijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Solidariteit</td>
+                        </tr>
+                        <tr>
+                            <td>Humor</td>
+                        </tr>
+                        <tr>
+                            <td>Dankbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Collegialiteit</td>
+                        </tr>
+                        <tr>
+                            <td>Verantwoordelijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Liefde</td>
+                        </tr>
+                        <tr>
+                            <td>Gelijk(waardig)heid</td>
+                        </tr>
+                        <tr>
+                            <td>Tolerantie</td>
+                        </tr>
+                        <tr>
+                            <td>Zelfstandigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Deskundigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Vrijheid</td>
+                        </tr>
+                        <tr>
+                            <td>Dienstbaarheid</td>
+                        </tr>
+                        <tr>
+                            <td>Zorgzaamheid</td>
+                        </tr>
+                        <tr>
+                            <td>Gehoorzaamheid</td>
+                        </tr>
+                        <tr>
+                            <td>Eigenheid</td>
+                        </tr>
+                        <tr>
+                            <td>Gerechtigheid</td>
+                        </tr>
+                        <tr>
+                            <td>Zinvolheid</td>
+                        </tr>
+                        <tr>
+                            <td>Duidelijkheid</td>
+                        </tr>
+                        <tr>
+                            <td>Veiligheid</td>
+                        </tr>
+                        <tr>
+                            <td>Vetrouwen</td>
+                        </tr>
+                        <tr>
+                            <td>Duurzaamheid</td>
+                        </tr>
+                      </tbody>
+                  </table>
                </div>
           </div>
           </div>
 
         </div>
         </div>
-      </div>
+
+        <!-- End of the bottom reflection page -->
 	<div v-show="$parent.step === 1">
             <div class="vraagbox-reflectie">
                   <div class="vraagbox-reflectie-titel">
                         Vraag 1
                   </div>
-                   <div class="vraagbox-reflectie-text">wat heb je gezien en gehoord?</div>
+                   <div class="vraagbox-reflectie-text">Wat heb je gezien en gehoord?</div>
             </div>
                   <div	v-if="$parent.vraag1.length > 0">
                    <div
@@ -144,7 +228,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 2
                   </div>
-                  <div class="vraagbox-reflectie-text">Wat heb jij daarbij gedacht en gevoeld ?</div>
+                  <div class="vraagbox-reflectie-text">Wat heb je daarbij gedacht en gevoeld?</div>
             </div>
                         <div	v-if="$parent.vraag2.length > 0">
                    <div
@@ -172,7 +256,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 3
                   </div>
-                  <div class="vraagbox-reflectie-text">Wat raakt je in de situatie, welke waarde is voor jou in het geding ?</div>
+                  <div class="vraagbox-reflectie-text">Wat raakt je in de situatie, welke waarde is voor jou in het geding?</div>
             </div>
                         <div	v-if="$parent.vraag3.length > 0">
                    <div
@@ -181,7 +265,7 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag3">
                         {{ vraag.memo}}
-                                                  <div class="remove">
+                          <div class="remove">
                             <a href="#" v-on:click.prevent="$parent.deleteObject3(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
@@ -209,7 +293,7 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag4">
                         {{ vraag.memo}}
-                                                  <div class="remove">
+                          <div class="remove">
                             <a href="#" v-on:click.prevent="$parent.deleteObject4(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
@@ -237,7 +321,7 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag5">
                         {{ vraag.memo}}
-                                                  <div class="remove">
+                          <div class="remove">
                             <a href="#" v-on:click.prevent="$parent.deleteObject5(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
@@ -256,7 +340,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 6
                   </div>
-                  <div class="vraagbox-reflectie-text">Wie heeft welk belang en wlke tegenstellingen zijn daarin?</div>
+                  <div class="vraagbox-reflectie-text">Wie heeft welk belang en welke tegenstellingen zijn daarin?</div>
             </div>
                         <div	v-if="$parent.vraag6.length > 0">
                    <div
@@ -265,7 +349,7 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag6">
                         {{ vraag.memo}}
-                                                                         <div class="remove">
+                          <div class="remove">
                             <a href="#" v-on:click.prevent="$parent.deleteObject6(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
@@ -284,7 +368,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 7
                   </div>
-                  <div class="vraagbox-reflectie-text">Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?</div>
+                  <div class="vraagbox-reflectie-text">Formuleer je gewetensvraag, begin met: moet...? Of: mag...?</div>
             </div>
                         <div	v-if="$parent.vraag7.length > 0">
                    <div
@@ -293,7 +377,7 @@
                         class="Reflectie-Response"
                         v-for="(vraag, index) in $parent.vraag7">
                         {{ vraag.memo}}
-                                                                         <div class="remove">
+                          <div class="remove">
                             <a href="#" v-on:click.prevent="$parent.deleteObject7(index)"><img class="bin" src="/images/delete-color.svg"></a>
                           </div>
                   </div>
@@ -368,7 +452,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 10
                   </div>
-                  <div class="vraagbox-reflectie-text">Zijn er nog meer gewetensvragen te formuleren?</div>
+                  <div class="vraagbox-reflectie-text">Welke stappen ga je in welke volgorde zetten?</div>
             </div>
                         <div	v-if="$parent.vraag10.length > 0">
                    <div
@@ -397,7 +481,7 @@
                   <div class="vraagbox-reflectie-titel">
                         Vraag 1
                   </div>
-                  <div class="vraagbox-reflectie-text">wat heb je gezien en gehoord?</div>
+                  <div class="vraagbox-reflectie-text">Wat heb je gezien en gehoord?</div>
             </div>
                                <div
                         :key="index"
@@ -413,7 +497,7 @@
                         Vraag 2
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        wat heb jij daarbij gedacht en gevoeld ?
+                        Wat heb je daarbij gedacht en gevoeld?
                   </div>
             </div>
                                           <div
@@ -498,7 +582,7 @@
                         Vraag 7
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        Formuleer je gewetensvraag, Begin met: moet..? Of: mag...?
+                        Formuleer je gewetensvraag, begin met: moet...? Of: mag...?
                   </div>
             </div>
                                                                                    <div
@@ -549,7 +633,7 @@
                         Vraag 10
                   </div>
                   <div class="vraagbox-reflectie-text">
-                        Wlke stappen ga je in welke volgore zetten ?
+                        Welke stappen ga je in welke volgorde zetten?
                   </div>
             </div>
                                                                                <div

@@ -28,30 +28,39 @@
 </head>
 <body>
  <div>
-{{--             <div class="container flop">
+   <!-- <div class="container flop">
                   <h2 class="text-center test">Reflectie</h2>
                   <div id="bg">
                   </a>
                   </div>
-          </div> --}}
-{{--    
-        <nav class="navbar fixed-bottom navbar-light bg-light">
+          </div> -->
+        <!-- Begin of navbar -->
+<!--
+         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container">
                 <a class="nav-item nav-link" href="{{ url('/') }}">
                   <img class="first-slide" src="{{asset('/images/home.svg')}} " alt="First slide">
                 </a>
-
-
-
+-->
                     <!-- Left Side Of Navbar -->
 
-             </button>
 
               <!--  <a class="nav-item nav-link active" href="{{ url('examples\create') }}">Add <span class="sr-only">(current)</span></a> -->
-
+<!--
                 <a class="nav-item nav-link" href="{{ url('examples') }}" ><img class="first-slide" src="{{asset('/images/memos.svg')}} " alt="First slide"></a>
                   <div class="cards">
-                <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/tile-2.svg')}} " alt="First slide"></a>
+
+                    <div id="card3">
+                        <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/tile-2.svg')}} " alt="First slide"></a>
+                    </div>
+
+                      <div id="card2">
+                          <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/tile-2.svg')}} " alt="First slide"></a>
+                      </div>
+
+                      <div id="card1">
+                          <a class="nav-item nav-link" href="{{ url('reflectie') }}" ><img class="first-slide" src="{{asset('/images/tile-2.svg')}} " alt="First slide"></a>
+                      </div>
                   </div>
                 <a class="nav-item nav-link" href="#"><img class="first-slide" src="{{asset('/images/contacts.svg')}} " alt="First slide"></a>
                 <a class="nav-item nav-link" href="{{ url('reflections\reflection') }}"><img class="first-slide" src="{{asset('/images/settings.svg')}} " alt="First slide"> </a>
@@ -60,7 +69,7 @@
                 </div>
             </div>
         </nav>
---}}
+-->
         <main class="body">
             @yield('content')
         </main>
